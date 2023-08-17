@@ -1,0 +1,301 @@
+\ProvidesExplPackage
+  {lua-unicode-math}
+  {2023-08-13}
+  {0.1}
+  {}
+
+\RequirePackage{fontspec}
+\bool_gset_false:N \g__fontspec_math_bool
+
+\int_new:N \g__l_uni_math_font_count_int
+\tl_new:N \l__main_family_tl
+
+\NewDocumentCommand \setmathfont { O{} m O{} } {
+  \int_incr:N \g__l_uni_math_font_count_int
+  \exp_args:Nc \newfontfamily
+    { g__l_uni_math_font_ \int_use:N \g__l_uni_math_font_count_int _text_font }
+    { #2 }
+    [ #1, #3, Script = Math, Renderer = Base ]
+  \tl_set_eq:NN \l__main_family_tl \l_fontspec_family_tl
+
+  \exp_args:Nc \newfontfamily
+    { g__l_uni_math_font_ \int_use:N \g__l_uni_math_font_count_int  _script_font }
+    { #2 }
+    [ #1, #3, Script = Math, Renderer = Base, Style = MathScript ]
+    \cs_set:cpx { scriptfont@@ TU / \l__main_family_tl } { TU/\l_fontspec_family_tl }
+
+  \exp_args:Nc \newfontfamily
+    { g__l_uni_math_font_ \int_use:N \g__l_uni_math_font_count_int  _scriptscript_font }
+    { #2 }
+    [ #1, #3, Script = Math, Renderer = Base, Style = MathScriptScript ]
+    \cs_set:cpx { scriptscriptfont@@ TU / \l__main_family_tl } { TU/\l_fontspec_family_tl }
+
+  \exp_args:NnnV \DeclareSymbolFont {lummain} {TU} \l__main_family_tl {m} {n}
+}
+
+\cs_set:Npn \__l_uni_math_family_variant:nw #1 #2/#3/ {
+  \ifcsname #1@@#2/#3 \endcsname
+    \lastnamedcs
+  \else
+    #2/#3
+  \fi
+  /
+}
+
+% Hook into the kernel to allow different families in scriptfonts
+\cs_set:Npn \getanddefine@fonts #1 #2 {
+  \xdef\font@name{\csname \string#2/\tf@size\endcsname}
+  \pickup@font \let\textfont@name\font@name
+  \xdef\font@name{\csname \exp_last_unbraced:Nno \__l_uni_math_family_variant:nw {scriptfont} {\string#2/\sf@size}\endcsname}
+  \pickup@font \let\scriptfont@name\font@name
+  \xdef\font@name{\csname \exp_last_unbraced:Nno \__l_uni_math_family_variant:nw {scriptscriptfont} {\string#2/\ssf@size}\endcsname}
+  \pickup@font
+  \edef\math@fonts{\math@fonts
+               \textfont#1\textfont@name
+               \scriptfont#1\scriptfont@name
+               \scriptscriptfont#1\font@name}
+    }
+
+\cs_generate_variant:Nn \tl_if_eq:nnT {o}
+\cs_set:Nn \__fontspec_setmainfont_hook:nn
+  {
+    \tl_if_eq:onT {\g__fontspec_mathrm_tl} {\rmdefault}
+      {
+        \fontspec_gset_family:Nnn \g__fontspec_mathrm_tl {Renderer=Basic,#1} {#2}
+        \__fontspec_setmathrm_hook:nn {#1} {#2}
+      }
+  }
+\cs_set:Nn \__fontspec_setsansfont_hook:nn
+  {
+    \tl_if_eq:onT {\g__fontspec_mathsf_tl} {\sfdefault}
+      {
+        \fontspec_gset_family:Nnn \g__fontspec_mathsf_tl {Renderer=Basic,#1} {#2}
+        \__fontspec_setmathsf_hook:nn {#1} {#2}
+      }
+  }
+\cs_set:Nn \__fontspec_setmonofont_hook:nn
+  {
+    \tl_if_eq:onT {\g__fontspec_mathtt_tl} {\ttdefault}
+      {
+        \fontspec_gset_family:Nnn \g__fontspec_mathtt_tl {Renderer=Basic,#1} {#2}
+        \__fontspec_setmathtt_hook:nn {#1} {#2}
+      }
+  }
+% \cs_new:Nn \@@_rm_series_default:n
+%   {
+%     \ifcsname #1series@rm\endcsname
+%       \csname #1series@rm\endcsname
+%     \else
+%       \csname #1default\endcsname
+%     \fi
+%   }
+\cs_set:Nn \__fontspec_setmathrm_hook:nn
+  {
+    \SetMathAlphabet \mathrm { normal } \g_fontspec_encoding_tl \g__fontspec_mathrm_tl { \mdseries@rm } \shapedefault
+    \SetMathAlphabet \mathit { normal } \g_fontspec_encoding_tl \g__fontspec_mathrm_tl { \mdseries@rm } \itdefault
+    \SetMathAlphabet \mathbf { normal } \g_fontspec_encoding_tl \g__fontspec_mathrm_tl { \bfseries@rm } \shapedefault
+  }
+\cs_set:Nn \__fontspec_setboldmathrm_hook:nn
+  {
+    \SetMathAlphabet \mathrm { bold } \g_fontspec_encoding_tl \g__fontspec_bfmathrm_tl { \mdseries@rm } \shapedefault
+    \SetMathAlphabet \mathit { bold } \g_fontspec_encoding_tl \g__fontspec_bfmathrm_tl { \mdseries@rm } \itdefault
+    \SetMathAlphabet \mathbf { bold } \g_fontspec_encoding_tl \g__fontspec_bfmathrm_tl { \bfseries@rm } \shapedefault
+  }
+\cs_set:Nn \__fontspec_setmathsf_hook:nn
+  {
+    \SetMathAlphabet \mathsf { normal } \g_fontspec_encoding_tl \g__fontspec_mathsf_tl { \mdseries@rm } \shapedefault
+    \SetMathAlphabet \mathsf { bold } \g_fontspec_encoding_tl \g__fontspec_mathsf_tl { \bfseries@rm } \shapedefault
+  }
+\cs_set:Nn \__fontspec_setmathtt_hook:nn
+  {
+    \SetMathAlphabet \mathtt { normal } \g_fontspec_encoding_tl \g__fontspec_mathtt_tl { \mdseries@rm } \shapedefault
+    \SetMathAlphabet \mathtt { bold } \g_fontspec_encoding_tl \g__fontspec_mathtt_tl { \bfseries@rm } \shapedefault
+  }
+%
+\__fontspec_setmathrm_hook:nn {} {}
+\__fontspec_setmathsf_hook:nn {} {}
+\__fontspec_setmathtt_hook:nn {} {}
+
+\cs_set_protected:Npn \operator@font {
+  \@fontswitch { \font@warning{Math~mode~required~for~\string\operator@font.} } { \mathtextrm }
+}
+
+\setmathfont {Latin Modern Math}
+
+\newattribute \mathfamattr
+\mathfamattr=2
+
+\lua_load_module:n { lua-unicode-math }
+
+\prop_set_from_keyval:Nn \l_tmpa_prop { rm = 0, bf = 1, it = 2, bfit = 3, cal = 8 }
+\prop_map_inline:Nn \l_tmpa_prop {
+  \cs_new_protected:cpn { sym #1 } ##1 {
+    {
+      \mathfamattr = #2 \scan_stop:
+      ##1
+    }
+  }
+  \cs_set_eq:cc { mathtext #1 } { math #1 }
+  \cs_set_eq:cc { math #1 } { sym #1 }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathord :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \char_generate:nn {#2} {12}
+  }
+}
+\tl_map_inline:nn {\mathbin \mathclose \mathpunct \mathrel} {
+  \cs_new_eq:cc
+    { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N #1 :nn }
+    { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathord :nn }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathop :nn } #1 #2 {
+  \exp_args:Nc \Umathchardef { \cs_to_str:N #1 op } 1~\symlummain #2~
+  \cs_set_eq:cN { \cs_to_str:N #1 oplimits } \scan_stop:
+  \cs_set:Npx #1 {
+    \char_generate:nn {#2} {12}
+  }
+  \mathcode #2 = "8000~
+  \cs_set:cpx { \char_generate:nn {"FFFF} {12} \char_generate:nn {#2} {12} } {
+    \use:c { \cs_to_str:N #1 op }
+    \use:c { \cs_to_str:N #1 oplimits }
+  }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathopen :nn } #1 #2 {
+  \token_if_eq_meaning:NNTF #1 \sqrt {
+    \cs_set:Npx \sqrtsign {
+      \Uradical \symlummain #2~
+    }
+  }{
+    \cs_set:Npx #1 {
+      \char_generate:nn {#2} {12}
+    }
+  }
+}
+
+\group_begin:
+\cs_set:Npn \l_tmp_cs:n #1 {
+  \group_end:
+
+  \cs_new_protected:Npn \__l_uni_math__check_mup_helper:w ##1 #1 ##2 \q_mark ##3 ##4 \q_stop {
+    ##3 {##2}
+  }
+
+  \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathalpha :nn } ##1 ##2 {
+    \cs_set:Npx ##1 {
+      \char_generate:nn {##2} {12}
+    }
+    \exp_after:wN \__l_uni_math__check_mup_helper:w \token_to_str:N ##1 \q_mark \cs_set_eq:cN #1 \q_mark \use_none:nn \q_stop ##1
+  }
+}
+\exp_args:No \l_tmp_cs:n {
+  \token_to_str:N \mup
+}
+
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathfence :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \char_generate:nn {#2} {12}
+  }
+  \cs_set:cpx {l \cs_to_str:N #1} {
+    \Udelimiter 4 ~ \symlummain #2 ~
+  }
+  \cs_set:cpx {r \cs_to_str:N #1} {
+    \Udelimiter 5 ~ \symlummain #2 ~
+  }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathaccent :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \Umathaccent fixed 0 ~ \symlummain #2 ~
+  }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathbotaccent :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \exp_not:N \PackageError{lua-unicode-math}{Unsupported~type~\token_to_str:N \mathbotaccent}{}
+  }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathaccentwide :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \Umathaccent 0 ~ \symlummain #2 ~
+  }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathbotaccentwide :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \Umathaccent bottom 0 ~ \symlummain #2 ~
+  }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathaccentoverlay :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \Umathaccent overlay 0 ~ \symlummain #2 ~
+  }
+  % \cs_set:Npx #1 {
+  %   \exp_not:N \PackageError{lua-unicode-math}{Unsupported~type~\token_to_str:N \mathaccentoverlay}{}
+  % }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathover :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \exp_not:N \PackageError{lua-unicode-math}{Unsupported~type~\token_to_str:N \mathover}{}
+  }
+}
+
+\cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathunder :nn } #1 #2 {
+  \cs_set:Npx #1 {
+    \exp_not:N \PackageError{lua-unicode-math}{Unsupported~type~\token_to_str:N \mathunder}{}
+  }
+}
+
+\cs_generate_variant:Nn \exp_args:Ne {c}
+\cs_new:Npn \UnicodeMathSymbol #1 #2 #3 #4 {
+  \use:c { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N #3 :nn }
+    {#2} {#1}
+}
+\input {unicode-math-table}
+\cs_undefine:N \UnicodeMathSymbol
+
+\clist_map_inline:nn {
+  \to \rightarrow,
+  \le \leq,
+  \ge \geq,
+  \neq \ne,
+  \bigcirc \mdlgwhtcircle,
+  \circ \vysmwhtcircle,
+  \bullet \smblkcircle,
+  \mathyen \yen,
+  \mathsterling \sterling,
+  \diamond \smwhtdiamond,
+  \emptyset \varnothing,
+  \hbar \hslash,
+  \land \wedge,
+  \lor \vee,
+  \owns \ni,
+  \gets \leftarrow,
+  \mathring \ocirc,
+  \lnot \neg,
+  \longdivision \longdivisionsign,
+  \backepsilon \upbackepsilon,
+  \eth \matheth,
+  % FIXME: Real \not implementation
+  \not \notaccent
+} {
+  \cs_set_eq:NN #1
+}
+
+\cs_set_protected:Npn \triangle { \mathord { \bigtriangleup } }
+\cs_set_protected:Npn \mathellipsis { \mathinner { \unicodeellipsis } }
+
+\cs_set_eq:NN \intoplimits \nolimits
+
+
+\cs_set_protected:cpx { \char_generate:nn {"FFFF} {12} ' } {
+  {
+    \prime_helper:w "2032~
+  }
+}
