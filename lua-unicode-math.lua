@@ -182,7 +182,7 @@ local remap_bases = {
     0x03B1, -- α
     0x1D7F6, -- 𝟶
   },
-  [21] = { -- Double-struck Bold
+  [20] = { -- Double-struck
     0x1D538, -- 𝔸
     0x1D552, -- 𝕒
     0x1D6A8, -- 𝚨
