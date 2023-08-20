@@ -143,6 +143,10 @@
     }
   }
   \cs_set_eq:cc { mathtext #1 } { math #1 }
+  % \cs_set_eq:cc { math #1 } { sym #1 }
+}
+
+\clist_map_inline:nn { cal, calbf, frak, frakbf, bb } {
   \cs_set_eq:cc { math #1 } { sym #1 }
 }
 
