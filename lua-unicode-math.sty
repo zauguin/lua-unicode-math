@@ -294,7 +294,6 @@
   \backepsilon \upbackepsilon,
   \eth \matheth,
   % FIXME: Real \not implementation
-  \not \notaccent
 } {
   \cs_set_eq:NN #1
 }
@@ -304,9 +303,6 @@
 
 \cs_set_eq:NN \intoplimits \nolimits
 
-
 \cs_set_protected:cpx { \char_generate:nn {"FFFF} {12} ' } {
-  {
-    \prime_helper:w "2032~
-  }
+  \prime_helper:w "2032~
 }

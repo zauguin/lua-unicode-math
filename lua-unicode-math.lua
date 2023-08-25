@@ -6,8 +6,6 @@ local symlummain = token.create'symlummain'
 assert(symlummain.cmdname == 'char_given')
 local main_fam = symlummain.index
 
-local prime_node_id = luatexbase.new_whatsit'prime'
-
 local processed_families = {[main_fam] = true}
 
 local parser = require'lua-uni-parse'
@@ -244,11 +242,17 @@ end
 local math_char_t = node.id'math_char'
 local sub_mlist_t = node.id'sub_mlist'
 -- local sub_box_t = node.id'sub_box'
+local whatsit_t = node.id'whatsit'
+local user_defined_s = node.subtype'user_defined'
+
+-- Map from whatsit user_ids to handlers
+-- Handler return values: head, node, state
+local math_whatsit_processors = {}
 
 local traverse_list
 
 -- container is set if we are a nucleus
-local function traverse_kernel(n, container)
+local function traverse_kernel(n, outer_head, outer)
   if not n then return 0, container end
   local id = n.id
   if id == math_char_t then
@@ -265,10 +269,15 @@ local function traverse_kernel(n, container)
       end
     end
   elseif id == sub_mlist_t then
-    return traverse_list(n.head, container)
-  -- elseif id == sub_box_t then
+    n.head = traverse_list(n.head)
+  elseif id == whatsit_t and n.subtype == user_defined_s then
+    local user_id = n.user_id
+    local processor = math_whatsit_processors[user_id]
+    if processor then
+      return processor(n, outer_head, outer)
+    end
   end
-  return 0, container
+  return outer_head, outer
 end
 
 local noad_t = node.id'noad'
@@ -278,13 +287,8 @@ local radical_t = node.id'radical'
 local fraction_t = node.id'fraction'
 -- local fence_t = node.id'fence'
 
-local whatsit_t = node.id'whatsit'
-local user_defined_s = node.subtype'user_defined'
-
-local process_prime_node
-
 -- parent is only set if we are a nucleus sub_mlist
-function traverse_list(head, parent)
+function traverse_list(head)
   local next_node, state, n = node.traverse(head)
   while true do
     local id, sub
@@ -292,28 +296,27 @@ function traverse_list(head, parent)
     if n == nil then break end
   -- end
   -- for n, id, sub in node.traverse(head) do
-    local levels = 0
     if id == noad_t then
       traverse_kernel(n.sub)
       traverse_kernel(n.sup)
-      levels, n = traverse_kernel(n.nucleus, n, parent)
+      head, n, state = traverse_kernel(n.nucleus, head, n)
     elseif id == accent_t then
       traverse_kernel(n.sub)
       traverse_kernel(n.sup)
       traverse_kernel(n.accent)
       traverse_kernel(n.bot_accent)
-      levels, n = traverse_kernel(n.nucleus, n, parent)
+      head, n, state = traverse_kernel(n.nucleus, head, n)
     elseif id == choice_t then
-      traverse_list(n.display)
-      traverse_list(n.text)
-      traverse_list(n.script)
-      traverse_list(n.scriptscript)
+      n.display = traverse_list(n.display)
+      n.text = traverse_list(n.text)
+      n.script = traverse_list(n.script)
+      n.scriptscript = traverse_list(n.scriptscript)
     elseif id == radical_t then
       traverse_kernel(n.sub)
       traverse_kernel(n.sup)
       traverse_kernel(n.degree)
       -- traverse_delim(n.left)
-      levels, n = traverse_kernel(n.nucleus, n, parent)
+      head, n, state = traverse_kernel(n.nucleus, head, n)
     elseif id == fraction_t then
       traverse_kernel(n.num)
       traverse_kernel(n.denom)
@@ -324,155 +327,62 @@ function traverse_list(head, parent)
       -- traverse_delim(n.delim)
     elseif id == whatsit_t and sub == user_defined_s then
       local user_id = n.user_id
-      if user_id == prime_node_id then
-        levels, n = process_prime_node(n, parent)
+      local processor = math_whatsit_processors[user_id]
+      if processor then
+        head, n, state = processor(n, head)
       end
     end
-    if levels ~= 0 then return levels - 1, n end
   end
-  return 0, parent
+  return head
 end
 
 luatexbase.add_to_callback('pre_mlist_to_hlist_filter', function(n, style, penalties)
-  traverse_list(n)
-  return true
+  return traverse_list(n)
 end, 'lua-unicode-math')
 
-tex.setmathcode(0x2D, tex.getmathcodes(0x2212)) -- '-' get the mathcode of '−'
+tex.setmathcode(0x2D, tex.getmathcodes(0x2212)) -- '-' gets the mathcode of '−'
 
-local func = luatexbase.new_luafunction'prime_helper:w'
-token.set_lua("prime_helper:w", func, 'protected')
 local nest = tex.nest
-local mmode = 267
 
-lua.get_functions_table()[func] = function()
-  local top = nest.top
-  local mode = top.mode
-  if mode ~= mmode and mode ~= -mmode then
-    return tex.error'Math mode required'
+local mmode do
+  for k, v in next, tex.getmodevalues() do
+    if v == 'math' then
+      mmode = k
+      break
+    end
   end
-  local n = node.new(whatsit_t, user_defined_s)
-  n.user_id, n.type, n.value = prime_node_id, 100, token.scan_int()
-  node.insert_after(top.head, top.tail, n)
-  top.tail = n
+  assert(mmode)
 end
 
-local prime_lookup = {
-  [0x2032] = {
-    [0x2032] = 0x2033,
-    [0x2033] = 0x2034,
-  },
-  [0x2035] = {
-    [0x2035] = 0x2036,
-    [0x2036] = 0x2037,
-  },
-}
-
-function process_prime_node(n, parent)
-  assert(parent)
-  local char = n.value
-  local pre_sup, pre_sub
-  local prev = parent.prev
-  local prev_id = prev and prev.id
-  if prev_id == noad_t or prev_id == accent_t or prev_id == radical_t then
-    pre_sup, pre_sub = prev.sup, prev.sub
-  else
-    node.flush_list(parent.nucleus.head)
-    parent.nucleus.head = nil
-    prev = parent
-  end
-  if pre_sub == nil then
-    prev.sub, parent.sub = parent.sub, nil
-  elseif parent.sub then
-    tex.error'Double subscript ignored'
-  end
-  local post_sup = parent.sup
-
-  -- First check for the cases where no sub_mlist is needed:
-  local done
-  if post_sup == nil then
-    if pre_sup == nil then
-      local new_sup = node.new(math_char_t)
-      new_sup.fam, new_sup.char = main_fam, char
-      prev.sup = new_sup
-
-      done = true
-    elseif pre_sup.id == math_char_t and pre_sup.fam == main_fam and prime_lookup[char][pre_sup.char] then
-      pre_sup.char = prime_lookup[char][pre_sup.char]
-
-      done = true
+local Ustartmath = token.new(text_style, token.command_id'math_shift_cs')
+local lua_call = token.command_id'lua_call'
+local environment = setmetatable({
+  check_math = function(id)
+    local mode = nest.top.mode
+    if mode ~= mmode and mode ~= -mmode then
+      token.push_back(Ustartmath, token.new(id, lua_call))
+      return tex.error('Missing $ inserted', {
+        "I've inserted a begin-math/end-math symbol since I think",
+        "you left one out. Proceed, with fingers crossed."
+      })
     end
-  end
+  end,
+  math_whatsit_processors = math_whatsit_processors,
+  main_fam = main_fam,
+  write_whatsit = function(user_id, kind, value)
+    local n = node.new(whatsit_t, user_defined_s)
+    n.user_id, n.type, n.value = user_id, kind, value
+    node.write(n)
+  end,
+  write_whatsit_wrapped = function(user_id, kind, value, noad_sub)
+    local n = node.new(noad_t, noad_sub)
+    local nuc = node.new(whatsit_t, user_defined_s)
+    n.nucleus = nuc
+    nuc.user_id, nuc.type, nuc.value = user_id, kind, value
+    node.write(n)
+  end,
+}, { __index = _ENV })
 
-  if not done then
-    local mlist -- Some sub_mlist node which will become the new sup
-    local new_head, current_tail
-
-    if pre_sup ~= nil then
-      if pre_sup.id == sub_mlist then
-        mlist, new_head = pre_sup, pre_sup.head
-        current_tail = node.tail(head)
-      else
-        -- mlist = node.new(sub_mlist_t)
-        new_head = node.new(noad_t, 0)
-        -- mlist.head = noad
-        new_head.nucleus = pre_sup
-        current_tail = new_head
-      end
-    end
-
-    if current_tail and current_tail.id == noad_t then
-      local nucleus = current_tail.nucleus
-      if nucleus.id == math_char_t and nucleus.fam == main_fam then
-        local oldchar = nucleus.char
-        local nextchar = prime_lookup[char][oldchar]
-        if nextchar then
-          nucleus.char, done = nextchar, true
-        end
-      end
-    end
-    
-    if not done then
-      local noad = node.new(noad_t, 0)
-      local nucleus = node.new(math_char_t)
-      nucleus.fam, nucleus.char = main_fam, char
-      noad.nucleus = nucleus
-      new_head, current_tail = node.insert_after(new_head, current_tail, noad)
-    end
-
-    if post_sup ~= nil then
-      if post_sup.id == sub_mlist then
-        local post_head = post_sup.head
-        current_tail.next, post_head.prev = post_head, current_tail
-
-        if mlist then
-          post_sup.head = nil
-        else
-          mlist = post_head
-          parent.sup = nil
-        end
-      else
-        -- mlist = node.new(sub_mlist_t)
-        local noad = node.node(noad_t, 0)
-        -- mlist.head = noad
-        noad.nucleus = post_sup
-        parent.sup = nil
-        node.insert_after(new_head, current_tail, noad)
-      end
-    end
-
-    if not mlist then
-      mlist = node.new(sub_mlist_t)
-    end
-
-    mlist.head = new_head
-    prev.sup = mlist
-    print(mlist)
-  end
-
-  if parent ~= prev then
-    node.remove(prev, parent)
-    node.free(parent)
-  end
-  return 1, prev
+for _, name in ipairs{'prime', 'not'} do
+  loadfile(kpse.find_file(string.format('lua-unicode-math--%s', name), 'lua'), 'bt', environment)()
 end
