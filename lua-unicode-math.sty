@@ -31,6 +31,7 @@
     \cs_set:cpx { scriptscriptfont@@ TU / \l__main_family_tl } { TU/\l_fontspec_family_tl }
 
   \exp_args:NnnV \DeclareSymbolFont {lummain} {TU} \l__main_family_tl {m} {n}
+  \exp_args:NnnnV \SetSymbolFont {lummain} {bold} {TU} \l__main_family_tl {b} {n}
 }
 
 \cs_set:Npn \__l_uni_math_family_variant:nw #1 #2/#3/ {
@@ -123,7 +124,6 @@
 \setmathfont {Latin Modern Math}
 
 \newattribute \mathfamattr
-\mathfamattr=2
 
 \lua_load_module:n { lua-unicode-math }
 

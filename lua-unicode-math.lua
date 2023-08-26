@@ -108,105 +108,115 @@ for base, remapped in next, pre_replacement do
   char_types[base], char_types[remapped] = char_types[remapped], nil
 end
 
+local serif, sans, script, fraktur, mono, bb = 0, 4, 8, 12, 16, 20
+local bold, italic = 1, 2
+
 local remap_bases = {
-  [0] = { -- Serif Normal
+  [serif] = { -- Serif Normal
     0x0041, -- A
     0x0061, -- a
     0x0391, -- Α
     0x03B1, -- α
     0x0030, -- 0
   },
-  [1] = { -- Serif Bold
+  [serif | bold] = { -- Serif Bold
     0x1D400, -- 𝐀
     0x1D41A, -- 𝐚
     0x1D6A8, -- 𝚨
     0x1D6C2, -- 𝛂
     0x1D7CE, -- 𝟎
   },
-  [2] = { -- Serif Italic
+  [serif | italic] = { -- Serif Italic
     0x1D434, -- 𝐴
     0x1D44E, -- 𝑎
     0x1D6E2, -- 𝛢
     0x1D6FC, -- 𝛼
     0x0030, -- 0
   },
-  [3] = { -- Serif Bold Italic
+  [serif | bold | italic] = { -- Serif Bold Italic
     0x1D468, -- 𝑨
     0x1D482, -- 𝒂
     0x1D71C, -- 𝜜
     0x1D736, -- 𝜶
     0x1D7CE, -- 𝟎
   },
-  [4] = { -- Sans Normal
+  [sans] = { -- Sans Normal
     0x1D5A0, -- 𝖠
     0x1D5BA, -- 𝖺
     0x0391, -- Α
     0x03B1, -- α
     0x1D7E2, -- 𝟢
   },
-  [5] = { -- Sans Bold
+  [sans | bold] = { -- Sans Bold
     0x1D5D4, -- 𝗔
     0x1D5EE, -- 𝗮
     0x1D756, -- 𝝖
     0x1D6C2, -- 𝛂
     0x1D7EC, -- 𝟬
   },
-  [6] = { -- Sans Italic
+  [sans | italic] = { -- Sans Italic
     0x1D608, -- 𝘈
     0x1D622, -- 𝘢
     0x1D6E2, -- 𝛢
     0x1D770, -- 𝝰
     0x1D7E2, -- 𝟢
   },
-  [7] = { -- Sans Bold Italic
+  [sans | bold | italic] = { -- Sans Bold Italic
     0x1D63C, -- 𝘼
     0x1D656, -- 𝙖
     0x1D790, -- 𝞐
     0x1D7AA, -- 𝞪
     0x1D7EC, -- 𝟬
   },
-  [8] = { -- Script Normal
+  [script] = { -- Script Normal
     0x1D49C, -- 𝒜
     0x1D4B6, -- 𝒶
     0x1D6E2, -- 𝛢
     0x1D6FC, -- 𝛼
     0x0030, -- 0
   },
-  [9] = { -- Script Bold
+  [script | bold] = { -- Script Bold
     0x1D4D0, -- 𝓐
     0x1D4EA, -- 𝓪
     0x1D71C, -- 𝜜
     0x1D736, -- 𝜶
     0x1D7CE, -- 𝟎
   },
-  [12] = { -- Fraktur Normal
+  [fraktur] = { -- Fraktur Normal
     0x1D504, -- 𝔄
     0x1D51E, -- 𝔞
     0x0391, -- Α
     0x03B1, -- α
     0x0030, -- 0
   },
-  [13] = { -- Fraktur Bold
+  [fraktur | bold] = { -- Fraktur Bold
     0x1D56C, -- 𝕬
     0x1D586, -- 𝖆
     0x1D6A8, -- 𝚨
     0x1D6C2, -- 𝛂
     0x1D7CE, -- 𝟎
   },
-  [16] = { -- Mono Normal
+  [mono] = { -- Mono Normal
     0x1D670, -- 𝙰
     0x1D68A, -- 𝚊
     0x0391, -- Α
     0x03B1, -- α
     0x1D7F6, -- 𝟶
   },
-  [20] = { -- Double-struck
+  [bb] = { -- Double-struck
     0x1D538, -- 𝔸
     0x1D552, -- 𝕒
     0x1D6A8, -- 𝚨
     0x1D6C2, -- 𝛂
     0x1D7D8, -- 𝟘
   },
+}
+remap_bases[false] = { -- Default
+  remap_bases[serif | italic][1], -- Latin uppercase
+  remap_bases[serif | italic][2], -- Latin lowercase
+  remap_bases[serif][3], -- Greek uppercase
+  remap_bases[serif | italic][4], -- Greek lowercase
+  remap_bases[serif][5], -- Serif digits
 }
 local base = remap_bases[0]
 remap_bases[0] = {} -- We don't want to overwrite it in the next step
@@ -217,7 +227,6 @@ for k, v in next, remap_bases do
   v[4] = v[4] and v[4] ~= base[4] and v[4] - base[4] or nil
   v[5] = v[5] and v[5] ~= base[5] and v[5] - base[5] or nil
 end
-remap_bases[false] = remap_bases[0] -- We don't want to overwrite it in the next step
 
 
 local classcodes = {
