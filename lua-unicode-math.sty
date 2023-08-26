@@ -311,3 +311,11 @@
 \cs_set_protected:cpx { \char_generate:nn {"FFFF} {12} ' } {
   \prime_helper:w "2032~
 }
+
+\cs_set_protected:Npn \uproot #1 {
+  \__l_uni_math_uproot:w #1 \scan_stop:
+}
+
+\cs_set_protected:Npn \leftroot #1 {
+  \__l_uni_math_leftroot:w #1 \scan_stop:
+}

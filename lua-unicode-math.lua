@@ -22,6 +22,9 @@ local mathfamattr = token.create'mathfamattr'
 assert(mathfamattr.cmdname == 'assign_attr')
 local attr = mathfamattr.index
 
+local leftroot_attr = luatexbase.new_attribute'leftroot'
+local uproot_attr = luatexbase.new_attribute'uproot'
+
 local symlummain = token.create'symlummain'
 assert(symlummain.cmdname == 'char_given')
 local main_fam = symlummain.index
@@ -275,7 +278,7 @@ end
 
 local math_char_t = node.id'math_char'
 local sub_mlist_t = node.id'sub_mlist'
--- local sub_box_t = node.id'sub_box'
+local sub_box_t = node.id'sub_box'
 local whatsit_t = node.id'whatsit'
 local user_defined_s = node.subtype'user_defined'
 
@@ -353,6 +356,48 @@ function traverse_list(style, head)
       traverse_kernel(sup_style(style), n.sup)
       traverse_kernel(6, n.degree)
       if sub < 3 or sub >= 6 then -- radicals and roots, \Udelimiterover, \Uhextension
+        if sub == 2 then -- Handle uproot and leftroot attributes
+          local leftroot = node.get_attribute(n, leftroot_attr)
+          if leftroot then
+            local degree = n.degree
+            print(degree)
+            if degree.id == math_char_t then
+              local noad = node.new(noad_t)
+              noad.nucleus = degree
+              degree = node.new(sub_mlist_t)
+              degree.head = noad
+              n.degree = degree
+            end
+            assert(degree.id == sub_mlist_t)
+            local quad = tex.getmath('quad', style_names[style])
+            leftroot = leftroot * quad // 18
+            local pre_kern, post_kern = node.new'kern', node.new'kern'
+            pre_kern.kern, post_kern.kern = -leftroot, leftroot
+            pre_kern.kern = -leftroot
+            degree.head = node.insert_after(node.insert_before(degree.head, degree.head, pre_kern), nil, post_kern)
+          end
+          local uproot = node.get_attribute(n, uproot_attr)
+          if uproot then
+            local degree = n.degree
+            print(degree)
+            if degree.id == math_char_t then
+              local noad = node.new(noad_t)
+              noad.nucleus = degree
+              degree = node.new(sub_mlist_t)
+              degree.head = noad
+              n.degree = degree
+            end
+            assert(degree.id == sub_mlist_t)
+            local quad = tex.getmath('quad', style_names[style])
+            uproot = uproot * quad // 18
+            local new_degree = node.new(sub_box_t)
+            new_degree.head = node.hpack(node.mlist_to_hlist(degree.head, 'scriptscript', false))
+            degree.head = nil
+            node.free(degree)
+            new_degree.head.shift = -uproot
+            n.degree = new_degree
+          end
+        end
         head, n, state = traverse_kernel(style | 1, n.nucleus, head, n)
       elseif sub == 3 then -- \Uunderdelimiter
         head, n, state = traverse_kernel(sub_style(style), n.nucleus, head, n)
@@ -437,4 +482,34 @@ local environment = setmetatable({
 
 for _, name in ipairs{'prime', 'not'} do
   loadfile(kpse.find_file(string.format('lua-unicode-math--%s', name), 'lua'), 'bt', environment)()
+end
+
+local func = luatexbase.new_luafunction'__l_uni_math_uproot:w'
+token.set_lua('__l_uni_math_uproot:w', func, 'protected')
+lua.get_functions_table()[func] = function()
+  local value = token.scan_int()
+
+  local root_nest = tex.nest[tex.nest.ptr - 1]
+  local root = root_nest and root_nest.tail
+  if not root or root.id ~= radical_t or root.subtype ~= 2 or root.nucleus or not root.degree then
+    tex.error'Misuse'
+    return
+  end
+
+  node.set_attribute(root, uproot_attr, value)
+end
+
+local func = luatexbase.new_luafunction'__l_uni_math_leftroot:w'
+token.set_lua('__l_uni_math_leftroot:w', func, 'protected')
+lua.get_functions_table()[func] = function()
+  local value = token.scan_int()
+
+  local root_nest = tex.nest[tex.nest.ptr - 1]
+  local root = root_nest and root_nest.tail
+  if not root or root.id ~= radical_t or root.subtype ~= 2 or root.nucleus or not root.degree then
+    tex.error'Misuse'
+    return
+  end
+
+  node.set_attribute(root, leftroot_attr, value)
 end
