@@ -62,7 +62,7 @@ local not_lookup = {
   [0x2ADD] = 0x2ADC,
 }
 
-math_whatsit_processors[whatsit_id] = function(n, parent_head, parent)
+math_whatsit_processors[whatsit_id] = function(_style, n, parent_head, parent)
   assert(parent)
   local after = parent.next
   if not after then

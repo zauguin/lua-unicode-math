@@ -1,3 +1,23 @@
+local function sub_style(s) return (s >> 1) | 5 end
+local function sup_style(s) return ((s & 4) >> 1) | (s & 1) | 4 end
+local function num_style(s) return s + 2 - s//6 * 2 end
+local function denom_style(s) return (s | 1) + 2 - s//6 * 2 end
+
+local style_names = {
+  [0] = 'display',
+  [1] = 'crampeddisplay',
+  [2] = 'text',
+  [3] = 'crampedtext',
+  [4] = 'script',
+  [5] = 'crampedscript',
+  [6] = 'scriptscript',
+  [7] = 'crampedscriptscript',
+}
+local reverse_styles = {}
+for i=0, 7 do
+  reverse_styles[style_names[i]] = i
+end
+
 local mathfamattr = token.create'mathfamattr'
 assert(mathfamattr.cmdname == 'assign_attr')
 local attr = mathfamattr.index
@@ -252,7 +272,7 @@ local math_whatsit_processors = {}
 local traverse_list
 
 -- container is set if we are a nucleus
-local function traverse_kernel(n, outer_head, outer)
+local function traverse_kernel(style, n, outer_head, outer)
   if not n then return 0, container end
   local id = n.id
   if id == math_char_t then
@@ -269,12 +289,12 @@ local function traverse_kernel(n, outer_head, outer)
       end
     end
   elseif id == sub_mlist_t then
-    n.head = traverse_list(n.head)
+    n.head = traverse_list(style, n.head)
   elseif id == whatsit_t and n.subtype == user_defined_s then
     local user_id = n.user_id
     local processor = math_whatsit_processors[user_id]
     if processor then
-      return processor(n, outer_head, outer)
+      return processor(style, n, outer_head, outer)
     end
   end
   return outer_head, outer
@@ -283,12 +303,13 @@ end
 local noad_t = node.id'noad'
 local accent_t = node.id'accent'
 local choice_t = node.id'choice'
+local style_t = node.id'style'
 local radical_t = node.id'radical'
 local fraction_t = node.id'fraction'
 -- local fence_t = node.id'fence'
 
 -- parent is only set if we are a nucleus sub_mlist
-function traverse_list(head)
+function traverse_list(style, head)
   local next_node, state, n = node.traverse(head)
   while true do
     local id, sub
@@ -297,29 +318,39 @@ function traverse_list(head)
   -- end
   -- for n, id, sub in node.traverse(head) do
     if id == noad_t then
-      traverse_kernel(n.sub)
-      traverse_kernel(n.sup)
-      head, n, state = traverse_kernel(n.nucleus, head, n)
+      traverse_kernel(sub_style(style), n.sub)
+      traverse_kernel(sup_style(style), n.sup)
+      head, n, state = traverse_kernel(style, n.nucleus, head, n)
     elseif id == accent_t then
-      traverse_kernel(n.sub)
-      traverse_kernel(n.sup)
-      traverse_kernel(n.accent)
-      traverse_kernel(n.bot_accent)
-      head, n, state = traverse_kernel(n.nucleus, head, n)
+      traverse_kernel(sub_style(style), n.sub)
+      traverse_kernel(sup_style(style), n.sup)
+      traverse_kernel(style, n.accent)
+      traverse_kernel(style, n.bot_accent)
+      head, n, state = traverse_kernel(style | 1, n.nucleus, head, n)
     elseif id == choice_t then
-      n.display = traverse_list(n.display)
-      n.text = traverse_list(n.text)
-      n.script = traverse_list(n.script)
-      n.scriptscript = traverse_list(n.scriptscript)
+      n.display = traverse_list(0, n.display)
+      n.text = traverse_list(2, n.text)
+      n.script = traverse_list(4, n.script)
+      n.scriptscript = traverse_list(6, n.scriptscript)
+    elseif id == style_t then
+      style = reverse_styles[n.style]
     elseif id == radical_t then
-      traverse_kernel(n.sub)
-      traverse_kernel(n.sup)
-      traverse_kernel(n.degree)
+      traverse_kernel(sub_style(style), n.sub)
+      traverse_kernel(sup_style(style), n.sup)
+      traverse_kernel(6, n.degree)
+      if sub < 3 or sub >= 6 then -- radicals and roots, \Udelimiterover, \Uhextension
+        head, n, state = traverse_kernel(style | 1, n.nucleus, head, n)
+      elseif sub == 3 then -- \Uunderdelimiter
+        head, n, state = traverse_kernel(sub_style(style), n.nucleus, head, n)
+      elseif sub == 4 then -- \Uoverdelimiter
+        head, n, state = traverse_kernel(sup_style(style), n.nucleus, head, n)
+      elseif sub == 5 then -- \Udelimiterunder
+        head, n, state = traverse_kernel(style, n.nucleus, head, n)
+      end
       -- traverse_delim(n.left)
-      head, n, state = traverse_kernel(n.nucleus, head, n)
     elseif id == fraction_t then
-      traverse_kernel(n.num)
-      traverse_kernel(n.denom)
+      traverse_kernel(num_style(style), n.num)
+      traverse_kernel(denom_style(style), n.denom)
       -- traverse_delim(n.left)
       -- traverse_delim(n.middle)
       -- traverse_delim(n.right)
@@ -329,7 +360,7 @@ function traverse_list(head)
       local user_id = n.user_id
       local processor = math_whatsit_processors[user_id]
       if processor then
-        head, n, state = processor(n, head)
+        head, n, state = processor(style, n, head)
       end
     end
   end
@@ -337,7 +368,7 @@ function traverse_list(head)
 end
 
 luatexbase.add_to_callback('pre_mlist_to_hlist_filter', function(n, style, penalties)
-  return traverse_list(n)
+  return traverse_list(reverse_styles[style], n)
 end, 'lua-unicode-math')
 
 tex.setmathcode(0x2D, tex.getmathcodes(0x2212)) -- '-' gets the mathcode of '−'

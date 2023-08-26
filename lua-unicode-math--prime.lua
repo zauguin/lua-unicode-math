@@ -25,7 +25,7 @@ local sub_mlist_t = node.id'sub_mlist'
 local noad_t = node.id'noad'
 local radical_t = node.id'radical'
 
-math_whatsit_processors[prime_node_id] = function(n, parent_head, parent)
+math_whatsit_processors[prime_node_id] = function(_style, n, parent_head, parent)
   assert(parent)
   local char = n.value
   local pre_sup, pre_sub
