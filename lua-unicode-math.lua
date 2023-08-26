@@ -31,6 +31,11 @@ local processed_families = {[main_fam] = true}
 local parser = require'lua-uni-parse'
 local mathclasses = parser.parse_file('MathClass-15', parser.eol + lpeg.Cg(parser.fields(parser.codepoint_range, lpeg.C(lpeg.S'NABCDFGLOPRSUVX'))), parser.multiset)
 
+-- Overwrites
+mathclasses[0x2F] = 'N' -- /
+mathclasses[0x5C] = 'N' -- \
+mathclasses[0x22EF] = 'N' -- ⋯
+
 -- 1: Latin uppercase
 -- 2: Latin lowercase
 -- 3: Greek uppercase
@@ -380,7 +385,14 @@ luatexbase.add_to_callback('pre_mlist_to_hlist_filter', function(n, style, penal
   return traverse_list(reverse_styles[style], n)
 end, 'lua-unicode-math')
 
+tex.setmathcode(0x2A, tex.getmathcodes(0x2217)) -- '*' gets the mathcode of '∗'
 tex.setmathcode(0x2D, tex.getmathcodes(0x2212)) -- '-' gets the mathcode of '−'
+tex.setmathcode(0x3A, tex.getmathcodes(0x2236)) -- ':' gets the mathcode of '∶'
+
+local slash_fence = 0x2F
+tex.setdelcode(0x2F, main_fam, slash_fence, 0, 0)
+tex.setdelcode(0x2044, main_fam, slash_fence, 0, 0)
+tex.setdelcode(0x2215, main_fam, slash_fence, 0, 0)
 
 local nest = tex.nest
 

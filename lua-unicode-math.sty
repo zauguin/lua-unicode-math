@@ -179,6 +179,9 @@
     \cs_set:Npx \sqrtsign {
       \Uradical \symlummain #2~
     }
+    \cs_set:Npx \root ##1 \of {
+      \Uroot \symlummain #2~ { ##1 }
+    }
   }{
     \cs_set:Npx #1 {
       \char_generate:nn {#2} {12}
@@ -271,6 +274,10 @@
 \input {unicode-math-table}
 \cs_undefine:N \UnicodeMathSymbol
 
+\cs_set_protected:Npn \triangle { \mathord { \bigtriangleup } }
+\cs_set_protected:Npn \mathellipsis { \mathinner { \unicodeellipsis } }
+\cs_set_protected:Npn \cdots { \mathinner { \unicodecdots } }
+
 \clist_map_inline:nn {
   \to \rightarrow,
   \le \leq,
@@ -293,13 +300,11 @@
   \longdivision \longdivisionsign,
   \backepsilon \upbackepsilon,
   \eth \matheth,
-  % FIXME: Real \not implementation
+  \dotsb@ \cdots,
+  \@cdots \cdots,
 } {
   \cs_set_eq:NN #1
 }
-
-\cs_set_protected:Npn \triangle { \mathord { \bigtriangleup } }
-\cs_set_protected:Npn \mathellipsis { \mathinner { \unicodeellipsis } }
 
 \cs_set_eq:NN \intoplimits \nolimits
 
