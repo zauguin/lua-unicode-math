@@ -1,3 +1,4 @@
+
 % This is the AMS's testmath.tex modified to check unicode-math output.
 
 \documentclass{article}
@@ -10,9 +11,10 @@ File name: \fn{testmath.tex}}
 
 \usepackage{amsmath,amsthm,trace}
 \usepackage{fontspec}
-\setmainfont{XITS}
 \usepackage{lua-unicode-math}
+\setmainfont{XITS}
 \setmathfont{XITS Math}
+\DeclareMathSizes{10}{10}{7.5}{6}
 
 %    Some definitions useful in producing this sort of documentation:
 \chardef\bslash=`\\ % p. 424, TeXbook
@@ -102,6 +104,7 @@ File name: \fn{testmath.tex}}
 \let\norm=\enVert
 
 \begin{document}
+\maketitle
 \markboth{Sample paper for the {\protect\ntt\lowercase{amsmath}} package}
 {Sample paper for the {\protect\ntt\lowercase{amsmath}} package}
 \renewcommand{\sectionmark}[1]{}
@@ -1264,6 +1267,7 @@ the position of the root index of a radical:
 \sqrt[\leftroot{-2}\uproot{2}\beta]{k}
 \end{verbatim}
 gives good positioning of the $\beta$:
+\[\sqrt[\beta]{k}\]
 \[\sqrt[\leftroot{-2}\uproot{2}\beta]{k}\]
 
 \subsection{Boxed formulas} The command \cn{boxed} puts a box around its
