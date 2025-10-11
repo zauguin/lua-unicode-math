@@ -1,3 +1,5 @@
 module = 'lua-unicode-math'
 
-unpackfiles = {'*.dtx'}
+unpackfiles = {'*.ins'}
+installfiles = {'*.sty', '*.lua'}
+sourcefiles = {'*.dtx', '*.ins', '*.lua'}

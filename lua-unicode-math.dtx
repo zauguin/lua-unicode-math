@@ -1,3 +1,18 @@
+%\documentclass[a4paper]{l3doc}
+%\title{The \pkg{lua-unicode-math} package}
+%\author{Marcel Krüger \url{https://github.com/zauguin/lua-unicode-math}}
+%\begin{document}
+%\maketitle
+%\begin{documentation}
+%Modern fonts are usually provided in OpenType format and are designed for Unicode
+%based input. For mathematical fonts this usually means the use of fonts with an OpenType MATH table:
+%Fonts containing special metadata needed to make them usable in a mathematical context.
+%
+%In Lua\TeX{} such fonts have traditionally been loaded with the \pkg{unicode-math} package.
+%While this works, is very flexible and allows to use the same document in Xe\TeX{} and Lua\TeX{} it has performance issues and it sometimes has unexpected interactions with the use of math versions. The \pkg{lua-unicode-math} is a specific Lua\LaTeX{} specific alternative which aims for higher performance and better integration with native Lua\TeX{} features.
+%\end{documentation}
+%\begin{implementation}
+
 \ProvidesExplPackage
   {lua-unicode-math}
   {2023-08-13}
@@ -319,3 +334,5 @@
 \cs_set_protected:Npn \leftroot #1 {
   \__l_uni_math_leftroot:w #1 \scan_stop:
 }
+%\end{implementation}
+%\end{document}
