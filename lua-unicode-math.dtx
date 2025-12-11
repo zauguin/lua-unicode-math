@@ -1,24 +1,90 @@
-%\documentclass[a4paper]{l3doc}
-%\title{The \pkg{lua-unicode-math} package}
-%\author{Marcel Krüger \url{https://github.com/zauguin/lua-unicode-math}}
-%\begin{document}
-%\maketitle
-%\begin{documentation}
-%Modern fonts are usually provided in OpenType format and are designed for Unicode
-%based input. For mathematical fonts this usually means the use of fonts with an OpenType MATH table:
-%Fonts containing special metadata needed to make them usable in a mathematical context.
+% \iffalse meta-comment
 %
-%In Lua\TeX{} such fonts have traditionally been loaded with the \pkg{unicode-math} package.
-%While this works, is very flexible and allows to use the same document in Xe\TeX{} and Lua\TeX{} it has performance issues and it sometimes has unexpected interactions with the use of math versions. The \pkg{lua-unicode-math} is a specific Lua\LaTeX{} specific alternative which aims for higher performance and better integration with native Lua\TeX{} features.
-%\end{documentation}
-%\begin{implementation}
-
+%% Copyright (C) 2025 by Marcel Krueger
+%%
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3c of this license or (at your option) any later
+%% version. The latest version of this license is in:
+%%
+%% http://www.latex-project.org/lppl.txt
+%%
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%
+%<*gobble>
+\expandafter\ifx\csname @currname\endcsname\empty
+\csname fi\endcsname
+%</gobble>
+%<*driver>
+\documentclass[full,a4paper]{l3doc}
+\usepackage{booktabs}
+\usepackage{lua-unicode-math}
+\MakeShortVerb{\|}
+\begin{document}
+\DocInput{lua-unicode-math.dtx}
+% \PrintIndex
+% \PrintChanges
+\end{document}
+%</driver>
+%<*gobble>
+\fi
+%</gobble>
+% \fi
+%
+% \GetFileInfo{lua-unicode-math.dtx}
+% \title{The \pkg{lua-unicode-math} package\thanks{This document
+%        corresponds to \pkg{lua-unicode-math}~v0.2, dated~2025-12-08.}}
+% \author{Marcel Kr\"uger \\ \href{mailto:tex@2krueger.de}{tex@2krueger.de} \\ \url{https://github.com/zauguin/lua-unicode-math}}
+% 
+% \let\fntname\texttt
+% \maketitle
+% \begin{documentation}
+% Modern fonts are usually provided in OpenType format and are designed for Unicode
+% based input. For mathematical fonts this usually means the use of fonts with an OpenType MATH table:
+% Fonts containing special metadata needed to make them usable in a mathematical context.
+%
+% In Lua\TeX{} such fonts have traditionally been loaded with the \pkg{unicode-math} package.
+% While this works, is very flexible and allows to use the same document in Xe\TeX{} and Lua\TeX{} it has performance issues and it sometimes has unexpected interactions with the use of math versions. The \pkg{lua-unicode-math} is a specific Lua\LaTeX{} specific alternative which aims for higher performance and better integration with native Lua\TeX{} features.
+%
+% \section{Usage instructions}
+% \subsection{Font packages}
+% For most Opentype the recommended way to load them with \pkg{lua-unicode-math} is to use a dedicated package.
+% Currently the following packages are shipped with \pkg{lua-unicode-math}:
+% \begin{tabular}{cc}
+% \toprule
+% Font & Package \\
+% \midrule
+% Latin Modern Math & lum-lmodern \\
+% \bottomrule
+% \end{tabular}
+%
+% \subsection{Loading fonts by name}
+% If you want to use a custom font, you can load \pkg{fontspec} and \pkg{lua-unicode-math}
+% using
+% \begin{verbatim}
+% \usepackage{fontspec,lua-unicode-math}
+% \end{verbatim}
+% This will load \fntname{Latin Modern Math} by default. Another math font can be loaded using \cs{setmathfont} using the same options as \pkg{fontspec}'s \cs{newfontfamily}.
+% For example, you can use to to configure the current math font using
+% \begin{verbatim}
+% \setmathfont[AutoFakeBold=1]{Latin Modern Math}
+% \end{verbatim}
+%
+% \subsection{Writing maths}
+% There are two ways of entering math: You can directly input Unicode math symbols or use regular \LaTeX{} commands for symbols.
+% All Unicode symbols are supported with the same commands as in \pkg{unicode-math}. For a full list see \texttt{texdoc unimath-symbols}.
+% \end{documentation}
+% \begin{implementation}
+% \section{Implementation}
+%    \begin{macrocode}
 \ProvidesExplPackage
   {lua-unicode-math}
-  {2023-08-13}
-  {0.1}
-  {}
+  {2025-12-08}
+  {0.2}
+  {Opentype Math support for LuaLaTeX}
 
+%<@@=l_uni_math>
 \int_new:N \g__l_uni_math_font_count_int
 \tl_new:N \l__l_uni_math_main_family_tl
 \tl_new:N \l__l_uni_math_script_family_tl
@@ -343,5 +409,5 @@
 \cs_set_protected:Npn \leftroot #1 {
   \__l_uni_math_leftroot:w #1 \scan_stop:
 }
-%\end{implementation}
-%\end{document}
+%    \end{macrocode}
+% \end{implementation}
