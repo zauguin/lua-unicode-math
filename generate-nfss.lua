@@ -205,4 +205,5 @@ for _, data in ipairs(fonts) do
     name = fmt("%s Subscript", data.name),
     shapes = add_feature(data.shapes, 'ssty=1;'),
   }
+  print(fmt("%s & lum-%s \\\\", data.name, data.package))
 end

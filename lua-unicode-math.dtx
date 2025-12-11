@@ -51,11 +51,20 @@
 % \subsection{Font packages}
 % For most Opentype the recommended way to load them with \pkg{lua-unicode-math} is to use a dedicated package.
 % Currently the following packages are shipped with \pkg{lua-unicode-math}:
-% \begin{tabular}{cc}
+% \begin{tabular}{ll}
 % \toprule
 % Font & Package \\
 % \midrule
 % Latin Modern Math & lum-lmodern \\
+% New Computer Modern Math & lum-newcomputermodern \\
+% STIX2 & lum-stix2 \\
+% XITS & lum-xits \\
+% TeX Gyre Pagella Math & lum-pagella \\
+% TeX Gyre DejaVu Math & lum-dejavu \\
+% TeX Gyre Bonum Math & lum-bonum \\
+% TeX Gyre Schola Math & lum-schola \\
+% TeX Gyre Termes Math & lum-termes \\
+% Fira Math & lum-fira \\
 % \bottomrule
 % \end{tabular}
 %
@@ -91,6 +100,28 @@
 \tl_new:N \l__l_uni_math_scriptscript_family_tl
 
 \cs_generate_variant:Nn \tl_if_eq:nnT {o}
+
+\msg_new:nnn { l_uni_math } { unicode-math-suppressed } {
+  You~tried~to~load~both~lua-unicode-math~and~unicode-math~
+  in~the~same~document.~This~is~not~supported,~unicode-math~
+  will~be~suppressed.~There~is~a~good~chance~that~this~will~
+  break~your~document.~Change~your~document~to~only~use~lua-unicode-math~
+  so~solve~this.
+}
+\msg_new:nnn { l_uni_math } { unicode-math-loaded } {
+  You~tried~to~load~lua-unicode-math~while~unicode-math~
+  was~already~loaded.~This~does~not~work.~Please~avoid~loading~
+  unicode-math.~If~that~is~not~possible~and~you~are~feeling~adventurous~
+  you~can~try~loading~the~lua-unicode-math~package~at~the~beginning~
+  of~your~document~instead~to~suppress~unicode-math.
+}
+\disable@package@load{unicode-math} {
+  \msg_warning:nn { l_uni_math } {unicode-math-incompatible }
+}
+\IfPackageLoadedTF {unicode-math} {
+  \msg_critical:nn { l_uni_math } {unicode-math-loaded }
+} {}
+
 
 \cs_if_exist:NF \DeclareMathScriptfontMapping {
   \cs_new:Npn \DeclareMathScriptfontMapping #1 #2 #3 #4 #5 #6 {
