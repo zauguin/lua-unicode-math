@@ -1,4 +1,4 @@
-local date = os.date'%F'
+local date = '2025-12-11'
 local version = 'v0.2'
 
 local fmt = string.format
