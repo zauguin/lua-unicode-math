@@ -118,9 +118,10 @@ end
 
 local serif, sans, script, fraktur, mono, bb = 0, 4, 8, 12, 16, 20
 local bold, italic = 1, 2
+local bold_default = 1024
 
 local remap_bases = {
-  [serif] = { -- Serif Normal
+  [serif] = { -- Serif Upright
     0x0041, -- A
     0x0061, -- a
     0x0391, -- Α
@@ -139,7 +140,7 @@ local remap_bases = {
     0x1D44E, -- 𝑎
     0x1D6E2, -- 𝛢
     0x1D6FC, -- 𝛼
-    0x0030, -- 0
+    0x0030,  -- 0
   },
   [serif | bold | italic] = { -- Serif Bold Italic
     0x1D468, -- 𝑨
@@ -148,14 +149,14 @@ local remap_bases = {
     0x1D736, -- 𝜶
     0x1D7CE, -- 𝟎
   },
-  [sans] = { -- Sans Normal
+  [sans] = { -- Sans Upright
     0x1D5A0, -- 𝖠
     0x1D5BA, -- 𝖺
     0x0391, -- Α
     0x03B1, -- α
     0x1D7E2, -- 𝟢
   },
-  [sans | bold] = { -- Sans Bold
+  [sans | bold] = { -- Sans Bold Upright
     0x1D5D4, -- 𝗔
     0x1D5EE, -- 𝗮
     0x1D756, -- 𝝖
@@ -225,6 +226,13 @@ remap_bases[false] = { -- Default
   remap_bases[serif][3], -- Greek uppercase
   remap_bases[serif | italic][4], -- Greek lowercase
   remap_bases[serif][5], -- Serif digits
+}
+remap_bases[bold_default] = { -- Bold Default
+  remap_bases[bold][1], -- Latin uppercase
+  remap_bases[bold][2], -- Latin lowercase
+  remap_bases[bold][3], -- Greek uppercase
+  remap_bases[bold | italic][4], -- Greek lowercase
+  remap_bases[bold][5], -- Serif digits
 }
 local base = remap_bases[0]
 remap_bases[0] = {} -- We don't want to overwrite it in the next step
