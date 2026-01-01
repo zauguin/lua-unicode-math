@@ -362,7 +362,7 @@
 }
 
 \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathaccent :nn } #1 #2 {
-  \cs_set:Npx #1 {
+  \cs_set_protected:Npx #1 {
     \Umathaccent fixed 0 ~ \symlummain #2 ~
   }
 }
@@ -458,6 +458,64 @@
 
 \cs_set_protected:Npn \leftroot #1 {
   \__l_uni_math_leftroot:w #1 \scan_stop:
+}
+%    \end{macrocode}
+% Some fixes for \pkg{amsmath}: Since \pkg{amsmath} is defining \cs{leftroot},
+% \cs{uproot} and \cs{root} with non Unicode definitions, we need to hide our definitions
+% and restore them afterwards.
+% We define \cs{varGamma} to stop \pkg{amsmath} from trying to define greek letter variants.
+%    \begin{macrocode}
+\tl_const:Nn \c__l_uni_math_amsmath_cmds_tl {
+  \uproot
+  \leftroot
+  \iint
+  \iiint
+  \iiiint
+  \dddot
+  \ddddot
+  \overleftrightarrow
+  \underrightarrow
+  \underleftarrow
+  \underleftrightarrow
+  \hat
+  \check
+  \tilde
+  \acute
+  \grave
+  \dot
+  \ddot
+  \breve
+  \bar
+  \vec
+  \mathring
+}
+\tl_const:Nn \c__l_uni_math_amsmath_cmds_defined_tl {
+  \root
+  \int
+  \oint
+  \overrightarrow
+  \overleftarrow
+}
+\hook_gput_code:nnn { package/amsmath/before } {.} {
+  \tl_map_inline:Nn \c__l_uni_math_amsmath_cmds_tl {
+    \cs_new_eq:cN { __l_uni_math_saved_ \cs_to_str:N #1 } #1
+    \cs_undefine:N #1
+  }
+  \tl_map_inline:Nn \c__l_uni_math_amsmath_cmds_defined_tl {
+    \cs_new_eq:cN { __l_uni_math_saved_ \cs_to_str:N #1 } #1
+  }
+  \cs_set:Npn \varGamma { \temporary_definition_do_not_use }
+}
+\hook_gput_code:nnn { package/amsmath/after } {.} {
+  \tl_map_inline:Nn \c__l_uni_math_amsmath_cmds_tl {
+    \cs_set_eq:Nc #1 { __l_uni_math_saved_ \cs_to_str:N #1 }
+    \cs_undefine:c { __l_uni_math_saved_ \cs_to_str:N #1 }
+  }
+  \tl_map_inline:Nn \c__l_uni_math_amsmath_cmds_defined_tl {
+    \cs_set_eq:Nc #1 { __l_uni_math_saved_ \cs_to_str:N #1 }
+    \cs_undefine:c { __l_uni_math_saved_ \cs_to_str:N #1 }
+  }
+  \cs_undefine:N \varGamma
 }
 %    \end{macrocode}
 % \end{implementation}
