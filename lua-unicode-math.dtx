@@ -1,6 +1,6 @@
 % \iffalse meta-comment
 %
-%% Copyright (C) 2025 by Marcel Krueger
+%% Copyright (C) 2026 by Marcel Krueger
 %%
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either
@@ -34,7 +34,7 @@
 %
 % \GetFileInfo{lua-unicode-math.dtx}
 % \title{The \pkg{lua-unicode-math} package\thanks{This document
-%        corresponds to \pkg{lua-unicode-math}~v0.2, dated~2025-12-11.}}
+%        corresponds to \pkg{lua-unicode-math}~v0.3, dated~2026-01-01.}}
 % \author{Marcel Kr\"uger \\ \href{mailto:tex@2krueger.de}{tex@2krueger.de} \\ \url{https://github.com/zauguin/lua-unicode-math}}
 % 
 % \let\fntname\texttt
@@ -93,8 +93,8 @@
 %    \begin{macrocode}
 \ProvidesExplPackage
   {lua-unicode-math}
-  {2025-12-11}
-  {0.2}
+  {2026-01-01}
+  {0.3}
   {Opentype Math support for LuaLaTeX}
 
 %<@@=l_uni_math>
@@ -247,6 +247,14 @@
 \newattribute \mathfamattr
 
 \lua_load_module:n { lua-unicode-math }
+
+%   up, it, bfup, bfit, sfup, sfit, bfsfup, bfsfit, bfsf, % 9
+%   tt, bb, bbit, scr, bfscr, cal, bfcal, frak, bffrak, % 9
+%   normal, literal, sf, bf, % 4
+
+%   bf, % 9
+%   bbit, % TODO: sigh. I really don't want this one. The only affected characters are ⅅⅆⅇⅈⅉ.
+%   scr, bfscr, % 9 % TODO: Think about these
 
 \prop_set_from_keyval:Nn \l_tmpa_prop {
   up = 0, bfup = 1, it = 2, bfit = 3,
