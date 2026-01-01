@@ -65,6 +65,10 @@
 % TeX Gyre Schola Math & lum-schola \\
 % TeX Gyre Termes Math & lum-termes \\
 % Fira Math & lum-fira \\
+% GFS Neohellenic Math & lum-gfsneohellenic \\
+% Erewhon Math & lum-erewhon \\
+% XCharter Math & lum-xcharter \\
+% Concrete Math & lum-concrete \\
 % \bottomrule
 % \end{tabular}
 %
@@ -137,7 +141,7 @@
     /
   }
 
-  % Hook into the kernel to allow different families in scriptfonts
+% Hook into the kernel to allow different families in scriptfonts
   \cs_set:Npn \getanddefine@fonts #1 #2 {
     \xdef\font@name{\csname \string#2/\tf@size\endcsname}
     \pickup@font \let\textfont@name\font@name

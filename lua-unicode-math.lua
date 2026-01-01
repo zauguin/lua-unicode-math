@@ -360,7 +360,6 @@ function traverse_list(style, head)
           local leftroot = node.get_attribute(n, leftroot_attr)
           if leftroot then
             local degree = n.degree
-            print(degree)
             if degree.id == math_char_t then
               local noad = node.new(noad_t)
               noad.nucleus = degree
@@ -379,7 +378,6 @@ function traverse_list(style, head)
           local uproot = node.get_attribute(n, uproot_attr)
           if uproot then
             local degree = n.degree
-            print(degree)
             if degree.id == math_char_t then
               local noad = node.new(noad_t)
               noad.nucleus = degree

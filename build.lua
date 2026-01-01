@@ -1,4 +1,5 @@
 module = 'lua-unicode-math'
+tdsroot = 'lualatex'
 
 typesetexe = 'lualatex'
 unpackexe = 'luatex'

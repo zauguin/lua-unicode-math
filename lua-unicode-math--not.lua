@@ -109,7 +109,6 @@ math_whatsit_processors[whatsit_id] = function(_style, n, parent_head, parent)
   node.insert_after(parent_head, after, acc)
   parent_head = node.remove(parent_head, after)
   parent_head = node.remove(parent_head, parent)
-  print(after, parent, acc)
   after.prev, after.next = nil, nil
   node.free(parent)
 

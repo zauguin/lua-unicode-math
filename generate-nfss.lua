@@ -163,12 +163,30 @@ local fonts = {
     package = 'fira',
     shapes = simple_shapes('FiraMath-Regular', 3),
   },
-  --[[
-  \defmathfont{gnh}{GFSNeohellenicMath.otf}{666633}{H}
-  \defmathfont{erm}{Erewhon-Math.otf}{66AA66}{E}
-  \defmathfont{xc}{XCharter-Math.otf}{6633AA}{C}
-  \defmathfont{con}{Concrete-Math.otf}{66AA33}{R}
-  ]]
+  {
+    family = 'gfsneohellenic-math',
+    name = "GFS Neohellenic Math",
+    package = 'gfsneohellenic',
+    shapes = simple_shapes('GFSNeohellenicMath', 3),
+  },
+  {
+    family = 'erewhon-math',
+    name = "Erewhon Math",
+    package = 'erewhon',
+    shapes = simple_and_bold('Erewhon-Math', 'Erewhon-Math-Bold'),
+  },
+  {
+    family = 'xcharter-math',
+    name = "XCharter Math",
+    package = 'xcharter',
+    shapes = simple_and_bold('XCharter-Math', 'XCharter-Math-Bold'),
+  },
+  {
+    family = 'concmath',
+    name = "Concrete Math",
+    package = 'concrete',
+    shapes = simple_and_bold('Concrete-Math', 'Concrete-Math-Bold'),
+  },
 }
 
 for _, data in ipairs(fonts) do
