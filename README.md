@@ -18,3 +18,5 @@ To start using this package, load a lua-unicode-math supported math font package
 
 ## License
 The package is available under the LaTeX Project Public License, version 1.3c or later.
+
+It is written and currently maintained by Marcel Krüger. If you encounter issues, please report them at https://github.com/zauguin/lua-unicode-math/issues.
