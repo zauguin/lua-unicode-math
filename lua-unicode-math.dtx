@@ -127,32 +127,10 @@
 } {}
 
 
-\cs_if_exist:NF \DeclareMathScriptfontMapping {
-  \cs_new:Npn \DeclareMathScriptfontMapping #1 #2 #3 #4 #5 #6 {
-    \cs_set:cpx { scriptfont@@ #1 / #2 } { #3 / #4 }
-    \cs_set:cpx { scriptscriptfont@@ #1 / #2 } { #5 / #6 }
-  }
-  \cs_set:Npn \__l_uni_math_family_variant:nw #1 #2/#3/ {
-    \ifcsname #1@@#2/#3 \endcsname
-      \lastnamedcs
-    \else
-      #2/#3
-    \fi
-    /
-  }
-
-% Hook into the kernel to allow different families in scriptfonts
-  \cs_set:Npn \getanddefine@fonts #1 #2 {
-    \xdef\font@name{\csname \string#2/\tf@size\endcsname}
-    \pickup@font \let\textfont@name\font@name
-    \xdef\font@name{\csname \exp_last_unbraced:Nno \__l_uni_math_family_variant:nw {scriptfont} {\string#2/\sf@size}\endcsname}
-    \pickup@font \let\scriptfont@name\font@name
-    \xdef\font@name{\csname \exp_last_unbraced:Nno \__l_uni_math_family_variant:nw {scriptscriptfont} {\string#2/\ssf@size}\endcsname}
-    \pickup@font
-    \edef\math@fonts{\math@fonts
-                 \textfont#1\textfont@name
-                 \scriptfont#1\scriptfont@name
-                 \scriptscriptfont#1\font@name}
+\IfFormatAtLeastTF{2026/01/01}{}{
+  \cs_set:Npn \DeclareMathScriptfontMapping #1 #2 #3 #4 #5 #6 {
+    \cs_gset:cpn {  __nfss_mapped_scriptfont_family_sf_ #1 / #2 } { #3 / #4 }
+    \cs_gset:cpn {  __nfss_mapped_scriptfont_family_ssf_ #1 / #2 } { #5 / #6 }
   }
 }
 

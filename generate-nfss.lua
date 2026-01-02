@@ -214,14 +214,14 @@ for _, data in ipairs(fonts) do
     date = date,
     version = version,
     name = fmt("%s Script", data.name),
-    shapes = add_feature(data.shapes, 'ssty=0;'),
+    shapes = add_feature(data.shapes, 'ssty=1;'),
   }
   write_fd {
     family = scriptscriptfamily,
     date = date,
     version = version,
     name = fmt("%s Subscript", data.name),
-    shapes = add_feature(data.shapes, 'ssty=1;'),
+    shapes = add_feature(data.shapes, 'ssty=2;'),
   }
   print(fmt("%s & lum-%s \\\\", data.name, data.package))
 end

@@ -107,7 +107,7 @@ math_whatsit_processors[prime_node_id] = function(_style, n, parent_head, parent
           parent.sup = nil
         end
       else
-        local noad = node.node(noad_t, 0)
+        local noad = node.new(noad_t, 0)
         noad.nucleus = post_sup
         parent.sup = nil
         node.insert_after(new_head, current_tail, noad)
