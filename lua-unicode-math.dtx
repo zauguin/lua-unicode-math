@@ -105,6 +105,14 @@
 
 \cs_generate_variant:Nn \tl_if_eq:nnT {o}
 
+\msg_new:nnn { l_uni_math } { engine-unsupported } {
+  lua-unicode-math~can~only~be~used~with~LuaTeX.
+}
+
+\sys_if_engine_luatex:F {
+  \msg_critical:nn { l_uni_math } { engine-unsupported }
+}
+
 \msg_new:nnn { l_uni_math } { unicode-math-suppressed } {
   You~tried~to~load~both~lua-unicode-math~and~unicode-math~
   in~the~same~document.~This~is~not~supported,~unicode-math~
