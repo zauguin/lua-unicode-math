@@ -160,14 +160,14 @@ local remap_bases = {
     0x1D5D4, -- 𝗔
     0x1D5EE, -- 𝗮
     0x1D756, -- 𝝖
-    0x1D6C2, -- 𝛂
+    0x1D770, -- 𝝰
     0x1D7EC, -- 𝟬
   },
   [sans | italic] = { -- Sans Italic
     0x1D608, -- 𝘈
     0x1D622, -- 𝘢
     0x1D6E2, -- 𝛢
-    0x1D770, -- 𝝰
+    0x1D6FC, -- 𝛼
     0x1D7E2, -- 𝟢
   },
   [sans | bold | italic] = { -- Sans Bold Italic

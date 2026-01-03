@@ -1,0 +1,79 @@
+\input regression-test
+\documentclass{article}
+\usepackage{lua-unicode-math}
+\begin{document}
+\START
+\setbox0=\vbox{
+  Default:
+  \[
+    Ff\Gamma\gamma0
+  \]
+  Normal:
+  \[
+    \symnormal{Ff\Gamma\gamma0}
+  \]
+  Up:
+  \[
+    \symup{Ff\Gamma\gamma0}
+  \]
+  Bold Up:
+  \[
+    \symbfup{Ff\Gamma\gamma0}
+  \]
+  Italic:
+  \[
+    \symit{Ff\Gamma\gamma0}
+  \]
+  Bold Italic:
+  \[
+    \symbfit{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Up:
+  \[
+    \symsfup{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Bold Up:
+  \[
+    \symbfsfup{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Italic:
+  \[
+    \symsfit{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Bold Italic:
+  \[
+    \symbfsfit{Ff\Gamma\gamma0}
+  \]
+  Caligraphic:
+  \[
+    \symcal{Ff\Gamma\gamma0}
+  \]
+  Bold Caligraphic:
+  \[
+    \symbfcal{Ff\Gamma\gamma0}
+  \]
+  Fraktur:
+  \[
+    \symfrak{Ff\Gamma\gamma0}
+  \]
+  Bold Fraktur:
+  \[
+    \symbffrak{Ff\Gamma\gamma0}
+  \]
+  Mono:
+  \[
+    \symtt{Ff\Gamma\gamma0}
+  \]
+  Blackboard Bold:
+  \[
+    \symbb{Ff\Gamma\gamma0}
+  \]
+  Bold:
+  \[
+    \symbf{Ff\Gamma\gamma0}
+  \]
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}

@@ -7,3 +7,4 @@ unpackfiles = {'*.ins'}
 installfiles = {'*.sty', 'lua-unicode-math*.lua', '*.fd'}
 sourcefiles = {'*.dtx', '*.ins', '*.lua', '*.fd'}
 textfiles = {'README.md'}
+checkengines = {'luatex'}
