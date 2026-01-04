@@ -441,9 +441,21 @@ tex.setmathcode(0x2D, tex.getmathcodes(0x2212)) -- '-' gets the mathcode of '−
 tex.setmathcode(0x3A, tex.getmathcodes(0x2236)) -- ':' gets the mathcode of '∶'
 
 local slash_fence = 0x2F
-tex.setdelcode(0x2F, main_fam, slash_fence, 0, 0)
-tex.setdelcode(0x2044, main_fam, slash_fence, 0, 0)
-tex.setdelcode(0x2215, main_fam, slash_fence, 0, 0)
+tex.setdelcode(0x2F, main_fam, slash_fence, 0, 0) -- /
+tex.setdelcode(0x2044, main_fam, slash_fence, 0, 0) -- ⁄
+tex.setdelcode(0x2215, main_fam, slash_fence, 0, 0) -- ∕
+
+local backslash_fence = 0x5C
+tex.setdelcode(0x5C, main_fam, backslash_fence, 0, 0) -- \
+tex.setdelcode(0x2216, main_fam, backslash_fence, 0, 0) -- ∖
+tex.setdelcode(0x29F5, main_fam, backslash_fence, 0, 0) -- ⧵
+
+tex.setdelcode(0x3C, tex.getdelcodes(0x27E8)) -- < => ⟨
+tex.setdelcode(0x3E, tex.getdelcodes(0x27E9)) -- > => ⟩
+
+for _, cp in ipairs{0x2191, 0x2193, 0x2195, 0x21D1, 0x21D3, 0x21D5} do -- ↑↓↕⇑⇓⇕
+  tex.setdelcode(cp, main_fam, cp, 0, 0)
+end
 
 local nest = tex.nest
 
