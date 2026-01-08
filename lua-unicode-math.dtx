@@ -355,7 +355,7 @@
 
 \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathbotaccent :nn } #1 #2 {
   \cs_set:Npx #1 {
-    \exp_not:N \PackageError{lua-unicode-math}{Unsupported~type~\token_to_str:N \mathbotaccent}{}
+    \Umathaccent bottom~fixed 0 ~ \symlummain #2 ~
   }
 }
 
@@ -375,20 +375,23 @@
   \cs_set:Npx #1 {
     \Umathaccent overlay 0 ~ \symlummain #2 ~
   }
-  % \cs_set:Npx #1 {
-  %   \exp_not:N \PackageError{lua-unicode-math}{Unsupported~type~\token_to_str:N \mathaccentoverlay}{}
-  % }
 }
 
 \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathover :nn } #1 #2 {
-  \cs_set:Npx #1 {
-    \exp_not:N \PackageError{lua-unicode-math}{Unsupported~type~\token_to_str:N \mathover}{}
+  \cs_set:Npx #1 ##1 {
+    \mathop {
+      \Udelimiterover \symlummain #2 { ##1 }
+    }
+    \limits
   }
 }
 
 \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathunder :nn } #1 #2 {
-  \cs_set:Npx #1 {
-    \exp_not:N \PackageError{lua-unicode-math}{Unsupported~type~\token_to_str:N \mathunder}{}
+  \cs_set:Npx #1 ##1 {
+    \mathop {
+      \Udelimiterunder \symlummain #2 { ##1 }
+    }
+    \limits
   }
 }
 
