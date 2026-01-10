@@ -1,0 +1,239 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+LaTeX Font Info:    Trying to load font information for TU+lmm on input line ....
+LaTeX Font Info:    Trying to load font information for TU+lmm-sf on input line ....
+(tulmm-sf.fd
+File: tulmm-sf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Script
+)
+LaTeX Font Info:    Trying to load font information for TU+lmm-ssf on input line ....
+(tulmm-ssf.fd
+File: tulmm-ssf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Subscript
+)
+> \box...=
+\vbox(114.68501+5.12502)x345.0, direction TLT
+.\hbox(6.94+2.05)x345.0, glue set 277.25fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\hbox(0.0+0.0)x15.0, direction TLT
+..\TU/lmr/m/n/10 D
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 s
+..\discretionary (penalty 50)
+...< \TU/lmr/m/n/10 -
+..\TU/lmr/m/n/10 p
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 a
+..\kern-0.28 (font)
+..\TU/lmr/m/n/10 y
+..\TU/lmr/m/n/10 s
+..\TU/lmr/m/n/10 t
+..\kern-0.28 (font)
+..\TU/lmr/m/n/10 y
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 e
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\lineskip) 1.0
+.\hbox(16.288+10.888)x61.47488, shifted 141.76256, direction TLT
+..\vbox(16.288+10.888)x14.44, direction TLT
+...\kern0.0 (font)
+...\hbox(4.648+0.14)x14.44, glue set 5.2285fil, direction TLT
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\TU/lmm-sf/m/n/7 5
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\kern2.0 (font)
+...\hbox(9.5+4.5)x14.44, direction TLT
+....\TU/lmm/m/n/10 󰞍
+...\kern1.67 (font)
+...\hbox(4.648+0.07)x14.44, glue set 1.0915fil, direction TLT
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\TU/lmm-sf/m/n/7 𝑖
+....\TU/lmm-sf/m/n/7 =
+....\TU/lmm-sf/m/n/7 1
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\kern0.0 (font)
+..\glue(\thinmuskip) 1.66663
+..\hbox(13.61+8.61)x4.08, direction TLT
+...\TU/lmm/m/n/10 󰞂
+..\vbox(26.438+0.14)x10.453, shifted 10.61, direction TLT
+...\hbox(4.718+0.0)x4.543, shifted 5.91, direction TLT
+....\TU/lmm-sf/m/n/7 4
+...\kern17.072 (font)
+...\hbox(4.648+0.14)x4.543, direction TLT
+....\TU/lmm-sf/m/n/7 0
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 2
+..\TU/lmm/m/n/10 𝑥
+..\hbox(3.087+0.07)x5.502, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 𝑛
+..\glue 1.66663
+..\TU/lmm/m/n/10 d
+..\TU/lmm/m/n/10 𝑥
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\lineskip) 1.0
+.\hbox(10.273+5.195)x345.0, glue set 245.97813fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/lmr/m/n/10 I
+..\TU/lmr/m/n/10 n
+..\discretionary (penalty 50)
+...< \TU/lmr/m/n/10 -
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 n
+..\TU/lmr/m/n/10 e
+..\TU/lmr/m/n/10 :
+..\glue(\spaceskip) 4.44 plus 3.32999 minus 0.555
+..\mathon
+..\hbox(7.5+2.5)x10.56, direction TLT
+...\TU/lmm/m/n/10 ∑
+..\vbox(14.148+0.07)x12.817, shifted 4.5, direction TLT
+...\hbox(4.648+0.14)x4.543, direction TLT
+....\TU/lmm-sf/m/n/7 5
+...\kern4.712 (font)
+...\hbox(4.648+0.07)x12.817, direction TLT
+....\TU/lmm-sf/m/n/7 𝑖
+....\TU/lmm-sf/m/n/7 =
+....\TU/lmm-sf/m/n/7 1
+..\glue(\thinmuskip) 1.66663
+..\hbox(8.05+3.06)x3.32999, shifted -0.00499, direction TLT
+...\TU/lmm/m/n/10 ∫
+..\vbox(15.328+0.14)x7.863, shifted 5.05501, direction TLT
+...\hbox(4.718+0.0)x4.543, shifted 3.32, direction TLT
+....\TU/lmm-sf/m/n/7 4
+...\kern5.962 (font)
+...\hbox(4.648+0.14)x4.543, direction TLT
+....\TU/lmm-sf/m/n/7 0
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 2
+..\TU/lmm/m/n/10 𝑥
+..\hbox(3.087+0.07)x5.502, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 𝑛
+..\glue 1.66663
+..\TU/lmm/m/n/10 d
+..\TU/lmm/m/n/10 𝑥
+..\mathoff
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\glue(\parskip) 0.0 plus 1.0
+.\glue(\parskip) 0.0
+.\glue(\lineskip) 1.0
+.\hbox(6.94+2.05)x345.0, glue set 277.25fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\hbox(0.0+0.0)x15.0, direction TLT
+..\TU/lmr/m/n/10 D
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 s
+..\discretionary (penalty 50)
+...< \TU/lmr/m/n/10 -
+..\TU/lmr/m/n/10 p
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 a
+..\kern-0.28 (font)
+..\TU/lmr/m/n/10 y
+..\TU/lmr/m/n/10 s
+..\TU/lmr/m/n/10 t
+..\kern-0.28 (font)
+..\TU/lmr/m/n/10 y
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 e
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\lineskip) 1.0
+.\hbox(15.968+10.68001)x57.09389, shifted 143.95306, direction TLT
+..\hbox(13.61+8.61)x4.08, direction TLT
+...\TU/lmm/m/n/10 󰞊
+..\vbox(26.578+0.07)x9.98401, shifted 10.61, direction TLT
+...\hbox(4.858+0.07)x4.074, shifted 5.91, direction TLT
+....\TU/lmm-sf/m/n/7 𝑏
+...\kern18.56299 (font)
+...\hbox(3.087+0.07)x4.9, direction TLT
+....\TU/lmm-sf/m/n/7 𝑎
+..\glue(\thinmuskip) 1.66663
+..\vbox(9.28+10.668)x14.63, direction TLT
+...\hbox(9.28+4.28)x14.63, glue set 1.76001fil, direction TLT
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\hbox(9.17+4.39)x11.11, shifted -0.11, direction TLT
+.....\TU/lmm/m/n/10 󰝦
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\kern1.67 (font)
+...\hbox(4.648+0.07)x14.63, direction TLT
+....\TU/lmm-sf/m/n/7 𝛼
+....\TU/lmm-sf/m/n/7 =
+....\TU/lmm-sf/m/n/7 1
+...\kern0.0 (font)
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝛼
+..\TU/lmm/m/n/10 𝑥
+..\glue 1.66663
+..\TU/lmm/m/n/10 d
+..\TU/lmm/m/n/10 𝑥
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\lineskip) 1.0
+.\hbox(10.413+5.12502)x345.0, glue set 250.10612fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/lmr/m/n/10 I
+..\TU/lmr/m/n/10 n
+..\discretionary (penalty 50)
+...< \TU/lmr/m/n/10 -
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 n
+..\TU/lmr/m/n/10 e
+..\TU/lmr/m/n/10 :
+..\glue(\spaceskip) 4.44 plus 3.32999 minus 0.555
+..\mathon
+..\hbox(8.05+3.06)x3.34, shifted -0.00499, direction TLT
+...\TU/lmm/m/n/10 ⨑
+..\vbox(15.468+0.07)x7.684, shifted 5.05501, direction TLT
+...\hbox(4.858+0.07)x4.074, shifted 3.61, direction TLT
+....\TU/lmm-sf/m/n/7 𝑏
+...\kern7.45299 (font)
+...\hbox(3.087+0.07)x4.9, direction TLT
+....\TU/lmm-sf/m/n/7 𝑎
+..\glue(\thinmuskip) 1.66663
+..\hbox(7.5+2.72)x8.33, shifted -0.11, direction TLT
+...\TU/lmm/m/n/10 ⨃
+..\hbox(4.648+0.07)x15.19, shifted 4.61, direction TLT
+...\TU/lmm-sf/m/n/7 𝛼
+...\TU/lmm-sf/m/n/7 =
+...\TU/lmm-sf/m/n/7 1
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝛼
+..\TU/lmm/m/n/10 𝑥
+..\glue 1.66663
+..\TU/lmm/m/n/10 d
+..\TU/lmm/m/n/10 𝑥
+..\mathoff
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+! OK.
+l. ...\showbox0

@@ -1,0 +1,28 @@
+\input regression-test
+\documentclass{article}
+\usepackage{lua-unicode-math}
+\begin{document}
+\START
+\setbox0=\vbox{
+  Displaystyle
+  \[
+    \sum_{i=1}^5\int_0^42 x^n\,\symrm{d}x
+  \]
+  Inline:
+  $
+    \sum_{i=1}^5\int_0^42 x^n\,\symrm{d}x
+  $
+
+  Displaystyle
+  \[
+    \awint_a^b\bigcupdot_{\alpha=1}\alpha x\,\symrm{d}x
+  \]
+  Inline:
+  $
+    \awint_a^b\bigcupdot_{\alpha=1}\alpha x\,\symrm{d}x
+  $
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}

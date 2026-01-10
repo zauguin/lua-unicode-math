@@ -34,6 +34,38 @@ local processed_families = {[main_fam] = true}
 local parser = require'lua-uni-parse'
 local mathclasses = parser.parse_file('MathClass-15', parser.eol + lpeg.Cg(parser.fields(parser.codepoint_range, lpeg.C(lpeg.S'NABCDFGLOPRSUVX'))), parser.multiset)
 
+-- Integrals and other big operators have the same classes in data files, but we need to tell them apart.
+-- Therefore we have a fixed list of all integral like codepoints here.
+local integral_codepoints = {
+  [0x222B] = true, -- ∫
+  [0x222C] = true, -- ∬
+  [0x222D] = true, -- ∭
+  [0x222E] = true, -- ∮
+  [0x222F] = true, -- ∯
+  [0x2230] = true, -- ∰
+  [0x2231] = true, -- ∱
+  [0x2232] = true, -- ∲
+  [0x2233] = true, -- ∳
+  [0x2A0B] = true, -- ⨋
+  [0x2A0C] = true, -- ⨌
+  [0x2A0D] = true, -- ⨍
+  [0x2A0E] = true, -- ⨎
+  [0x2A0F] = true, -- ⨏
+  [0x2A10] = true, -- ⨐
+  [0x2A11] = true, -- ⨑
+  [0x2A12] = true, -- ⨒
+  [0x2A13] = true, -- ⨓
+  [0x2A14] = true, -- ⨔
+  [0x2A15] = true, -- ⨕
+  [0x2A16] = true, -- ⨖
+  [0x2A17] = true, -- ⨗
+  [0x2A18] = true, -- ⨘
+  [0x2A19] = true, -- ⨙
+  [0x2A1A] = true, -- ⨚
+  [0x2A1B] = true, -- ⨛
+  [0x2A1C] = true, -- ⨜
+}
+
 -- Overwrites
 mathclasses[0x2F] = 'N' -- /
 mathclasses[0x5C] = 'N' -- \
@@ -325,6 +357,10 @@ local function traverse_kernel(style, n, outer_head, outer)
   return outer_head, outer
 end
 
+local use_i_nn = token.create'use_i:nn'
+local use_ii_nn = token.create'use_ii:nn'
+local bool_token = {[false] = use_ii_nn, [true] = use_i_nn}
+
 local noad_t = node.id'noad'
 local accent_t = node.id'accent'
 local choice_t = node.id'choice'
@@ -498,7 +534,7 @@ local environment = setmetatable({
   end,
 }, { __index = _ENV })
 
-for _, name in ipairs{'prime', 'not'} do
+for _, name in ipairs{'prime', 'not', 'dots'} do
   loadfile(kpse.find_file(string.format('lua-unicode-math--%s', name), 'lua'), 'bt', environment)()
 end
 
@@ -530,4 +566,12 @@ lua.get_functions_table()[func] = function()
   end
 
   node.set_attribute(root, leftroot_attr, value)
+end
+
+
+local func = luatexbase.new_luafunction'__l_uni_math_is_integral_cp:wTF'
+token.set_lua('__l_uni_math_is_integral_cp:wTF', func)
+lua.get_functions_table()[func] = function()
+  local value = token.scan_int()
+  token.put_next(bool_token[integral_codepoints[value] or false])
 end

@@ -1,0 +1,31 @@
+\input regression-test
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{lua-unicode-math}
+\show\implies
+\begin{document}
+\START
+\setbox0=\vbox{
+  \[
+    a, \dots, b
+  \]
+  \[
+    a + \dots + b - \dots - c
+  \]
+  \[
+    a \amalg \expandafter \dots \amalg b
+  \]
+  \[
+    3 = \dots \not = 5
+  \]
+  \[
+    \phi \implies \dots \implies \psi
+  \]
+  \[
+    a + \dots \prod_{i=1}^5 i
+  \]
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}

@@ -232,6 +232,33 @@
 
 \newattribute \mathfamattr
 
+\cs_if_exist:NF \slimits@ {
+  \cs_set_eq:NN \slimits@ \displaylimits
+}
+\cs_if_exist:NF \ilimits@ {
+  \cs_set_eq:NN \ilimits@ \nolimits
+}
+\chardef \g_l_uni_math_dots_binary_char = `⋯
+\chardef \g_l_uni_math_dots_comma_char = `…
+\chardef \g_l_uni_math_dots_int_char = `⋯
+\chardef \g_l_uni_math_dots_other_char = `…
+
+\cs_set_protected:Npn \DOTSB {
+  \__l_uni_math_set_previous_dots_type:w \g_l_uni_math_dots_binary_char
+}
+
+\cs_set_protected:Npn \DOTSX {
+  \__l_uni_math_set_previous_dots_type:w \g_l_uni_math_dots_other_char
+}
+
+\cs_set_protected:Npn \DOTSI {
+  \__l_uni_math_set_previous_dots_type:w \g_l_uni_math_dots_int_char
+}
+
+\cs_set_protected:Npn \DOTSC {
+  \__l_uni_math_set_previous_dots_type:w \g_l_uni_math_dots_comma_char
+}
+
 \lua_load_module:n { lua-unicode-math }
 
 \prop_set_from_keyval:Nn \l_tmpa_prop {
@@ -289,14 +316,14 @@
 
 \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathop :nn } #1 #2 {
   \exp_args:Nc \Umathchardef { \cs_to_str:N #1 op } 1~\symlummain #2~
-  \cs_set_eq:cN { \cs_to_str:N #1 oplimits } \scan_stop:
   \cs_set:Npx #1 {
     \char_generate:nn {#2} {12}
   }
   \mathcode #2 = "8000~
   \cs_set:cpx { \char_generate:nn {"FFFF} {12} \char_generate:nn {#2} {12} } {
+    \__l_uni_math_is_integral_cp:wTF #2 { \DOTSI } { \DOTSB }
     \use:c { \cs_to_str:N #1 op }
-    \use:c { \cs_to_str:N #1 oplimits }
+    \__l_uni_math_is_integral_cp:wTF #2 { \ilimits@ } { \slimits@ }
   }
 }
 
@@ -435,8 +462,6 @@
   \cs_set_eq:NN #1
 }
 
-\cs_set_eq:NN \intoplimits \nolimits
-
 \cs_set_protected:cpx { \char_generate:nn {"FFFF} {12} ' } {
   \prime_helper:w "2032~
 }
@@ -477,8 +502,23 @@
   \bar
   \vec
   \mathring
+  \DOTSC
+  \DOTSI
+  \DOTSX
+  \DOTSB
+  \mdots@
 }
 \tl_const:Nn \c__l_uni_math_amsmath_cmds_defined_tl {
+  \prod
+  \coprod
+  \bigwedge
+  \bigvee
+  \bigcap
+  \bigcup
+  \bigodot
+  \bigoplus
+  \bigotimes
+  \bigsqcup
   \root
   \int
   \oint

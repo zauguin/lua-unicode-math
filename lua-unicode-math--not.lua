@@ -4,6 +4,7 @@ local noad_t = node.id'noad'
 local sub_mlist_t = node.id'sub_mlist'
 
 local whatsit_id = luatexbase.new_whatsit'not'
+not_whatsit = whatsit_id -- Needed for dots module
 
 local func = luatexbase.new_luafunction'not'
 token.set_lua("not", func, 'protected')

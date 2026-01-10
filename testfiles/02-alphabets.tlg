@@ -5,6 +5,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line ....
 LaTeX Font Info:    Trying to load font information for TU+lmm on input line ....
+LaTeX Font Info:    Trying to load font information for TU+lmm-sf on input line ....
+(tulmm-sf.fd
+File: tulmm-sf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Script
+)
+LaTeX Font Info:    Trying to load font information for TU+lmm-ssf on input line ....
+(tulmm-ssf.fd
+File: tulmm-ssf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Subscript
+)
 Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
