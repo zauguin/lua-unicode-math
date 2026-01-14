@@ -105,22 +105,22 @@
 
 \cs_generate_variant:Nn \tl_if_eq:nnT {o}
 
-\msg_new:nnn { l_uni_math } { engine-unsupported } {
+\msg_new:nnn { lua-unicode-math } { engine-unsupported } {
   lua-unicode-math~can~only~be~used~with~LuaTeX.
 }
 
 \sys_if_engine_luatex:F {
-  \msg_critical:nn { l_uni_math } { engine-unsupported }
+  \msg_critical:nn { lua-unicode-math } { engine-unsupported }
 }
 
-\msg_new:nnn { l_uni_math } { unicode-math-suppressed } {
+\msg_new:nnn { lua-unicode-math } { unicode-math-suppressed } {
   You~tried~to~load~both~lua-unicode-math~and~unicode-math~
   in~the~same~document.~This~is~not~supported,~unicode-math~
   will~be~suppressed.~There~is~a~good~chance~that~this~will~
   break~your~document.~Change~your~document~to~only~use~lua-unicode-math~
   so~solve~this.
 }
-\msg_new:nnn { l_uni_math } { unicode-math-loaded } {
+\msg_new:nnn { lua-unicode-math } { unicode-math-loaded } {
   You~tried~to~load~lua-unicode-math~while~unicode-math~
   was~already~loaded.~This~does~not~work.~Please~avoid~loading~
   unicode-math.~If~that~is~not~possible~and~you~are~feeling~adventurous~
@@ -128,10 +128,10 @@
   of~your~document~instead~to~suppress~unicode-math.
 }
 \disable@package@load{unicode-math} {
-  \msg_warning:nn { l_uni_math } {unicode-math-incompatible }
+  \msg_warning:nn { lua-unicode-math } {unicode-math-suppressed }
 }
 \IfPackageLoadedTF {unicode-math} {
-  \msg_critical:nn { l_uni_math } {unicode-math-loaded }
+  \msg_critical:nn { lua-unicode-math } {unicode-math-loaded }
 } {}
 
 
