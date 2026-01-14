@@ -116,6 +116,12 @@ local fonts = {
     shapes = simple_and_bold('NewCMMath-Book', 'NewCMMath-Bold'),
   },
   {
+    family = 'ncmsm',
+    name = "New Computer Modern Sans Math",
+    package = 'newcomputermodernsans',
+    shapes = simple_shapes('NewCMSansMath-Regular', 3),
+  },
+  {
     family = 'stix2-math',
     name = "STIX2",
     package = 'stix2',
