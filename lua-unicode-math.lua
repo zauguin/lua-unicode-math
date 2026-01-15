@@ -71,14 +71,13 @@ mathclasses[0x2F] = 'N' -- /
 mathclasses[0x5C] = 'N' -- \
 mathclasses[0x22EF] = 'N' -- ⋯
 
--- 1: Latin uppercase
--- 2: Latin lowercase
--- 3: Greek uppercase
--- 4: Greek lowercase
--- 5: Digits
--- 6: weird characters needing special handling
-local char_types = {}
-
+-- Generally mathematical alphabets in Unicode are sequential blocks which reflect the order of the corresponding non-mathematical characters.
+-- Therefore we can just store the position of the base characters for each style and then access other characters as offsets.
+--
+-- There are a few exceptions though:
+-- For some greek character, the non-mathematical alphabet has some characters in positions not matching the mathematical alphabets.
+-- This typically happens for variant forms where the non-mathematical slot is occupied by some pre-composed accented glyph.
+-- These we map before processing to be in the position we expect them to be in.
 local pre_replacement = {
   [0x03F4] = 0x03A2,
   [0x2207] = 0x03AA,
@@ -92,6 +91,9 @@ local pre_replacement = {
   [0x03D6] = 0x03D0,
 }
 
+-- More common is the opposite case: Some mathematical characters are not in the spaces normally associated with their alphabets but much lower.
+-- This happens when the corresponding character was already encoded by the time the remaining alphabet got added.
+-- We remap after processing from their expected to their actual places.
 local post_replacement = {
   [0x1D49D] = 0x212C,
   [0x1D4A0] = 0x2130,
@@ -123,24 +125,39 @@ local post_replacement = {
   [0x1D4C4] = 0x2134,
 }
 
+-- The characters come in 5 blocks
+-- 1: Latin uppercase
+-- 2: Latin lowercase
+-- 3: Greek uppercase
+-- 4: Greek lowercase
+-- 5: Digits
+-- 6: weird characters needing special handling
+local char_Latin = 1 -- Latin uppercase
+local char_latin = 2 -- Latin lowercase
+local char_Greek = 3 -- Greek uppercase
+local char_greek = 4 -- Greek lowercase
+local char_digit = 5 -- Digits
+local char_weird = 5 -- weird characters needing special handling
+local char_types = {}
+
 for i=0x41, 0x5A do
-  char_types[i], char_types[i + 0x20] = 1, 2
+  char_types[i], char_types[i + 0x20] = char_Latin, char_latin
 end
-char_types[0x0131] = 6
-char_types[0x0237] = 6
+char_types[0x0131] = char_weird -- ı -- dotless i
+char_types[0x0237] = char_weird -- ȷ -- dotless j
 
 for i=0x0391, 0x03A9 do
-  char_types[i] = 3
+  char_types[i] = char_Greek
 end
 
 for i=0x03B1, 0x03D0 do
-  char_types[i] = 4
+  char_types[i] = char_greek
 end
-char_types[0x03DC] = 6
-char_types[0x03DD] = 6
+char_types[0x03DC] = char_weird -- Ϝ -- capital digamma
+char_types[0x03DD] = char_weird -- ϝ -- small digamma
 
 for i=0x0030, 0x0039 do
-  char_types[i] = 5
+  char_types[i] = char_digit
 end
 
 for base, remapped in next, pre_replacement do
@@ -253,11 +270,11 @@ local remap_bases = {
   },
 }
 remap_bases[false] = { -- Default
-  remap_bases[serif | italic][1], -- Latin uppercase
-  remap_bases[serif | italic][2], -- Latin lowercase
-  remap_bases[serif][3], -- Greek uppercase
-  remap_bases[serif | italic][4], -- Greek lowercase
-  remap_bases[serif][5], -- Serif digits
+  remap_bases[serif | italic][char_Latin], -- Latin uppercase
+  remap_bases[serif | italic][char_latin], -- Latin lowercase
+  remap_bases[serif][char_Greek], -- Greek uppercase
+  remap_bases[serif | italic][char_greek], -- Greek lowercase
+  remap_bases[serif][char_digit], -- Serif digits
 }
 remap_bases[bold_default] = { -- Bold Default
   remap_bases[bold][1], -- Latin uppercase
@@ -389,6 +406,7 @@ function traverse_list(style, head)
       traverse_kernel(style, n.bot_accent)
       head, n, state = traverse_kernel(style | 1, n.nucleus, head, n)
     elseif id == choice_t then
+      -- Currently we process all of these. We know the current style though, so we could simplify if needed.
       n.display = traverse_list(0, n.display)
       n.text = traverse_list(2, n.text)
       n.script = traverse_list(4, n.script)
