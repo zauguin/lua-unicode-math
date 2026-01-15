@@ -1,0 +1,56 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+LaTeX Font Info:    Trying to load font information for TU+lmm on input line ....
+LaTeX Font Info:    Trying to load font information for TU+lmm-sf on input line ....
+(tulmm-sf.fd
+File: tulmm-sf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Script
+)
+LaTeX Font Info:    Trying to load font information for TU+lmm-ssf on input line ....
+(tulmm-ssf.fd
+File: tulmm-ssf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Subscript
+)
+> \box...=
+\vbox(50.0+0.0)x345.0, direction TLT
+.\hbox(0.0+0.0)x345.0, glue set 122.9979fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\hbox(0.0+0.0)x15.0, direction TLT
+..\hbox(0.0+0.0)x207.0021, glue set 103.50105fil, direction TLT
+...\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayskip) 10.0 plus 2.0 minus 5.0
+.\glue(\baselineskip) 5.06
+.\hbox(6.94+0.13)x29.30998, shifted 157.84502, direction TLT
+..\TU/lmm/m/n/10 𝜆
+..\TU/lmm/m/n/10 λ
+..\kern0.54 (italic)
+..\TU/lmm/m/n/10 𝜆
+..\TU/lmm/m/n/10 λ
+..\kern0.54 (italic)
+..\TU/lmm/m/n/10 𝜆
+.\penalty 0
+.\glue(\belowdisplayskip) 10.0 plus 2.0 minus 5.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 4.70999
+.\hbox(7.16+0.0)x34.70001, shifted 155.15, direction TLT
+..\TU/lmm/m/n/10 Λ
+..\TU/lmm/m/n/10 Λ
+..\TU/lmm/m/n/10 𝛬
+..\TU/lmm/m/n/10 Λ
+..\TU/lmm/m/n/10 𝛬
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+! OK.
+l. ...\showbox0

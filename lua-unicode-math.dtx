@@ -343,6 +343,24 @@
   }
 }
 
+% For a \mathalpha command starting with \mup like \mupalpha this will be called as
+% \__l_uni_math_uproot_assign_mup_char:nNn {alpha} \Alpha {"...}
+\cs_new_protected:Npn \__l_uni_math_uproot_assign_mup_char:nNn #1 #2 #3 {
+    \cs_set:Npx #2 {
+      \symup {\char_generate:nn {#3} {12}}
+    }
+    \cs_set:cpx {#1} {
+      \char_generate:nn {#3} {12}
+    }
+}
+
+% For a \mathalpha command not starting with \mup this will be called as \__l_uni_math_uproot_assign_mup_char:nNn {} \cmd {"...}
+\cs_new_protected:Npn \__l_uni_math_uproot_assign_nonmup_alpha:nNn #1 #2 #3 {
+    \cs_set:Npx #2 {
+      \char_generate:nn {#3} {12}
+    }
+}
+
 \group_begin:
 \cs_set:Npn \l_tmp_cs:n #1 {
   \group_end:
@@ -351,11 +369,8 @@
     ##3 {##2}
   }
 
-  \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathalpha :nn } ##1 ##2 {
-    \cs_set:Npx ##1 {
-      \char_generate:nn {##2} {12}
-    }
-    \exp_after:wN \__l_uni_math__check_mup_helper:w \token_to_str:N ##1 \q_mark \cs_set_eq:cN #1 \q_mark \use_none:nn \q_stop ##1
+  \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathalpha :nn } ##1 {
+    \exp_after:wN \__l_uni_math__check_mup_helper:w \token_to_str:N ##1 \q_mark \__l_uni_math_uproot_assign_mup_char:nNn #1 \q_mark \__l_uni_math_uproot_assign_nonmup_alpha:nNn \q_stop ##1
   }
 }
 

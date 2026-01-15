@@ -1,0 +1,17 @@
+\input regression-test
+\documentclass{article}
+\usepackage{lua-unicode-math}
+\begin{document}
+\START
+\setbox0=\vbox{
+  \[
+    \lambda \muplambda \mitlambda \symup{\lambda} \symit{\lambda}
+  \]
+  \[
+    \Lambda \mupLambda \mitLambda \symup{\Lambda} \symit{\Lambda}
+  \]
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}
