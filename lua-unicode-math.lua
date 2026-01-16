@@ -34,6 +34,14 @@ local processed_families = {[main_fam] = true}
 local parser = require'lua-uni-parse'
 local mathclasses = parser.parse_file('MathClass-15', parser.eol + lpeg.Cg(parser.fields(parser.codepoint_range, lpeg.C(lpeg.S'NABCDFGLOPRSUVX'))), parser.multiset)
 
+-- We derive mathclasses from the Unicode data file MathClass-15.txt, but some characters can be used
+-- in different ways in math and LaTeX traditionally defines a different class for them by default than
+-- Unicode does. For these we adjust the class here.
+mathclasses[0x2F] = 'N' -- /
+mathclasses[0x5C] = 'N' -- \
+mathclasses[0x22EF] = 'N' -- ⋯
+mathclasses[0x2E] = 'N' -- .
+
 -- Integrals and other big operators have the same classes in data files, but we need to tell them apart.
 -- Therefore we have a fixed list of all integral like codepoints here.
 local integral_codepoints = {
@@ -65,11 +73,6 @@ local integral_codepoints = {
   [0x2A1B] = true, -- ⨛
   [0x2A1C] = true, -- ⨜
 }
-
--- Overwrites
-mathclasses[0x2F] = 'N' -- /
-mathclasses[0x5C] = 'N' -- \
-mathclasses[0x22EF] = 'N' -- ⋯
 
 -- Generally mathematical alphabets in Unicode are sequential blocks which reflect the order of the corresponding non-mathematical characters.
 -- Therefore we can just store the position of the base characters for each style and then access other characters as offsets.
