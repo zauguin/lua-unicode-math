@@ -262,6 +262,29 @@
 
 \lua_load_module:n { lua-unicode-math }
 
+\cs_new_protected:Npn \__l_uni_math_define_mathstyle_cmd:n #1 {
+    \cs_new_protected:cpx { sym #1 } ##1 {
+      \group_begin:
+        \mathfamattr = \use:c { c__l_uni_math_attribute_sym #1 _int }
+        ##1
+      \group_end:
+    }
+}
+
+\int_new:N \g__l_uni_math_max_mathstyle_int
+\int_gset:Nn \g__l_uni_math_max_mathstyle_int { 1024 }
+\cs_new:Npn \__l_uni_math_provide_mathstyle_id:n #1 {
+  \cs_if_exist:cF { c__l_uni_math_attribute_sym #1 _int } {
+    \int_const:cn { c__l_uni_math_attribute_sym #1 _int } { \g__l_uni_math_max_mathstyle_int }
+    \int_incr:N \g__l_uni_math_max_mathstyle_int
+    \__l_uni_math_define_mathstyle_cmd:n { #1 }
+  }
+}
+
+\tex_Umathcharnumdef:D \c__l_uni_math_attribute_symnormal_int = -"7FFFFFFF \scan_stop:
+\__l_uni_math_define_mathstyle_cmd:n {normal}
+\cs_gset:Npn \mathnormal { \symnormal }
+
 \seq_set_from_clist:Nn \l_tmpa_seq {
   up, rm, it, tt, bf, sf
 }
@@ -276,33 +299,17 @@
   frak = 16, bffrak = 17,
   tt = 20,
   bb = 24,
-  bf = 1024,
-  normal = -"7FFFFFFF,
 }
 \prop_map_inline:Nn \l_tmpa_prop {
   \int_const:cn { c__l_uni_math_attribute_sym #1 _int } { #2 }
-  \cs_new_protected:cpx { sym #1 } ##1 {
-    \group_begin:
-      \mathfamattr = \use:c { c__l_uni_math_attribute_sym #1 _int }
-      ##1
-    \group_end:
-  }
+  \__l_uni_math_define_mathstyle_cmd:n { #1 }
   \cs_set_eq:cc { math #1 } { sym #1 }
 }
 \cs_set_eq:NN \symrm \symup
 \cs_set_eq:NN \mathtextup \mathtextrm
-%    \end{macrocode}
-% In \pkg{unicode-math} there is a package option to use italic or upright letters
-% for \cs{symsf} and \cs{symbfsf}. Depending on the setting these become aliases for
-% \cs{symsfup} and \cs{symbfsfup} or \cs{symsfit} and \cs{symbfsfit}.
-% Since we do not want package option, we always use upright letters and you ca redefine
-% \cs{symsf} and \cs{symbfsf} if you want to change it.
-%    \begin{macrocode}
 \cs_set_eq:NN \mathtextsf \mathsf
-\cs_set_eq:NN \symsf \symsfup
-\cs_set_protected:Npn \mathsfup { \symsfup }
-\cs_set_eq:NN \symbfsf \symbfsfup
-\cs_set_protected:Npn \mathbfsf { \symbfsf }
+\cs_set:Npn \mathsf { \symsf }
+\cs_set:Npn \mathbfsf { \symbfsf }
 
 \seq_map_inline:Nn \l_tmpa_seq {
   \cs_set_eq:cc { math #1 } { mathtext #1 }
@@ -569,5 +576,115 @@
 \addto@hook \every@math@size {
   \__l_uni_math_every_math_size:
 }
+%    \end{macrocode}
+% \subsection{Customization}
+% We defined templates to customize the behavior of \pkg{lua-unicode-math}.
+% The main customization point for the user is the \texttt{lua-unicode-math-style} which
+% selects how \cs{symnormal} and \cs{symbf} behave.
+%    \begin{macrocode}
+\NewTemplateType {lua-unicode-math-style} {0}
+%    \end{macrocode}
+%
+% In the default interface \texttt{substyles} a mathstyle is defined in terms of
+% two nested instances of type \texttt{lua-unicode-math-style-cmd}. This template allows to
+% define or redefine a mathstyle like \texttt{normal}, \texttt{bf} or \texttt{up} with corresponding
+% \cs{sym...} command.
+%    \begin{macrocode}
+\NewTemplateType {lua-unicode-math-style-cmd} {1}
+\DeclareTemplateInterface {lua-unicode-math-style} {substyles} {0} {
+  normal: instance {lua-unicode-math-style-cmd},
+  bf: instance {lua-unicode-math-style-cmd},
+  sf: instance {lua-unicode-math-style-cmd},
+  bfsf: instance {lua-unicode-math-style-cmd},
+}
+%    \end{macrocode}
+%
+% By default a new style command instance is defined by defining mappings for the five main
+% math alphabets to existing styles.
+%    \begin{macrocode}
+\DeclareTemplateInterface {lua-unicode-math-style-cmd} {alphabet-style-mapping} {1} {
+  Latin: tokenlist,
+  latin: tokenlist,
+  Greek: tokenlist,
+  greek: tokenlist,
+  digit: tokenlist,
+}
+%    \end{macrocode}
+%
+% By default a new style command instance is defined by defining mappings for the five main
+% math alphabets to existing styles.
+%    \begin{macrocode}
+\DeclareTemplateCode {lua-unicode-math-style} {substyles} {0} {
+  normal = \__l_uni_math_instance_normal:n,
+  bf = \__l_uni_math_instance_bf:n,
+  sf = \__l_uni_math_instance_sf:n,
+  bfsf = \__l_uni_math_instance_bfsf:n,
+} {
+  \__l_uni_math_instance_normal:n { normal }
+  \__l_uni_math_instance_bf:n { bf }
+  \__l_uni_math_instance_sf:n { sf }
+  \__l_uni_math_instance_bfsf:n { bfsf }
+}
+\cs_generate_variant:Nn \__l_uni_math_set_mathstyle_mappings:NNNNNN { cccccc }
+\tl_new:N \l__l_uni_math_Latin_style_tl
+\tl_new:N \l__l_uni_math_latin_style_tl
+\tl_new:N \l__l_uni_math_Greek_style_tl
+\tl_new:N \l__l_uni_math_greek_style_tl
+\tl_new:N \l__l_uni_math_digit_style_tl
+\DeclareTemplateCode {lua-unicode-math-style-cmd} {alphabet-style-mapping} {1} {
+  Latin = \l__l_uni_math_Latin_style_tl,
+  latin = \l__l_uni_math_latin_style_tl,
+  Greek = \l__l_uni_math_Greek_style_tl,
+  greek = \l__l_uni_math_greek_style_tl,
+  digit = \l__l_uni_math_digit_style_tl,
+} {
+  \__l_uni_math_provide_mathstyle_id:n { #1 }
+  \__l_uni_math_set_mathstyle_mappings:cccccc
+    { c__l_uni_math_attribute_sym #1 _int }
+    { c__l_uni_math_attribute_sym \l__l_uni_math_Latin_style_tl _int }
+    { c__l_uni_math_attribute_sym \l__l_uni_math_latin_style_tl _int }
+    { c__l_uni_math_attribute_sym \l__l_uni_math_Greek_style_tl _int }
+    { c__l_uni_math_attribute_sym \l__l_uni_math_greek_style_tl _int }
+    { c__l_uni_math_attribute_sym \l__l_uni_math_digit_style_tl _int }
+}
+%    \end{macrocode}
+%
+% Finally we define some defaults.
+%    \begin{macrocode}
+\DeclareInstance{lua-unicode-math-style}{default}{substyles}{
+  normal = default,
+  bf = default-bf,
+  sf = default-sf,
+  bfsf = default-bfsf,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{default}{alphabet-style-mapping}{
+  Latin = it,
+  latin = it,
+  Greek = up,
+  greek = it,
+  digit = up,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{default-bf}{alphabet-style-mapping}{
+  Latin = bfup,
+  latin = bfup,
+  Greek = bfup,
+  greek = bfit,
+  digit = bfup,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{default-sf}{alphabet-style-mapping}{
+  Latin = sfup,
+  latin = sfup,
+  Greek = sfup,
+  greek = sfup,
+  digit = sfup,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{default-bfsf}{alphabet-style-mapping}{
+  Latin = bfsfup,
+  latin = bfsfup,
+  Greek = bfsfup,
+  greek = bfsfup,
+  digit = bfsfup,
+}
+\UseInstance {lua-unicode-math-style} {default}
 %    \end{macrocode}
 % \end{implementation}

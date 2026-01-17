@@ -700,6 +700,18 @@ for _, name in ipairs{'prime', 'not', 'dots'} do
   loadfile(kpse.find_file(string.format('lua-unicode-math--%s', name), 'lua'), 'bt', environment)()
 end
 
+local func = luatexbase.new_luafunction'__l_uni_math_set_mathstyle_mappings:NNNNNN'
+token.set_lua('__l_uni_math_set_mathstyle_mappings:NNNNNN', func, 'protected')
+lua.get_functions_table()[func] = function()
+  remap_bases[token.scan_int()] = { -- Default
+    remap_bases[token.scan_int()][char_Latin], -- Latin uppercase
+    remap_bases[token.scan_int()][char_latin], -- Latin lowercase
+    remap_bases[token.scan_int()][char_Greek], -- Greek uppercase
+    remap_bases[token.scan_int()][char_greek], -- Greek lowercase
+    remap_bases[token.scan_int()][char_digit], -- Serif digits
+  }
+end
+
 local func = luatexbase.new_luafunction'__l_uni_math_uproot:w'
 token.set_lua('__l_uni_math_uproot:w', func, 'protected')
 lua.get_functions_table()[func] = function()
