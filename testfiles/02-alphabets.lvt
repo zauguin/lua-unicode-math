@@ -1,6 +1,7 @@
 \input regression-test
 \documentclass{article}
 \usepackage{lua-unicode-math}
+\usepackage{fontspec}
 \begin{document}
 \START
 \setbox0=\vbox{
@@ -10,67 +11,67 @@
   \]
   Normal:
   \[
-    \symnormal{Ff\Gamma\gamma0}
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
   \]
   Up:
   \[
-    \symup{Ff\Gamma\gamma0}
+    \symup{Ff\Gamma\gamma0}\mathup{Ff\Gamma\gamma0}
   \]
   Bold Up:
   \[
-    \symbfup{Ff\Gamma\gamma0}
+    \symbfup{Ff\Gamma\gamma0}\mathbfup{Ff\Gamma\gamma0}
   \]
   Italic:
   \[
-    \symit{Ff\Gamma\gamma0}
+    \symit{Ff\Gamma\gamma0}\mathit{Ff\Gamma\gamma0}
   \]
   Bold Italic:
   \[
-    \symbfit{Ff\Gamma\gamma0}
+    \symbfit{Ff\Gamma\gamma0}\mathbfit{Ff\Gamma\gamma0}
   \]
   Sans Serif Up:
   \[
-    \symsfup{Ff\Gamma\gamma0}
+    \symsfup{Ff\Gamma\gamma0}\mathsfup{Ff\Gamma\gamma0}
   \]
   Sans Serif Bold Up:
   \[
-    \symbfsfup{Ff\Gamma\gamma0}
+    \symbfsfup{Ff\Gamma\gamma0}\mathbfsfup{Ff\Gamma\gamma0}
   \]
   Sans Serif Italic:
   \[
-    \symsfit{Ff\Gamma\gamma0}
+    \symsfit{Ff\Gamma\gamma0}\mathsfit{Ff\Gamma\gamma0}
   \]
   Sans Serif Bold Italic:
   \[
-    \symbfsfit{Ff\Gamma\gamma0}
+    \symbfsfit{Ff\Gamma\gamma0}\mathbfsfit{Ff\Gamma\gamma0}
   \]
   Caligraphic:
   \[
-    \symcal{Ff\Gamma\gamma0}
+    \symcal{Ff\Gamma\gamma0}\mathcal{Ff\Gamma\gamma0}
   \]
   Bold Caligraphic:
   \[
-    \symbfcal{Ff\Gamma\gamma0}
+    \symbfcal{Ff\Gamma\gamma0}\mathbfcal{Ff\Gamma\gamma0}
   \]
   Fraktur:
   \[
-    \symfrak{Ff\Gamma\gamma0}
+    \symfrak{Ff\Gamma\gamma0}\mathfrak{Ff\Gamma\gamma0}
   \]
   Bold Fraktur:
   \[
-    \symbffrak{Ff\Gamma\gamma0}
+    \symbffrak{Ff\Gamma\gamma0}\mathbffrak{Ff\Gamma\gamma0}
   \]
   Mono:
   \[
-    \symtt{Ff\Gamma\gamma0}
+    \symtt{Ff\Gamma\gamma0}\mathtt{Ff\Gamma\gamma0}
   \]
   Blackboard Bold:
   \[
-    \symbb{Ff\Gamma\gamma0}
+    \symbb{Ff\Gamma\gamma0}\mathbb{Ff\Gamma\gamma0}
   \]
   Bold:
   \[
-    \symbf{Ff\Gamma\gamma0}
+    \symbf{Ff\Gamma\gamma0}\mathbf{Ff\Gamma\gamma0}
   \]
 }
 \showbox0

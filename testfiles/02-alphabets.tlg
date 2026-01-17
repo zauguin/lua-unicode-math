@@ -13,10 +13,18 @@ LaTeX Font Info:    Trying to load font information for TU+lmm-ssf on input line
 (tulmm-ssf.fd
 File: tulmm-ssf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Subscript
 )
+Missing character: There is no γ (U+03B3) in font [lmroman10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-italic]:+tlig;!
+Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no γ (U+03B3) in font [lmmono10-regular]:!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 > \box...=
 \vbox(507.16+0.0)x345.0, direction TLT
 .\hbox(7.05+0.11)x345.0, glue set 294.85fil, direction TLT
@@ -75,7 +83,15 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.84
-.\hbox(7.05+2.15)x30.52997, shifted 157.23502, direction TLT
+.\hbox(7.05+2.15)x61.05994, shifted 141.97003, direction TLT
+..\TU/lmm/m/n/10 𝐹
+..\kern1.34 (italic)
+..\TU/lmm/m/n/10 𝑓
+..\kern0.9 (italic)
+..\TU/lmm/m/n/10 Γ
+..\TU/lmm/m/n/10 𝛾
+..\kern0.53 (italic)
+..\TU/lmm/m/n/10 0
 ..\TU/lmm/m/n/10 𝐹
 ..\kern1.34 (italic)
 ..\TU/lmm/m/n/10 𝑓
@@ -102,13 +118,18 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 3.01
-.\hbox(7.05+2.15)x27.48999, shifted 158.755, direction TLT
+.\hbox(7.05+2.15)x48.32999, shifted 148.335, direction TLT
 ..\TU/lmm/m/n/10 F
 ..\TU/lmm/m/n/10 f
 ..\kern0.79 (italic)
 ..\TU/lmm/m/n/10 Γ
 ..\TU/lmm/m/n/10 γ
 ..\TU/lmm/m/n/10 0
+..\hbox(7.05+0.22)x20.84, direction TLT
+...\TU/lmr/m/n/10 F
+...\TU/lmr/m/n/10 f
+...\TU/lmr/m/n/10 Γ
+...\TU/lmm/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.91
@@ -132,7 +153,13 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 3.06
-.\hbox(7.0+2.11)x31.34999, shifted 156.82501, direction TLT
+.\hbox(7.0+2.11)x62.69998, shifted 141.15001, direction TLT
+..\TU/lmm/m/n/10 𝐅
+..\TU/lmm/m/n/10 𝐟
+..\kern1.14 (italic)
+..\TU/lmm/m/n/10 𝚪
+..\TU/lmm/m/n/10 𝛄
+..\TU/lmm/m/n/10 𝟎
 ..\TU/lmm/m/n/10 𝐅
 ..\TU/lmm/m/n/10 𝐟
 ..\kern1.14 (italic)
@@ -161,7 +188,7 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.84
-.\hbox(7.05+2.15)x31.76996, shifted 156.61502, direction TLT
+.\hbox(7.05+2.15)x56.28996, shifted 144.35503, direction TLT
 ..\TU/lmm/m/n/10 𝐹
 ..\kern1.34 (italic)
 ..\TU/lmm/m/n/10 𝑓
@@ -171,6 +198,14 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 ..\TU/lmm/m/n/10 𝛾
 ..\kern0.53 (italic)
 ..\TU/lmm/m/n/10 0
+..\hbox(7.05+2.05)x24.52, direction TLT
+...\TU/lmr/m/it/10 F
+...\kern1.0 (italic)
+...\TU/lmr/m/it/10 f
+...\kern1.65 (italic)
+...\TU/lmr/m/it/10 Γ
+...\kern1.0 (italic)
+...\TU/lmm/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.91
@@ -198,7 +233,16 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.87
-.\hbox(7.02+2.11)x35.15999, shifted 154.92001, direction TLT
+.\hbox(7.02+2.11)x70.31998, shifted 137.34001, direction TLT
+..\TU/lmm/m/n/10 𝑭
+..\kern1.48 (italic)
+..\TU/lmm/m/n/10 𝒇
+..\kern0.86 (italic)
+..\TU/lmm/m/n/10 𝜞
+..\kern1.48 (italic)
+..\TU/lmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/lmm/m/n/10 𝟎
 ..\TU/lmm/m/n/10 𝑭
 ..\kern1.48 (italic)
 ..\TU/lmm/m/n/10 𝒇
@@ -237,7 +281,13 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 3.01
-.\hbox(7.05+2.15)x26.55, shifted 159.225, direction TLT
+.\hbox(7.05+2.15)x53.1, shifted 145.95, direction TLT
+..\TU/lmm/m/n/10 𝖥
+..\TU/lmm/m/n/10 𝖿
+..\kern0.69 (italic)
+..\TU/lmm/m/n/10 Γ
+..\TU/lmm/m/n/10 γ
+..\TU/lmm/m/n/10 𝟢
 ..\TU/lmm/m/n/10 𝖥
 ..\TU/lmm/m/n/10 𝖿
 ..\kern0.69 (italic)
@@ -278,7 +328,13 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 2.9
-.\hbox(7.16+2.17)x28.48999, shifted 158.255, direction TLT
+.\hbox(7.16+2.17)x56.97998, shifted 144.01001, direction TLT
+..\TU/lmm/m/n/10 𝗙
+..\TU/lmm/m/n/10 𝗳
+..\kern0.73 (italic)
+..\TU/lmm/m/n/10 𝝘
+..\TU/lmm/m/n/10 𝝲
+..\TU/lmm/m/n/10 𝟬
 ..\TU/lmm/m/n/10 𝗙
 ..\TU/lmm/m/n/10 𝗳
 ..\kern0.73 (italic)
@@ -318,7 +374,16 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.73
-.\hbox(7.05+2.15)x30.43999, shifted 157.28001, direction TLT
+.\hbox(7.05+2.15)x60.87997, shifted 142.06001, direction TLT
+..\TU/lmm/m/n/10 𝘍
+..\kern1.32 (italic)
+..\TU/lmm/m/n/10 𝘧
+..\kern2.17 (italic)
+..\TU/lmm/m/n/10 𝛤
+..\kern1.34 (italic)
+..\TU/lmm/m/n/10 𝛾
+..\kern0.53 (italic)
+..\TU/lmm/m/n/10 𝟢
 ..\TU/lmm/m/n/10 𝘍
 ..\kern1.32 (italic)
 ..\TU/lmm/m/n/10 𝘧
@@ -366,7 +431,16 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.62
-.\hbox(7.16+2.17)x32.98999, shifted 156.005, direction TLT
+.\hbox(7.16+2.17)x65.97998, shifted 139.51001, direction TLT
+..\TU/lmm/m/n/10 𝙁
+..\kern1.2 (italic)
+..\TU/lmm/m/n/10 𝙛
+..\kern2.17 (italic)
+..\TU/lmm/m/n/10 𝞒
+..\kern1.2 (italic)
+..\TU/lmm/m/n/10 𝞬
+..\kern0.67 (italic)
+..\TU/lmm/m/n/10 𝟬
 ..\TU/lmm/m/n/10 𝙁
 ..\kern1.2 (italic)
 ..\TU/lmm/m/n/10 𝙛
@@ -405,7 +479,13 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 2.95
-.\hbox(6.99+2.15)x27.23997, shifted 158.88002, direction TLT
+.\hbox(6.99+2.15)x54.47995, shifted 145.26003, direction TLT
+..\TU/lmm/m/n/10 ℱ
+..\TU/lmm/m/n/10 𝛤
+..\kern1.34 (italic)
+..\TU/lmm/m/n/10 𝛾
+..\kern0.53 (italic)
+..\TU/lmm/m/n/10 0
 ..\TU/lmm/m/n/10 ℱ
 ..\TU/lmm/m/n/10 𝛤
 ..\kern1.34 (italic)
@@ -446,7 +526,13 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 2.63
-.\hbox(7.31+2.11)x30.3, shifted 157.35, direction TLT
+.\hbox(7.31+2.11)x60.6, shifted 142.2, direction TLT
+..\TU/lmm/m/n/10 𝓕
+..\TU/lmm/m/n/10 𝜞
+..\kern1.48 (italic)
+..\TU/lmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/lmm/m/n/10 𝟎
 ..\TU/lmm/m/n/10 𝓕
 ..\TU/lmm/m/n/10 𝜞
 ..\kern1.48 (italic)
@@ -479,7 +565,14 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 5.03
-.\hbox(6.86+2.38)x27.12, shifted 158.94, direction TLT
+.\hbox(6.86+2.38)x54.23999, shifted 145.38, direction TLT
+..\TU/lmm/m/n/10 𝔉
+..\kern0.38 (italic)
+..\TU/lmm/m/n/10 𝔣
+..\kern0.23 (italic)
+..\TU/lmm/m/n/10 Γ
+..\TU/lmm/m/n/10 γ
+..\TU/lmm/m/n/10 0
 ..\TU/lmm/m/n/10 𝔉
 ..\kern0.38 (italic)
 ..\TU/lmm/m/n/10 𝔣
@@ -518,7 +611,14 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 5.05
-.\hbox(6.84+2.42)x31.23, shifted 156.88501, direction TLT
+.\hbox(6.84+2.42)x62.45999, shifted 141.27, direction TLT
+..\TU/lmm/m/n/10 𝕱
+..\kern0.41 (italic)
+..\TU/lmm/m/n/10 𝖋
+..\kern0.28 (italic)
+..\TU/lmm/m/n/10 𝚪
+..\TU/lmm/m/n/10 𝛄
+..\TU/lmm/m/n/10 𝟎
 ..\TU/lmm/m/n/10 𝕱
 ..\kern0.41 (italic)
 ..\TU/lmm/m/n/10 𝖋
@@ -546,12 +646,17 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 5.09
-.\hbox(6.8+2.15)x27.86, shifted 158.57, direction TLT
+.\hbox(6.8+2.15)x48.61, shifted 148.195, direction TLT
 ..\TU/lmm/m/n/10 𝙵
 ..\TU/lmm/m/n/10 𝚏
 ..\TU/lmm/m/n/10 Γ
 ..\TU/lmm/m/n/10 γ
 ..\TU/lmm/m/n/10 𝟶
+..\hbox(6.66+0.22)x20.75, direction TLT
+...\TU/lmtt/m/n/10 F
+...\TU/lmtt/m/n/10 f
+...\TU/lmtt/m/n/10 Γ
+...\TU/lmm/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.91
@@ -587,7 +692,13 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.73
-.\hbox(7.16+2.11)x29.54, shifted 157.73001, direction TLT
+.\hbox(7.16+2.11)x59.07999, shifted 142.96, direction TLT
+..\TU/lmm/m/n/10 𝔽
+..\TU/lmm/m/n/10 𝕗
+..\kern0.27 (italic)
+..\TU/lmm/m/n/10 𝚪
+..\TU/lmm/m/n/10 𝛄
+..\TU/lmm/m/n/10 𝟘
 ..\TU/lmm/m/n/10 𝔽
 ..\TU/lmm/m/n/10 𝕗
 ..\kern0.27 (italic)
@@ -614,7 +725,7 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.89
-.\hbox(7.0+2.11)x31.01, shifted 156.99501, direction TLT
+.\hbox(7.0+2.11)x53.68, shifted 145.66, direction TLT
 ..\TU/lmm/m/n/10 𝐅
 ..\TU/lmm/m/n/10 𝐟
 ..\kern1.14 (italic)
@@ -622,6 +733,11 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 ..\TU/lmm/m/n/10 𝜸
 ..\kern0.55 (italic)
 ..\TU/lmm/m/n/10 𝟎
+..\hbox(7.0+0.22)x22.67, direction TLT
+...\TU/lmr/bx/n/10 F
+...\TU/lmr/bx/n/10 f
+...\TU/lmr/bx/n/10 Γ
+...\TU/lmm/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 ! OK.
