@@ -276,9 +276,10 @@
 \cs_undefine:N \mathnormal
 \cs_undefine:N \mathcal
 \prop_map_inline:Nn \l_tmpa_prop {
-  \cs_new_protected:cpn { sym #1 } ##1 {
+  \int_const:cn { c__l_uni_math_attribute_sym #1 _int } { #2 }
+  \cs_new_protected:cpx { sym #1 } ##1 {
     {
-      \mathfamattr = #2 \scan_stop:
+      \mathfamattr = \use:c { c__l_uni_math_attribute_sym #1 _int }
       ##1
     }
   }

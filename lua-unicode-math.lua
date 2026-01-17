@@ -3,6 +3,8 @@ local function sup_style(s) return ((s & 4) >> 1) | (s & 1) | 4 end
 local function num_style(s) return s + 2 - s//6 * 2 end
 local function denom_style(s) return (s | 1) + 2 - s//6 * 2 end
 
+local unset_attribute = -0x7FFFFFFF
+
 local style_names = {
   [0] = 'display',
   [1] = 'crampeddisplay',
@@ -140,7 +142,7 @@ local char_latin = 2 -- Latin lowercase
 local char_Greek = 3 -- Greek uppercase
 local char_greek = 4 -- Greek lowercase
 local char_digit = 5 -- Digits
-local char_weird = 5 -- weird characters needing special handling
+local char_weird = 6 -- weird characters needing special handling
 local char_types = {}
 
 for i=0x41, 0x5A do
@@ -272,7 +274,7 @@ local remap_bases = {
     0x1D7D8, -- 𝟘
   },
 }
-remap_bases[false] = { -- Default
+remap_bases[unset_attribute] = { -- Default
   remap_bases[serif | italic][char_Latin], -- Latin uppercase
   remap_bases[serif | italic][char_latin], -- Latin lowercase
   remap_bases[serif][char_Greek], -- Greek uppercase
@@ -358,7 +360,7 @@ local function traverse_kernel(style, n, outer_head, outer)
       local char_type = char_types[char]
       if char_type then
         char = pre_replacement[char] or char
-        local offset = remap_bases[node.get_attribute(n, attr) or false][char_type]
+        local offset = remap_bases[node.get_attribute(n, attr) or unset_attribute][char_type]
         if offset then
           char = char + offset
           n.char = post_replacement[char] or char
