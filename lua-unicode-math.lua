@@ -83,6 +83,12 @@ local integral_codepoints = {
 -- For some greek character, the non-mathematical alphabet has some characters in positions not matching the mathematical alphabets.
 -- This typically happens for variant forms where the non-mathematical slot is occupied by some pre-composed accented glyph.
 -- These we map before processing to be in the position we expect them to be in.
+--
+-- Special mention:
+-- U+0131 (dotless i), U+0237 (dotless j), U+03DC (capital digamma), and U+03DD (small digamma)
+-- These four need to remapped in some styles but don't fit the general alphabets at all.
+-- There are no expected locations to map them into, so we remap them completely outside the normal
+-- Unicode range and then map the adjusted versions back.
 local pre_replacement = {
   [0x03F4] = 0x03A2,
   [0x2207] = 0x03AA,
@@ -94,6 +100,11 @@ local pre_replacement = {
   [0x03D5] = 0x03CE,
   [0x03F1] = 0x03CF,
   [0x03D6] = 0x03D0,
+
+  [0x0131] = 0x100000,
+  [0x0237] = 0x100001,
+  [0x03DC] = 0x100002,
+  [0x03DD] = 0x100003,
 }
 
 -- More common is the opposite case: Some mathematical characters are not in the spaces normally associated with their alphabets but much lower.
@@ -128,6 +139,50 @@ local post_replacement = {
   [0x1D4BA] = 0x212F,
   [0x1D4BC] = 0x210A,
   [0x1D4C4] = 0x2134,
+
+  -- dotless i -- only italic variant exists
+  [0x11D3B9] = 0x0131, -- bfup
+  [0x11D3ED] = 0x1D6A4, -- it
+  [0x11D421] = 0x1D6A4, -- bfit
+  [0x11D559] = 0x0131, -- sfup
+  [0x11D58D] = 0x0131, -- sfit
+  [0x11D5C1] = 0x1D6A4, -- bfsfup
+  [0x11D5F5] = 0x1D6A4, -- bfsfit
+  [0x11D455] = 0x1D6A4, -- cal
+  [0x11D489] = 0x1D6A4, -- bfcal
+  [0x11D4BD] = 0x0131, -- frak
+  [0x11D525] = 0x0131, -- bffrak
+  [0x11D629] = 0x0131, -- tt
+  [0x11D4F1] = 0x0131, -- bb
+
+  -- dotless j -- only italic variant exists
+  [0x11D3BA] = 0x0237, -- bfup
+  [0x11D3EE] = 0x1D6A5, -- it
+  [0x11D422] = 0x1D6A5, -- bfit
+  [0x11D55A] = 0x0237, -- sfup
+  [0x11D58E] = 0x0237, -- sfit
+  [0x11D5C2] = 0x1D6A5, -- bfsfup
+  [0x11D5F6] = 0x1D6A5, -- bfsfit
+  [0x11D456] = 0x1D6A5, -- cal
+  [0x11D48A] = 0x1D6A5, -- bfcal
+  [0x11D4BE] = 0x0237, -- frak
+  [0x11D526] = 0x0237, -- bffrak
+  [0x11D62A] = 0x0237, -- tt
+  [0x11D4F2] = 0x0237, -- bb
+
+  -- capital digamma -- only bold variant exists
+  [0x11D319] = 0x1D7CA, -- bfup
+  [0x11D353] = 0x03DC, -- it
+  [0x11D38D] = 0x1D7CA, -- bfit
+  [0x11D3C7] = 0x1D7CA, -- bfsfup
+  [0x11D401] = 0x1D7CA, -- bfsfit
+
+  -- small digamma -- only bold variant exists
+  [0x11D314] = 0x1D7CB, -- bfup
+  [0x11D34E] = 0x03DD, -- it
+  [0x11D388] = 0x1D7CB, -- bfit
+  [0x11D3C2] = 0x1D7CB, -- bfsfup
+  [0x11D3FC] = 0x1D7CB, -- bfsfit
 }
 
 -- The characters come in 5 blocks
@@ -136,20 +191,16 @@ local post_replacement = {
 -- 3: Greek uppercase
 -- 4: Greek lowercase
 -- 5: Digits
--- 6: weird characters needing special handling
 local char_Latin = 1 -- Latin uppercase
 local char_latin = 2 -- Latin lowercase
 local char_Greek = 3 -- Greek uppercase
 local char_greek = 4 -- Greek lowercase
 local char_digit = 5 -- Digits
-local char_weird = 6 -- weird characters needing special handling
 local char_types = {}
 
 for i=0x41, 0x5A do
   char_types[i], char_types[i + 0x20] = char_Latin, char_latin
 end
-char_types[0x0131] = char_weird -- ı -- dotless i
-char_types[0x0237] = char_weird -- ȷ -- dotless j
 
 for i=0x0391, 0x03A9 do
   char_types[i] = char_Greek
@@ -158,8 +209,6 @@ end
 for i=0x03B1, 0x03D0 do
   char_types[i] = char_greek
 end
-char_types[0x03DC] = char_weird -- Ϝ -- capital digamma
-char_types[0x03DD] = char_weird -- ϝ -- small digamma
 
 for i=0x0030, 0x0039 do
   char_types[i] = char_digit
@@ -169,6 +218,10 @@ for base, remapped in next, pre_replacement do
   -- We want to apply char_types before pre_replacement
   char_types[base], char_types[remapped] = char_types[remapped], nil
 end
+char_types[0x0131] = char_latin -- ı -- dotless i
+char_types[0x0237] = char_latin -- ȷ -- dotless j
+char_types[0x03DC] = char_Greek -- Ϝ -- capital digamma
+char_types[0x03DD] = char_greek -- ϝ -- small digamma
 
 local serif, sans, script, fraktur, mono, bb = 0, 4, 8, 12, 16, 20
 local bold, italic = 1, 2

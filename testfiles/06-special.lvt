@@ -1,0 +1,96 @@
+\input regression-test
+\documentclass{article}
+\usepackage{lum-stix2}
+\usepackage{lua-unicode-math}
+\newcommand\Digamma{^^^^03dc}
+\newcommand\digamma{^^^^03dd}
+\renewcommand\imath{^^^^0131}
+\renewcommand\jmath{^^^^0237}
+\begin{document}
+\START
+\setbox0=\vbox{
+  \[
+    \symup{a}
+    \symbfup{a}
+    \symit{a}
+    \symbfit{a}
+    \symsfup{a}
+    \symbfsfup{a}
+    \symsfit{a}
+    \symbfsfit{a}
+    \symcal{a}
+    \symbfcal{a}
+    \symfrak{a}
+    \symbffrak{a}
+    \symtt{a}
+    \symbb{a}
+  \]
+  \[
+    \symup{\imath}
+    \symbfup{\imath}
+    \symit{\imath}
+    \symbfit{\imath}
+    \symsfup{\imath}
+    \symbfsfup{\imath}
+    \symsfit{\imath}
+    \symbfsfit{\imath}
+    \symcal{\imath}
+    \symbfcal{\imath}
+    \symfrak{\imath}
+    \symbffrak{\imath}
+    \symtt{\imath}
+    \symbb{\imath}
+  \]
+  \[
+    \symup{\jmath}
+    \symbfup{\jmath}
+    \symit{\jmath}
+    \symbfit{\jmath}
+    \symsfup{\jmath}
+    \symbfsfup{\jmath}
+    \symsfit{\jmath}
+    \symbfsfit{\jmath}
+    \symcal{\jmath}
+    \symbfcal{\jmath}
+    \symfrak{\jmath}
+    \symbffrak{\jmath}
+    \symtt{\jmath}
+    \symbb{\jmath}
+  \]
+  \[
+    \symup{\Digamma}
+    \symbfup{\Digamma}
+    \symit{\Digamma}
+    \symbfit{\Digamma}
+    \symsfup{\Digamma}
+    \symbfsfup{\Digamma}
+    \symsfit{\Digamma}
+    \symbfsfit{\Digamma}
+    \symcal{\Digamma}
+    \symbfcal{\Digamma}
+    \symfrak{\Digamma}
+    \symbffrak{\Digamma}
+    \symtt{\Digamma}
+    \symbb{\Digamma}
+  \]
+  \[
+    \symup{\digamma}
+    \symbfup{\digamma}
+    \symit{\digamma}
+    \symbfit{\digamma}
+    \symsfup{\digamma}
+    \symbfsfup{\digamma}
+    \symsfit{\digamma}
+    \symbfsfit{\digamma}
+    \symcal{\digamma}
+    \symbfcal{\digamma}
+    \symfrak{\digamma}
+    \symbffrak{\digamma}
+    \symtt{\digamma}
+    \symbb{\digamma}
+  \]
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}

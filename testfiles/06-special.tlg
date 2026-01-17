@@ -1,0 +1,147 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+LaTeX Font Info:    Trying to load font information for TU+stix2-math on input line ....
+(tustix2-math.fd
+File: tustix2-math.fd ....-..-.. v... NFSS font definitions for STIX2
+)
+LaTeX Font Info:    Trying to load font information for TU+stix2-math-sf on input line ....
+(tustix2-math-sf.fd
+File: tustix2-math-sf.fd ....-..-.. v... NFSS font definitions for STIX2 Script
+)
+LaTeX Font Info:    Trying to load font information for TU+stix2-math-ssf on input line ....
+(tustix2-math-ssf.fd
+File: tustix2-math-ssf.fd ....-..-.. v... NFSS font definitions for STIX2 Subscript
+)
+> \box...=
+\vbox(106.38+0.0)x345.0, direction TLT
+.\hbox(0.0+0.0)x345.0, glue set 122.9979fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\hbox(0.0+0.0)x15.0, direction TLT
+..\hbox(0.0+0.0)x207.0021, glue set 103.50105fil, direction TLT
+...\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayskip) 10.0 plus 2.0 minus 5.0
+.\glue(\baselineskip) 7.13
+.\hbox(4.87+0.2)x78.55, shifted 133.225, direction TLT
+..\TU/stix2-math/m/n/10 a
+..\TU/stix2-math/m/n/10 𝐚
+..\TU/stix2-math/m/n/10 𝑎
+..\TU/stix2-math/m/n/10 𝒂
+..\TU/stix2-math/m/n/10 𝖺
+..\TU/stix2-math/m/n/10 𝗮
+..\TU/stix2-math/m/n/10 𝘢
+..\TU/stix2-math/m/n/10 𝙖
+..\TU/stix2-math/m/n/10 𝒶
+..\TU/stix2-math/m/n/10 𝓪
+..\TU/stix2-math/m/n/10 𝔞
+..\TU/stix2-math/m/n/10 𝖆
+..\TU/stix2-math/m/n/10 𝚊
+..\TU/stix2-math/m/n/10 𝕒
+.\penalty 0
+.\glue(\belowdisplayskip) 10.0 plus 2.0 minus 5.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 6.98
+.\hbox(4.82+0.09)x39.5401, shifted 152.72995, direction TLT
+..\TU/stix2-math/m/n/10 ı
+..\TU/stix2-math/m/n/10 ı
+..\TU/stix2-math/m/n/10 𝚤
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 𝚤
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 ı
+..\TU/stix2-math/m/n/10 ı
+..\TU/stix2-math/m/n/10 𝚤
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 𝚤
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 𝚤
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 𝚤
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 ı
+..\TU/stix2-math/m/n/10 ı
+..\TU/stix2-math/m/n/10 ı
+..\TU/stix2-math/m/n/10 ı
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 7.09
+.\hbox(4.82+2.35)x47.20004, shifted 148.89998, direction TLT
+..\TU/stix2-math/m/n/10 ȷ
+..\TU/stix2-math/m/n/10 ȷ
+..\TU/stix2-math/m/n/10 𝚥
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 𝚥
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 ȷ
+..\TU/stix2-math/m/n/10 ȷ
+..\TU/stix2-math/m/n/10 𝚥
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 𝚥
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 𝚥
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 𝚥
+..\kern0.05 (italic)
+..\TU/stix2-math/m/n/10 ȷ
+..\TU/stix2-math/m/n/10 ȷ
+..\TU/stix2-math/m/n/10 ȷ
+..\TU/stix2-math/m/n/10 ȷ
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 3.07999
+.\hbox(6.57+0.0)x84.49005, shifted 130.25497, direction TLT
+..\TU/stix2-math/m/n/10 Ϝ
+..\TU/stix2-math/m/n/10 𝟊
+..\TU/stix2-math/m/n/10 Ϝ
+..\TU/stix2-math/m/n/10 𝟊
+..\TU/stix2-math/m/n/10 Ϝ
+..\TU/stix2-math/m/n/10 𝟊
+..\TU/stix2-math/m/n/10 Ϝ
+..\TU/stix2-math/m/n/10 𝟊
+..\TU/stix2-math/m/n/10 Ϝ
+..\TU/stix2-math/m/n/10 𝟊
+..\TU/stix2-math/m/n/10 Ϝ
+..\TU/stix2-math/m/n/10 𝟊
+..\TU/stix2-math/m/n/10 Ϝ
+..\TU/stix2-math/m/n/10 𝟊
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 7.29
+.\hbox(4.71+2.38)x55.43999, shifted 144.78001, direction TLT
+..\TU/stix2-math/m/n/10 ϝ
+..\TU/stix2-math/m/n/10 𝟋
+..\TU/stix2-math/m/n/10 ϝ
+..\TU/stix2-math/m/n/10 𝟋
+..\TU/stix2-math/m/n/10 ϝ
+..\TU/stix2-math/m/n/10 𝟋
+..\TU/stix2-math/m/n/10 ϝ
+..\TU/stix2-math/m/n/10 𝟋
+..\TU/stix2-math/m/n/10 ϝ
+..\TU/stix2-math/m/n/10 𝟋
+..\TU/stix2-math/m/n/10 ϝ
+..\TU/stix2-math/m/n/10 𝟋
+..\TU/stix2-math/m/n/10 ϝ
+..\TU/stix2-math/m/n/10 𝟋
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+! OK.
+l. ...\showbox0
