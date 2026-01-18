@@ -31,7 +31,7 @@ local lookup = {
 
 local function select_dots_from_next(noad)
   -- FIXME: Handle \boldsymbol. See \boldsymboldots@
-  if noad.id ~= noad_t then return other_dots end
+  if not noad or noad.id ~= noad_t then return other_dots end
   local sub = noad.subtype
   if sub == 4 or sub == 5 then -- bin or rel
     return binary_dots

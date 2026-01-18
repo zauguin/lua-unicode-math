@@ -6,6 +6,9 @@
 \START
 \setbox0=\vbox{
   \[
+    \dotso
+  \]
+  \[
     a, \dotsc, b
   \]
   \[

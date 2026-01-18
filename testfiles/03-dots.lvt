@@ -7,6 +7,9 @@
 \START
 \setbox0=\vbox{
   \[
+    \dots
+  \]
+  \[
     a, \dots, b
   \]
   \[

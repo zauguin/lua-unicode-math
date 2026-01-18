@@ -1,0 +1,26 @@
+\input regression-test
+\documentclass{article}
+\usepackage{lua-unicode-math}
+\begin{document}
+\START
+\setbox0=\vbox{
+  \[
+    a'
+  \]
+  \[
+    a', a'', a''', a'''', a''''', a'''''', a''''''', a'''''''', a'''''''''
+  \]
+  \[
+    a^2', a'^2, a^2'', a''^2, a^2''', a'''^2, a^2'''', a''''^2, a^2''''', a'''''^2
+  \]
+  \[
+    a^{2x}', a'^{2x}, a^{2x}'', a''^{2x}, a^{2x}''', a'''^{2x}, a^{2x}'''', a''''^{2x}, a^{2x}''''', a'''''^{2x}
+  \]
+  \[
+    a''^{2x}'''^{3y}
+  \]
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}

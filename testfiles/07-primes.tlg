@@ -1,0 +1,253 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+LaTeX Font Info:    Trying to load font information for TU+lmm on input line ....
+LaTeX Font Info:    Trying to load font information for TU+lmm-sf on input line ....
+(tulmm-sf.fd
+File: tulmm-sf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Script
+)
+LaTeX Font Info:    Trying to load font information for TU+lmm-ssf on input line ....
+(tulmm-ssf.fd
+File: tulmm-ssf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Subscript
+)
+> \box...=
+\vbox(104.11+0.0)x345.0, direction TLT
+.\hbox(0.0+0.0)x345.0, glue set 122.9979fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\hbox(0.0+0.0)x15.0, direction TLT
+..\hbox(0.0+0.0)x207.0021, glue set 103.50105fil, direction TLT
+...\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayskip) 10.0 plus 2.0 minus 5.0
+.\glue(\baselineskip) 4.527
+.\hbox(7.473+0.11)x8.69899, shifted 168.15051, direction TLT
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x3.409, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ′
+.\penalty 0
+.\glue(\belowdisplayskip) 10.0 plus 2.0 minus 5.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 4.41699
+.\hbox(7.473+1.93)x181.35799, shifted 81.82101, direction TLT
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x3.409, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ′
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x5.089, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ″
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x6.769, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ‴
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x8.449, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x11.298, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ′
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x12.97801, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ″
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x14.658, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ‴
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x16.33801, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ⁗
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(3.843+0.0)x19.18701, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ′
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 1.792
+.\hbox(8.278+1.93)x202.77759, shifted 71.1112, direction TLT
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x7.392, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 ′
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x7.392, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ′
+...\TU/lmm-sf/m/n/7 2
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x9.072, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 ″
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x9.072, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ″
+...\TU/lmm-sf/m/n/7 2
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x10.752, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 ‴
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x10.752, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ‴
+...\TU/lmm-sf/m/n/7 2
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x12.432, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 ⁗
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x12.432, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 2
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x15.281, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ′
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.0)x15.281, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ′
+...\TU/lmm-sf/m/n/7 2
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 1.792
+.\hbox(8.278+1.93)x248.13754, shifted 48.43123, direction TLT
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x11.928, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+...\TU/lmm-sf/m/n/7 ′
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x11.928, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ′
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x13.608, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+...\TU/lmm-sf/m/n/7 ″
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x13.608, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ″
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x15.288, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+...\TU/lmm-sf/m/n/7 ‴
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x15.288, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ‴
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x16.968, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+...\TU/lmm-sf/m/n/7 ⁗
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x16.968, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x19.817, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ′
+..\TU/lmm/m/n/10 ,
+..\glue(\thinmuskip) 1.66663
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+0.07)x19.817, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ⁗
+...\TU/lmm-sf/m/n/7 ′
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 1.792
+.\hbox(8.278+0.11)x33.206, shifted 155.897, direction TLT
+..\TU/lmm/m/n/10 𝑎
+..\hbox(4.648+1.428)x27.916, shifted -3.63, direction TLT
+...\TU/lmm-sf/m/n/7 ″
+...\TU/lmm-sf/m/n/7 2
+...\TU/lmm-sf/m/n/7 𝑥
+...\TU/lmm-sf/m/n/7 ‴
+...\TU/lmm-sf/m/n/7 3
+...\TU/lmm-sf/m/n/7 𝑦
+...\kern0.063 (italic)
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+! OK.
+l. ...\showbox0
