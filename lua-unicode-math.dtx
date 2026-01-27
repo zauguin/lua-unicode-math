@@ -262,6 +262,12 @@
 
 \lua_load_module:n { lua-unicode-math }
 
+\seq_set_from_clist:Nn \l_tmpa_seq {
+  up, rm, it, tt, bf, sf
+}
+\seq_map_inline:Nn \l_tmpa_seq {
+  \cs_new_eq:cc { mathtext #1 } { math #1 }
+}
 \prop_set_from_keyval:Nn \l_tmpa_prop {
   up = 0, bfup = 1, it = 2, bfit = 3,
   sfup = 4, bfsfup = 5, sfit = 6, bfsfit = 7,
@@ -272,9 +278,6 @@
   bf = 1024,
   normal = -"7FFFFFFF,
 }
-\cs_set_eq:NN \mathup \mathrm
-\cs_undefine:N \mathnormal
-\cs_undefine:N \mathcal
 \prop_map_inline:Nn \l_tmpa_prop {
   \int_const:cn { c__l_uni_math_attribute_sym #1 _int } { #2 }
   \cs_new_protected:cpx { sym #1 } ##1 {
@@ -283,14 +286,10 @@
       ##1
     \group_end:
   }
-  \cs_if_exist:cTF { math #1 } {
-    \cs_set_eq:cc { mathtext #1 } { math #1 }
-  } {
-    \cs_set_eq:cc { math #1 } { sym #1 }
-  }
+  \cs_set_eq:cc { math #1 } { sym #1 }
 }
-\cs_set_eq:NN \mathtextrm \mathrm
 \cs_set_eq:NN \symrm \symup
+\cs_set_eq:NN \mathtextup \mathtextrm
 %    \end{macrocode}
 % In \pkg{unicode-math} there is a package option to use italic or upright letters
 % for \cs{symsf} and \cs{symbfsf}. Depending on the setting these become aliases for
@@ -304,8 +303,8 @@
 \cs_set_eq:NN \symbfsf \symbfsfup
 \cs_set_protected:Npn \mathbfsf { \symbfsf }
 
-\clist_map_inline:nn { cal, calbf, frak, frakbf, bb } {
-  \cs_set_eq:cc { math #1 } { sym #1 }
+\seq_map_inline:Nn \l_tmpa_seq {
+  \cs_set_eq:cc { math #1 } { mathtext #1 }
 }
 
 \cs_new:cpn { __l_uni_math_UnicodeMathSymbol_ \token_to_str:N \mathord :nn } #1 #2 {
