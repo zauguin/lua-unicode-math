@@ -88,6 +88,25 @@
 % \subsection{Writing maths}
 % There are two ways of entering math: You can directly input Unicode math symbols or use regular \LaTeX{} commands for symbols.
 % All Unicode symbols are supported with the same commands as in \pkg{unicode-math}. For a full list see \texttt{texdoc unimath-symbols}.
+%
+% \subsection{Selecting math style}
+% \textit{Selecting math style is considered experimental and the interface is not stable.}
+%
+% The \pkg{unicode-math} package allows to configure a math style through package options. It is
+% used to configure which characters are upright or italic in the default math alphabet (\texttt{\symnormal}).
+% To configure similar settings in \pkg{lua-unicode-math}, you can select an instance of the \texttt{lua-unicode-math-style} template.
+%
+% There are four supported styles:
+% \begin{description}
+%   \item[TeX] Attempt to be compatible with traditional \TeX{} conventions. This is the default. Everything is italic by default except for capital greek letters which are upright.
+%   \item[ISO80000-2] Attempt to be compliant with ISO 80000-2 rules. Everything is italic.
+%   \item[french] Latin lowercase is italic, everything else is upright.
+%   \item[upright] Everything is upright.
+% \end{description}
+% One of the styles can be selected by running \texttt{\cs{UseInstance}\{lua-unicode-math-style\}\{\meta{style}\}} in your preamble, e.g.
+% \begin{verbatim}
+% \UseInstance{lua-unicode-math-style}{ISO80000-2}
+% \end{verbatim}
 % \end{documentation}
 % \begin{implementation}
 % \section{Implementation}
@@ -281,7 +300,10 @@
   }
 }
 
-\tex_Umathcharnumdef:D \c__l_uni_math_attribute_symnormal_int = -"7FFFFFFF \scan_stop:
+% This should be 
+% \tex_Umathcharnumdef:D \c__l_uni_math_attribute_symnormal_int = -"7FFFFFFF \scan_stop
+% but LuaTeX is too buggy to save this correctly.
+\tex_Umathchardef:D \c__l_uni_math_attribute_symnormal_int = "0 "80 "1 \scan_stop:
 \__l_uni_math_define_mathstyle_cmd:n {normal}
 \cs_gset:Npn \mathnormal { \symnormal }
 
@@ -650,40 +672,107 @@
 %
 % Finally we define some defaults.
 %    \begin{macrocode}
-\DeclareInstance{lua-unicode-math-style}{default}{substyles}{
-  normal = default,
-  bf = default-bf,
-  sf = default-sf,
-  bfsf = default-bfsf,
+\DeclareInstance{lua-unicode-math-style}{TeX}{substyles}{
+  normal = TeX,
+  bf = TeX-bf,
+  sf = upright-sf,
+  bfsf = upright-bfsf,
 }
-\DeclareInstance{lua-unicode-math-style-cmd}{default}{alphabet-style-mapping}{
+\DeclareInstance{lua-unicode-math-style}{ISO80000-2}{substyles}{
+  normal = ISO80000-2,
+  bf = ISO80000-2-bf,
+  sf = italic-sf,
+  bfsf = italic-bfsf,
+}
+\DeclareInstance{lua-unicode-math-style}{french}{substyles}{
+  normal = french,
+  bf = upright-bf,
+  sf = upright-sf,
+  bfsf = upright-bfsf,
+}
+\DeclareInstance{lua-unicode-math-style}{upright}{substyles}{
+  normal = upright,
+  bf = upright-bf,
+  sf = upright-sf,
+  bfsf = upright-bfsf,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{TeX}{alphabet-style-mapping}{
   Latin = it,
   latin = it,
   Greek = up,
   greek = it,
   digit = up,
 }
-\DeclareInstance{lua-unicode-math-style-cmd}{default-bf}{alphabet-style-mapping}{
+\DeclareInstance{lua-unicode-math-style-cmd}{TeX-bf}{alphabet-style-mapping}{
   Latin = bfup,
   latin = bfup,
   Greek = bfup,
   greek = bfit,
   digit = bfup,
 }
-\DeclareInstance{lua-unicode-math-style-cmd}{default-sf}{alphabet-style-mapping}{
+\DeclareInstance{lua-unicode-math-style-cmd}{ISO80000-2}{alphabet-style-mapping}{
+  Latin = it,
+  latin = it,
+  Greek = it,
+  greek = it,
+  digit = up,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{ISO80000-2-bf}{alphabet-style-mapping}{
+  Latin = bfit,
+  latin = bfit,
+  Greek = bfit,
+  greek = bfit,
+  digit = bfup,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{french}{alphabet-style-mapping}{
+  Latin = up,
+  latin = it,
+  Greek = up,
+  greek = up,
+  digit = up,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{upright}{alphabet-style-mapping}{
+  Latin = up,
+  latin = up,
+  Greek = up,
+  greek = up,
+  digit = up,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{upright-bf}{alphabet-style-mapping}{
+  Latin = bfup,
+  latin = bfup,
+  Greek = bfup,
+  greek = bfup,
+  digit = bfup,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{upright-sf}{alphabet-style-mapping}{
   Latin = sfup,
   latin = sfup,
   Greek = sfup,
   greek = sfup,
   digit = sfup,
 }
-\DeclareInstance{lua-unicode-math-style-cmd}{default-bfsf}{alphabet-style-mapping}{
+\DeclareInstance{lua-unicode-math-style-cmd}{italic-sf}{alphabet-style-mapping}{
+  Latin = sfit,
+  latin = sfit,
+  Greek = sfit,
+  greek = sfit,
+  digit = sfit,
+}
+\DeclareInstance{lua-unicode-math-style-cmd}{upright-bfsf}{alphabet-style-mapping}{
   Latin = bfsfup,
   latin = bfsfup,
   Greek = bfsfup,
   greek = bfsfup,
   digit = bfsfup,
 }
-\UseInstance {lua-unicode-math-style} {default}
+\DeclareInstance{lua-unicode-math-style-cmd}{italic-bfsf}{alphabet-style-mapping}{
+  Latin = bfsfit,
+  latin = bfsfit,
+  Greek = bfsfit,
+  greek = bfsfit,
+  digit = bfsfit,
+}
+\UseInstance {lua-unicode-math-style} {TeX}
 %    \end{macrocode}
 % \end{implementation}
