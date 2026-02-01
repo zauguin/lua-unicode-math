@@ -15,6 +15,7 @@ File: tulmm-ssf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math S
 )
 Missing character: There is no γ (U+03B3) in font [lmroman10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmroman10-italic]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
@@ -26,7 +27,7 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 Missing character: There is no γ (U+03B3) in font [lmmono10-regular]:!
 Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 > \box...=
-\vbox(507.16+0.0)x345.0, direction TLT
+\vbox(567.16+0.0)x345.0, direction TLT
 .\hbox(7.05+0.11)x345.0, glue set 294.85fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
@@ -255,6 +256,108 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.84
+.\hbox(7.05+0.22)x345.0, glue set 263.37fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/lmr/m/n/10 S
+..\TU/lmr/m/n/10 a
+..\TU/lmr/m/n/10 n
+..\TU/lmr/m/n/10 s
+..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..\TU/lmr/m/n/10 S
+..\TU/lmr/m/n/10 e
+..\TU/lmr/m/n/10 r
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 f
+..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..\TU/lmr/m/n/10 D
+..\TU/lmr/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/lmr/m/n/10 -
+..\TU/lmr/m/n/10 f
+..\TU/lmr/m/n/10 a
+..\TU/lmr/m/n/10 u
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 t
+..\TU/lmr/m/n/10 :
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 4.73
+.\hbox(7.05+2.15)x45.72, shifted 149.64, direction TLT
+..\TU/lmm/m/n/10 𝖥
+..\TU/lmm/m/n/10 𝖿
+..\kern0.69 (italic)
+..\TU/lmm/m/n/10 Γ
+..\TU/lmm/m/n/10 γ
+..\TU/lmm/m/n/10 𝟢
+..\hbox(7.05+0.22)x19.17, direction TLT
+...\TU/lmss/m/n/10 F
+...\TU/lmss/m/n/10 f
+...\TU/lmss/m/n/10 Γ
+...\TU/lmm/m/n/10 0
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\baselineskip) 2.8
+.\hbox(7.05+0.22)x345.0, glue set 239.62001fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/lmr/m/n/10 S
+..\TU/lmr/m/n/10 a
+..\TU/lmr/m/n/10 n
+..\TU/lmr/m/n/10 s
+..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..\TU/lmr/m/n/10 S
+..\TU/lmr/m/n/10 e
+..\TU/lmr/m/n/10 r
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 f
+..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..\TU/lmr/m/n/10 B
+..\TU/lmr/m/n/10 o
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 d
+..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..\TU/lmr/m/n/10 D
+..\TU/lmr/m/n/10 e
+..\discretionary (penalty 50)
+...< \TU/lmr/m/n/10 -
+..\TU/lmr/m/n/10 f
+..\TU/lmr/m/n/10 a
+..\TU/lmr/m/n/10 u
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 t
+..\TU/lmr/m/n/10 :
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 4.62
+.\hbox(7.16+2.17)x56.97998, shifted 144.01001, direction TLT
+..\TU/lmm/m/n/10 𝗙
+..\TU/lmm/m/n/10 𝗳
+..\kern0.73 (italic)
+..\TU/lmm/m/n/10 𝝘
+..\TU/lmm/m/n/10 𝝲
+..\TU/lmm/m/n/10 𝟬
+..\TU/lmm/m/n/10 𝗙
+..\TU/lmm/m/n/10 𝗳
+..\kern0.73 (italic)
+..\TU/lmm/m/n/10 𝝘
+..\TU/lmm/m/n/10 𝝲
+..\TU/lmm/m/n/10 𝟬
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\baselineskip) 2.78
 .\hbox(7.05+1.94)x345.0, glue set 282.68fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0

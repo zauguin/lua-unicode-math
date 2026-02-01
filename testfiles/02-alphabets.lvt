@@ -29,6 +29,14 @@
   \[
     \symbfit{Ff\Gamma\gamma0}\mathbfit{Ff\Gamma\gamma0}
   \]
+  Sans Serif Default:
+  \[
+    \symsf{Ff\Gamma\gamma0}\mathsf{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Bold Default:
+  \[
+    \symbfsf{Ff\Gamma\gamma0}\mathbfsf{Ff\Gamma\gamma0}
+  \]
   Sans Serif Up:
   \[
     \symsfup{Ff\Gamma\gamma0}\mathsfup{Ff\Gamma\gamma0}
