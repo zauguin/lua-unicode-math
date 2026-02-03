@@ -1,5 +1,5 @@
-local date = '2026-01-15'
-local version = 'v0.6'
+local date = '2026-02-03'
+local version = 'v0.7'
 
 local fmt = string.format
 
