@@ -36,6 +36,51 @@ local processed_families = {[main_fam] = true}
 local parser = require'lua-uni-parse'
 local mathclasses = parser.parse_file('MathClass-15', parser.eol + lpeg.Cg(parser.fields(parser.codepoint_range, lpeg.C(lpeg.S'NABCDFGLOPRSUVX'))), parser.multiset)
 
+-- Store all Lua tables that should be cleaned whenever the mathsetup get changed.
+-- The tables are stored as keys, the values are ignored.
+local mathsize_reset_maps = setmetatable({}, {__mode = 'k'})
+
+-- Generate a table that is queried by (fam << 2) | (style >> 1) and provides
+-- get_data(font.getfont(fid)) for fid matching the font at fam/style while
+-- aggressively caching everything involved.
+local function family_style_fontdir_map(get_data, default)
+  -- The base is a metatable based cache on fontids. This is stable since fontids never change.
+  local font_cache = setmetatable({}, {__index = function(t, fid)
+    local fontdir = font.getfont(fid)
+    if not fontdir then return default end
+    local data = get_data(fontdir)
+    if data == nil then
+      data = default
+    end
+    t[fid] = data
+    return data
+  end})
+  local fam_cache = setmetatable({}, {__index = function(t, mathfont_locator)
+    local fam = mathfont_locator >> 2
+    local size = mathfont_locator & 3
+    if size ~= 0 then
+      size = size - 1
+    end
+    local fid = node.family_font(fam, size)
+    if fid == 0 then return default end
+    local data = font_cache[fid]
+    t[mathfont_locator] = data
+    return data
+  end})
+  mathsize_reset_maps[fam_cache] = true
+  return fam_cache
+end
+
+local vs_maps = setmetatable({}, {__index = function(t, vs)
+  local map = family_style_fontdir_map(function(fontdir)
+    local resources = fontdir.resources
+    local variants = resources and resources.variants
+    return variants and variants[vs]
+  end, {})
+  t[vs] = map
+  return map
+end})
+
 -- We derive mathclasses from the Unicode data file MathClass-15.txt, but some characters can be used
 -- in different ways in math and LaTeX traditionally defines a different class for them by default than
 -- Unicode does. For these we adjust the class here.
@@ -223,9 +268,16 @@ char_types[0x0237] = char_latin -- ȷ -- dotless j
 char_types[0x03DC] = char_Greek -- Ϝ -- capital digamma
 char_types[0x03DD] = char_greek -- ϝ -- small digamma
 
-local serif, sans, script, fraktur, mono, bb = 0, 4, 8, 12, 16, 20
+local serif, sans, script, calligraphic, fraktur, mono, bb = 0, 4, 8, 12, 16, 20, 24
 local bold, italic = 1, 2
 local bold_default = 1024
+
+local special_offsets = {}
+
+local function special_offset(t)
+  special_offsets[t] = true
+  return t
+end
 
 local remap_bases = {
   [serif] = { -- Serif Upright
@@ -284,16 +336,30 @@ local remap_bases = {
     0x1D7AA, -- 𝞪
     0x1D7EC, -- 𝟬
   },
-  [script] = { -- Script Normal
-    0x1D49C, -- 𝒜
-    0x1D4B6, -- 𝒶
+  [script] = { -- Script Normal -- Chancery
+    special_offset{offset = 0x1D49C, vs = 0xFE00}, -- 𝒜
+    special_offset{offset = 0x1D4B6, vs = 0xFE00}, -- 𝒶
     0x1D6E2, -- 𝛢
     0x1D6FC, -- 𝛼
     0x0030, -- 0
   },
-  [script | bold] = { -- Script Bold
-    0x1D4D0, -- 𝓐
-    0x1D4EA, -- 𝓪
+  [script | bold] = { -- Script Bold -- Chancery
+    special_offset{offset = 0x1D4D0, vs = 0xFE00}, -- 𝓐
+    special_offset{offset = 0x1D4EA, vs = 0xFE00}, -- 𝓪
+    0x1D71C, -- 𝜜
+    0x1D736, -- 𝜶
+    0x1D7CE, -- 𝟎
+  },
+  [calligraphic] = { -- Script Normal -- Roundhand
+    special_offset{offset = 0x1D49C, vs = 0xFE01}, -- 𝒜
+    special_offset{offset = 0x1D4B6, vs = 0xFE01}, -- 𝒶
+    0x1D6E2, -- 𝛢
+    0x1D6FC, -- 𝛼
+    0x0030, -- 0
+  },
+  [calligraphic | bold] = { -- Script Bold -- Roundhand
+    special_offset{offset = 0x1D4D0, vs = 0xFE01}, -- 𝓐
+    special_offset{offset = 0x1D4EA, vs = 0xFE01}, -- 𝓪
     0x1D71C, -- 𝜜
     0x1D736, -- 𝜶
     0x1D7CE, -- 𝟎
@@ -341,16 +407,28 @@ remap_bases[bold_default] = { -- Bold Default
   remap_bases[bold | italic][4], -- Greek lowercase
   remap_bases[bold][5], -- Serif digits
 }
-local base = remap_bases[0]
-remap_bases[0] = {} -- We don't want to overwrite it in the next step
-for k, v in next, remap_bases do
-  v[1] = v[1] and v[1] ~= base[1] and v[1] - base[1] or nil
-  v[2] = v[2] and v[2] ~= base[2] and v[2] - base[2] or nil
-  v[3] = v[3] and v[3] ~= base[3] and v[3] - base[3] or nil
-  v[4] = v[4] and v[4] ~= base[4] and v[4] - base[4] or nil
-  v[5] = v[5] and v[5] ~= base[5] and v[5] - base[5] or nil
+do
+  local base = remap_bases[0]
+  remap_bases[0] = {} -- We don't want to overwrite it in the next step
+  local function adjust_offset(v, i)
+    local bi, vi = base[i], v[i]
+    if not vi or bi == vi then
+      v[i] = nil
+    elseif special_offsets[vi] then
+      vi.offset = vi.offset - bi
+      vi.special_replacement = vs_maps[vi.vs]
+    else
+      v[i] = vi - bi
+    end
+  end
+  for _, v in next, remap_bases do
+    adjust_offset(v, 1)
+    adjust_offset(v, 2)
+    adjust_offset(v, 3)
+    adjust_offset(v, 4)
+    adjust_offset(v, 5)
+  end
 end
-
 
 local classcodes = {
   N = 0, -- Normal --> ord
@@ -415,8 +493,16 @@ local function traverse_kernel(style, n, outer_head, outer)
         char = pre_replacement[char] or char
         local offset = remap_bases[node.get_attribute(n, attr) or unset_attribute][char_type]
         if offset then
-          char = char + offset
-          n.char = post_replacement[char] or char
+          if special_offsets[offset] then
+            local special_replacement = offset.special_replacement
+            char = char + offset.offset
+            char = post_replacement[char] or char
+            n.char = special_replacement[(style >> 2) | (n.fam << 2)][char] or char
+            -- TODO: Set properties for replacing luamml mapping
+          else
+            char = char + offset
+            n.char = post_replacement[char] or char
+          end
         end
       end
     end
@@ -644,10 +730,19 @@ lua.get_functions_table()[func] = function()
   node.set_attribute(root, leftroot_attr, value)
 end
 
-
 local func = luatexbase.new_luafunction'__l_uni_math_is_integral_cp:wTF'
 token.set_lua('__l_uni_math_is_integral_cp:wTF', func)
 lua.get_functions_table()[func] = function()
   local value = token.scan_int()
   token.put_next(bool_token[integral_codepoints[value] or false])
+end
+
+local func = luatexbase.new_luafunction'__l_uni_math_every_math_size:'
+token.set_lua('__l_uni_math_every_math_size:', func)
+lua.get_functions_table()[func] = function()
+  for t in pairs(mathsize_reset_maps) do
+    for k in pairs(t) do
+      t[k] = nil
+    end
+  end
 end
