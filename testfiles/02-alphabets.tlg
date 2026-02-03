@@ -24,10 +24,18 @@ Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=ba
 Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝒻 (U+1D4BB) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
+Missing character: There is no 𝓯 (U+1D4EF) in font [latinmodern-math]:mode=base;script=math;language=dflt;!
 Missing character: There is no γ (U+03B3) in font [lmmono10-regular]:!
 Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 > \box...=
-\vbox(567.16+0.0)x345.0, direction TLT
+\vbox(627.16+0.0)x345.0, direction TLT
 .\hbox(7.05+0.11)x345.0, glue set 294.85fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
@@ -556,6 +564,81 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.78
+.\hbox(7.05+1.94)x345.0, glue set 316.07fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/lmr/m/n/10 S
+..\TU/lmr/m/n/10 c
+..\TU/lmr/m/n/10 r
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 p
+..\TU/lmr/m/n/10 t
+..\TU/lmr/m/n/10 :
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 3.06999
+.\hbox(6.99+2.15)x54.47995, shifted 145.26003, direction TLT
+..\TU/lmm/m/n/10 ℱ
+..\TU/lmm/m/n/10 𝛤
+..\kern1.34 (italic)
+..\TU/lmm/m/n/10 𝛾
+..\kern0.53 (italic)
+..\TU/lmm/m/n/10 0
+..\TU/lmm/m/n/10 ℱ
+..\TU/lmm/m/n/10 𝛤
+..\kern1.34 (italic)
+..\TU/lmm/m/n/10 𝛾
+..\kern0.53 (italic)
+..\TU/lmm/m/n/10 0
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\baselineskip) 2.8
+.\hbox(7.05+1.94)x345.0, glue set 292.32fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/lmr/m/n/10 B
+..\TU/lmr/m/n/10 o
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 d
+..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..\TU/lmr/m/n/10 S
+..\TU/lmr/m/n/10 c
+..\TU/lmr/m/n/10 r
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 p
+..\TU/lmr/m/n/10 t
+..\TU/lmr/m/n/10 :
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 2.75
+.\hbox(7.31+2.11)x60.6, shifted 142.2, direction TLT
+..\TU/lmm/m/n/10 𝓕
+..\TU/lmm/m/n/10 𝜞
+..\kern1.48 (italic)
+..\TU/lmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/lmm/m/n/10 𝟎
+..\TU/lmm/m/n/10 𝓕
+..\TU/lmm/m/n/10 𝜞
+..\kern1.48 (italic)
+..\TU/lmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/lmm/m/n/10 𝟎
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\baselineskip) 2.84
 .\hbox(7.05+2.06)x345.0, glue set 292.18fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0

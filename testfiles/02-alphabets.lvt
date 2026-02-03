@@ -53,6 +53,14 @@
   \[
     \symbfsfit{Ff\Gamma\gamma0}\mathbfsfit{Ff\Gamma\gamma0}
   \]
+  Script:
+  \[
+    \symscr{Ff\Gamma\gamma0}\mathscr{Ff\Gamma\gamma0}
+  \]
+  Bold Script:
+  \[
+    \symbfscr{Ff\Gamma\gamma0}\mathbfscr{Ff\Gamma\gamma0}
+  \]
   Caligraphic:
   \[
     \symcal{Ff\Gamma\gamma0}\mathcal{Ff\Gamma\gamma0}

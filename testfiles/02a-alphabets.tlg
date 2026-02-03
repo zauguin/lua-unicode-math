@@ -19,7 +19,7 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmmono10-regular]:!
 Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 > \box...=
-\vbox(567.16+0.0)x345.0, direction TLT
+\vbox(627.16+0.0)x345.0, direction TLT
 .\hbox(7.05+0.11)x345.0, glue set 294.85fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
@@ -548,6 +548,85 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 3.23999
+.\hbox(7.05+1.94)x345.0, glue set 316.07fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/lmr/m/n/10 S
+..\TU/lmr/m/n/10 c
+..\TU/lmr/m/n/10 r
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 p
+..\TU/lmr/m/n/10 t
+..\TU/lmr/m/n/10 :
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 3.19
+.\hbox(6.87+2.15)x68.47998, shifted 138.26001, direction TLT
+..\TU/ncmm/m/n/10 󰫫
+..\TU/ncmm/m/n/10 𝒻
+..\TU/ncmm/m/n/10 𝛤
+..\kern1.34 (italic)
+..\TU/ncmm/m/n/10 𝛾
+..\kern0.53 (italic)
+..\TU/ncmm/m/n/10 0
+..\TU/ncmm/m/n/10 󰫫
+..\TU/ncmm/m/n/10 𝒻
+..\TU/ncmm/m/n/10 𝛤
+..\kern1.34 (italic)
+..\TU/ncmm/m/n/10 𝛾
+..\kern0.53 (italic)
+..\TU/ncmm/m/n/10 0
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\baselineskip) 2.8
+.\hbox(7.05+1.94)x345.0, glue set 292.32fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\TU/lmr/m/n/10 B
+..\TU/lmr/m/n/10 o
+..\TU/lmr/m/n/10 l
+..\TU/lmr/m/n/10 d
+..\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..\TU/lmr/m/n/10 S
+..\TU/lmr/m/n/10 c
+..\TU/lmr/m/n/10 r
+..\TU/lmr/m/n/10 i
+..\TU/lmr/m/n/10 p
+..\TU/lmr/m/n/10 t
+..\TU/lmr/m/n/10 :
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 3.06999
+.\hbox(6.99+2.11)x76.69998, shifted 134.15001, direction TLT
+..\TU/ncmm/m/n/10 󰬅
+..\TU/ncmm/m/n/10 𝓯
+..\TU/ncmm/m/n/10 𝜞
+..\kern1.48 (italic)
+..\TU/ncmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/ncmm/m/n/10 𝟎
+..\TU/ncmm/m/n/10 󰬅
+..\TU/ncmm/m/n/10 𝓯
+..\TU/ncmm/m/n/10 𝜞
+..\kern1.48 (italic)
+..\TU/ncmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/ncmm/m/n/10 𝟎
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+.\glue(\baselineskip) 2.84
 .\hbox(7.05+2.06)x345.0, glue set 292.18fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
