@@ -1,0 +1,125 @@
+\input regression-test
+\documentclass{article}
+\usepackage{lua-unicode-math}
+\usepackage{fontspec}
+\begin{document}
+\START
+\setbox0=\vbox{
+  \paragraph{Default}
+  Default:
+  \[
+    Ff\Gamma\gamma0
+  \]
+  Normal:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Bold:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Default:
+  \[
+    \symsf{Ff\Gamma\gamma0}\mathsf{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Bold Default:
+  \[
+    \symbfsf{Ff\Gamma\gamma0}\mathbfsf{Ff\Gamma\gamma0}
+  \]
+
+  \paragraph{TeX}
+  \UseInstance{lua-unicode-math-style}{TeX}
+  Default:
+  \[
+    Ff\Gamma\gamma0
+  \]
+  Normal:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Bold:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Default:
+  \[
+    \symsf{Ff\Gamma\gamma0}\mathsf{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Bold Default:
+  \[
+    \symbfsf{Ff\Gamma\gamma0}\mathbfsf{Ff\Gamma\gamma0}
+  \]
+
+  \paragraph{ISO}
+  \UseInstance{lua-unicode-math-style}{ISO80000-2}
+  Default:
+  \[
+    Ff\Gamma\gamma0
+  \]
+  Normal:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Bold:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Default:
+  \[
+    \symsf{Ff\Gamma\gamma0}\mathsf{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Bold Default:
+  \[
+    \symbfsf{Ff\Gamma\gamma0}\mathbfsf{Ff\Gamma\gamma0}
+  \]
+
+  \paragraph{french}
+  \UseInstance{lua-unicode-math-style}{french}
+  Default:
+  \[
+    Ff\Gamma\gamma0
+  \]
+  Normal:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Bold:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Default:
+  \[
+    \symsf{Ff\Gamma\gamma0}\mathsf{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Bold Default:
+  \[
+    \symbfsf{Ff\Gamma\gamma0}\mathbfsf{Ff\Gamma\gamma0}
+  \]
+
+  \paragraph{upright}
+  \UseInstance{lua-unicode-math-style}{upright}
+  Default:
+  \[
+    Ff\Gamma\gamma0
+  \]
+  Normal:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Bold:
+  \[
+    \symnormal{Ff\Gamma\gamma0}\mathnormal{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Default:
+  \[
+    \symsf{Ff\Gamma\gamma0}\mathsf{Ff\Gamma\gamma0}
+  \]
+  Sans Serif Bold Default:
+  \[
+    \symbfsf{Ff\Gamma\gamma0}\mathbfsf{Ff\Gamma\gamma0}
+  \]
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}
