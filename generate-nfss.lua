@@ -241,6 +241,18 @@ local fonts = {
     package = 'plex',
     shapes = simple_shapes('IBMPlexMath-Regular', 3),
   },
+  {
+    family = 'libertinus-math',
+    name = "Libertinus Math",
+    package = 'libertinus',
+    shapes = simple_shapes('LibertinusMath-Regular', 3),
+  },
+  {
+    family = 'kpmath-sans',
+    name = "KpMath Sans",
+    package = 'kpmath-sans',
+    shapes = simple_and_bold('KpMath-Sans', 'KpMath-SansBold'),
+  },
 }
 
 for _, data in ipairs(fonts) do
