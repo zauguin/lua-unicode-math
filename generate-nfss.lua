@@ -193,6 +193,54 @@ local fonts = {
     package = 'concrete',
     shapes = simple_and_bold('Concrete-Math', 'Concrete-Math-Bold'),
   },
+  {
+    family = 'euler-math',
+    name = "Euler Math",
+    package = 'euler',
+    shapes = simple_shapes('Euler-Math', 3),
+  },
+  {
+    family = 'arsenal-math',
+    name = "Arsenal Math",
+    package = 'arsenal',
+    shapes = simple_and_bold('ArsenalMath-Sans', 'ArsenalMath-SansBold'),
+  },
+  {
+    family = 'asana-math',
+    name = "Asana Math",
+    package = 'asana',
+    shapes = simple_shapes('Asana-Math', 3),
+  },
+  {
+    family = 'garamond-math',
+    name = "Garamond Math",
+    package = 'garamond',
+    shapes = simple_shapes('Garamond-Math', 3),
+  },
+  {
+    family = 'lete-sans-math',
+    name = "Lete Sans Math",
+    package = 'lete-sans',
+    shapes = simple_and_bold('LeteSansMath', 'LeteSansMath-Bold'),
+  },
+  {
+    family = 'luciole-math',
+    name = "Luciole Math",
+    package = 'luciole',
+    shapes = simple_and_bold('Luciole-Math', 'Luciole-Math-Bold'),
+  },
+  {
+    family = 'oldstandard-math',
+    name = "Old Standard Math",
+    package = 'oldstandard',
+    shapes = simple_shapes('OldStandard-Math', 3),
+  },
+  {
+    family = 'plex-math',
+    name = "IBM Plex Math",
+    package = 'plex',
+    shapes = simple_shapes('IBMPlexMath-Regular', 3),
+  },
 }
 
 for _, data in ipairs(fonts) do
