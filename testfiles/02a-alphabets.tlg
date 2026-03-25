@@ -566,16 +566,16 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 3.19
-.\hbox(6.87+2.15)x68.47998, shifted 138.26001, direction TLT
-..\TU/ncmm/m/n/10 󰫫
+.\glue(\baselineskip) 3.06999
+.\hbox(6.99+2.15)x68.17996, shifted 138.41002, direction TLT
+..\TU/ncmm/m/n/10 ℱ
 ..\TU/ncmm/m/n/10 𝒻
 ..\TU/ncmm/m/n/10 𝛤
 ..\kern1.34 (italic)
 ..\TU/ncmm/m/n/10 𝛾
 ..\kern0.53 (italic)
 ..\TU/ncmm/m/n/10 0
-..\TU/ncmm/m/n/10 󰫫
+..\TU/ncmm/m/n/10 ℱ
 ..\TU/ncmm/m/n/10 𝒻
 ..\TU/ncmm/m/n/10 𝛤
 ..\kern1.34 (italic)
@@ -608,16 +608,16 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 3.06999
-.\hbox(6.99+2.11)x76.69998, shifted 134.15001, direction TLT
-..\TU/ncmm/m/n/10 󰬅
+.\glue(\baselineskip) 2.75
+.\hbox(7.31+2.11)x75.95999, shifted 134.52, direction TLT
+..\TU/ncmm/m/n/10 𝓕
 ..\TU/ncmm/m/n/10 𝓯
 ..\TU/ncmm/m/n/10 𝜞
 ..\kern1.48 (italic)
 ..\TU/ncmm/m/n/10 𝜸
 ..\kern0.55 (italic)
 ..\TU/ncmm/m/n/10 𝟎
-..\TU/ncmm/m/n/10 󰬅
+..\TU/ncmm/m/n/10 𝓕
 ..\TU/ncmm/m/n/10 𝓯
 ..\TU/ncmm/m/n/10 𝜞
 ..\kern1.48 (italic)
@@ -652,16 +652,16 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 2.95
-.\hbox(6.99+2.15)x68.17996, shifted 138.41002, direction TLT
-..\TU/ncmm/m/n/10 ℱ
+.\glue(\baselineskip) 3.07
+.\hbox(6.87+2.15)x68.47998, shifted 138.26001, direction TLT
+..\TU/ncmm/m/n/10 󰫫
 ..\TU/ncmm/m/n/10 𝒻
 ..\TU/ncmm/m/n/10 𝛤
 ..\kern1.34 (italic)
 ..\TU/ncmm/m/n/10 𝛾
 ..\kern0.53 (italic)
 ..\TU/ncmm/m/n/10 0
-..\TU/ncmm/m/n/10 ℱ
+..\TU/ncmm/m/n/10 󰫫
 ..\TU/ncmm/m/n/10 𝒻
 ..\TU/ncmm/m/n/10 𝛤
 ..\kern1.34 (italic)
@@ -701,16 +701,16 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 2.63
-.\hbox(7.31+2.11)x75.95999, shifted 134.52, direction TLT
-..\TU/ncmm/m/n/10 𝓕
+.\glue(\baselineskip) 2.95
+.\hbox(6.99+2.11)x76.69998, shifted 134.15001, direction TLT
+..\TU/ncmm/m/n/10 󰬅
 ..\TU/ncmm/m/n/10 𝓯
 ..\TU/ncmm/m/n/10 𝜞
 ..\kern1.48 (italic)
 ..\TU/ncmm/m/n/10 𝜸
 ..\kern0.55 (italic)
 ..\TU/ncmm/m/n/10 𝟎
-..\TU/ncmm/m/n/10 𝓕
+..\TU/ncmm/m/n/10 󰬅
 ..\TU/ncmm/m/n/10 𝓯
 ..\TU/ncmm/m/n/10 𝜞
 ..\kern1.48 (italic)
