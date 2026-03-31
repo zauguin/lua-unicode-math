@@ -157,6 +157,17 @@
   you~can~try~loading~the~lua-unicode-math~package~at~the~beginning~
   of~your~document~instead~to~suppress~unicode-math.
 }
+\msg_new:nnn { lua-unicode-math } { legacy-symbol-package-suppressed } {
+  You~tried~to~load~#1~in~a~document~using~lua-unicode-math.~
+  This~is~no~useful~since~your~Unicode~math~font~is~already~
+  providing~these~symbols.~The~package~will~be~skipped.
+}
+\disable@package@load{amssymb} {
+  \msg_note:nnn { lua-unicode-math } { legacy-symbol-package-suppressed } {amssymb}
+}
+\disable@package@load{amsfonts} {
+  \msg_note:nnn { lua-unicode-math } { legacy-symbol-package-suppressed } {amsfonts}
+}
 \disable@package@load{unicode-math} {
   \msg_warning:nn { lua-unicode-math } {unicode-math-suppressed }
 }
