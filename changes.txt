@@ -1,0 +1,4 @@
+- Switch \symcal and \symscr.
+- Treat Upsilon as a math character
+- Avoid loading amssymb and amsfonts to reduce conflicts
+- Fix \cdots and \ldots
