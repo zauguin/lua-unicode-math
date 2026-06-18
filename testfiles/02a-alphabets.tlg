@@ -334,7 +334,7 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.61
-.\hbox(7.17+1.71)x54.1, shifted 145.45, direction TLT
+.\hbox(7.17+1.71)x54.29999, shifted 145.35, direction TLT
 ..\TU/ncmm/m/n/10 𝗙
 ..\TU/ncmm/m/n/10 𝗳
 ..\kern0.73 (italic)
@@ -423,7 +423,7 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 2.89
-.\hbox(7.17+1.71)x54.1, shifted 145.45, direction TLT
+.\hbox(7.17+1.71)x54.29999, shifted 145.35, direction TLT
 ..\TU/ncmm/m/n/10 𝗙
 ..\TU/ncmm/m/n/10 𝗳
 ..\kern0.73 (italic)
@@ -526,7 +526,7 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.61
-.\hbox(7.17+1.71)x63.12, shifted 140.94, direction TLT
+.\hbox(7.17+1.71)x63.31998, shifted 140.84001, direction TLT
 ..\TU/ncmm/m/n/10 𝙁
 ..\kern1.2 (italic)
 ..\TU/ncmm/m/n/10 𝙛
@@ -566,9 +566,10 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 3.06999
-.\hbox(6.99+2.15)x68.17996, shifted 138.41002, direction TLT
+.\glue(\baselineskip) 3.19
+.\hbox(6.87+2.15)x66.45999, shifted 139.27, direction TLT
 ..\TU/ncmm/m/n/10 ℱ
+..\kern0.99 (italic)
 ..\TU/ncmm/m/n/10 𝒻
 ..\TU/ncmm/m/n/10 𝛤
 ..\kern1.34 (italic)
@@ -576,6 +577,7 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\kern0.53 (italic)
 ..\TU/ncmm/m/n/10 0
 ..\TU/ncmm/m/n/10 ℱ
+..\kern0.99 (italic)
 ..\TU/ncmm/m/n/10 𝒻
 ..\TU/ncmm/m/n/10 𝛤
 ..\kern1.34 (italic)
@@ -608,9 +610,10 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 2.75
-.\hbox(7.31+2.11)x75.95999, shifted 134.52, direction TLT
+.\glue(\baselineskip) 3.06999
+.\hbox(6.99+2.11)x74.15997, shifted 135.42001, direction TLT
 ..\TU/ncmm/m/n/10 𝓕
+..\kern1.01 (italic)
 ..\TU/ncmm/m/n/10 𝓯
 ..\TU/ncmm/m/n/10 𝜞
 ..\kern1.48 (italic)
@@ -618,6 +621,7 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\kern0.55 (italic)
 ..\TU/ncmm/m/n/10 𝟎
 ..\TU/ncmm/m/n/10 𝓕
+..\kern1.01 (italic)
 ..\TU/ncmm/m/n/10 𝓯
 ..\TU/ncmm/m/n/10 𝜞
 ..\kern1.48 (italic)
@@ -654,14 +658,14 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 3.07
 .\hbox(6.87+2.15)x68.47998, shifted 138.26001, direction TLT
-..\TU/ncmm/m/n/10 󰫫
+..\TU/ncmm/m/n/10 󰬟
 ..\TU/ncmm/m/n/10 𝒻
 ..\TU/ncmm/m/n/10 𝛤
 ..\kern1.34 (italic)
 ..\TU/ncmm/m/n/10 𝛾
 ..\kern0.53 (italic)
 ..\TU/ncmm/m/n/10 0
-..\TU/ncmm/m/n/10 󰫫
+..\TU/ncmm/m/n/10 󰬟
 ..\TU/ncmm/m/n/10 𝒻
 ..\TU/ncmm/m/n/10 𝛤
 ..\kern1.34 (italic)
@@ -703,14 +707,14 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 2.95
 .\hbox(6.99+2.11)x76.69998, shifted 134.15001, direction TLT
-..\TU/ncmm/m/n/10 󰬅
+..\TU/ncmm/m/n/10 󰬹
 ..\TU/ncmm/m/n/10 𝓯
 ..\TU/ncmm/m/n/10 𝜞
 ..\kern1.48 (italic)
 ..\TU/ncmm/m/n/10 𝜸
 ..\kern0.55 (italic)
 ..\TU/ncmm/m/n/10 𝟎
-..\TU/ncmm/m/n/10 󰬅
+..\TU/ncmm/m/n/10 󰬹
 ..\TU/ncmm/m/n/10 𝓯
 ..\TU/ncmm/m/n/10 𝜞
 ..\kern1.48 (italic)
