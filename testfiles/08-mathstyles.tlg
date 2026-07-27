@@ -18,6 +18,11 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 > \box...=
 \vbox(793.25746+0.0)x345.0, direction TLT
 .\penalty -300
@@ -192,7 +197,7 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ...\TU/lmss/m/n/10 F
 ...\TU/lmss/m/n/10 f
 ...\TU/lmss/m/n/10 Γ
-...\TU/lmm/m/n/10 0
+...\TU/lmss/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.8
@@ -421,7 +426,7 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ...\TU/lmss/m/n/10 F
 ...\TU/lmss/m/n/10 f
 ...\TU/lmss/m/n/10 Γ
-...\TU/lmm/m/n/10 0
+...\TU/lmss/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.8
@@ -657,7 +662,7 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ...\TU/lmss/m/n/10 F
 ...\TU/lmss/m/n/10 f
 ...\TU/lmss/m/n/10 Γ
-...\TU/lmm/m/n/10 0
+...\TU/lmss/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.8
@@ -885,7 +890,7 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ...\TU/lmss/m/n/10 F
 ...\TU/lmss/m/n/10 f
 ...\TU/lmss/m/n/10 Γ
-...\TU/lmm/m/n/10 0
+...\TU/lmss/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.8
@@ -1110,7 +1115,7 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ...\TU/lmss/m/n/10 F
 ...\TU/lmss/m/n/10 f
 ...\TU/lmss/m/n/10 Γ
-...\TU/lmm/m/n/10 0
+...\TU/lmss/m/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
 .\glue(\baselineskip) 2.8

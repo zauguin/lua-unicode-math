@@ -257,8 +257,12 @@ for i=0x03B1, 0x03D0 do
   char_types[i] = char_greek
 end
 
+-- One more time messing with mathclasses: Mark digits as alphabetic to use variable mathclass in TeX.
+-- This is for compatibility, especially with the URL package expecting to be able to change the font
+-- of digits using \fam.
 for i=0x0030, 0x0039 do
   char_types[i] = char_digit
+  mathclasses[i] = 'A'
 end
 
 for base, remapped in next, pre_replacement do
