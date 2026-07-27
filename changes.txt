@@ -1,1 +1,2 @@
 - Move ASCII digits to variable mathclass
+- Adjust mathclass for ? and !

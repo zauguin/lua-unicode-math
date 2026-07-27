@@ -85,7 +85,9 @@ end})
 -- in different ways in math and LaTeX traditionally defines a different class for them by default than
 -- Unicode does. For these we adjust the class here.
 -- Also Unicode does not consider Upsilon to be a math character...
+mathclasses[0x21] = 'C' -- !
 mathclasses[0x2F] = 'N' -- /
+mathclasses[0x3F] = 'N' -- ?
 mathclasses[0x5C] = 'N' -- \
 mathclasses[0x22EF] = 'N' -- ⋯
 mathclasses[0x2E] = 'N' -- .
