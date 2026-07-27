@@ -531,8 +531,17 @@
   \cs_set_eq:NN #1
 }
 
-\cs_set_protected:cpx { \char_generate:nn {"FFFF} {12} ' } {
+\cs_new:Npn \__l_uni_math_set_math_active:npx #1 {
+  \char_set_mathcode:nn { #1 } { "8000 }
+  \cs_set_protected:cpx { \char_generate:nn {"FFFF} {12} \char_generate:nn { #1 } {12} }
+}
+
+\__l_uni_math_set_math_active:npx { `\' } {
   \prime_helper:w "2032~
+}
+
+\__l_uni_math_set_math_active:npx { `\` } {
+  \prime_helper:w "2035~
 }
 
 \cs_set_protected:Npn \uproot #1 {
