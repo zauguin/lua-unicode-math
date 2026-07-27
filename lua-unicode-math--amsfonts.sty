@@ -1,0 +1,93 @@
+%%
+%% This is file `lua-unicode-math--amsfonts.sty',
+%% derived from `amsfonts.sty` which is generated from `amsfonts.dtx`.
+%%
+%% Copyright for original `amssymb.sty`:
+%%
+%% This is a generated file.
+%% 
+%% Copyright 2001, 2009, 2013 American Mathematical Society.
+%% 
+%% American Mathematical Society
+%% Technical Support
+%% Publications Technical Group
+%% 201 Charles Street
+%% Providence, RI 02904
+%% USA
+%% tel: (401) 455-4080
+%%      (800) 321-4267 (USA and Canada only)
+%% fax: (401) 331-3842
+%% email: tech-support@ams.org
+%% 
+%% Unlimited copying and redistribution of this file are permitted as
+%% long as this file is not modified.  Modifications, and distribution
+%% of modified versions, are permitted, but only if the resulting file
+%% is renamed.
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{amsfonts}[2013/01/14 v3.01 Basic AMSFonts support - Modified for lua-unicode-math]
+\DeclareFontShape{OMX}{cmex}{m}{n}{%
+       <-7.5>cmex7%
+    <7.5-8.5>cmex8%
+    <8.5-9.5>cmex9%
+    <9.5->cmex10%
+}{}%
+
+\expandafter\let\csname OMX/cmex/m/n/10\endcsname\relax
+
+\def\cmex@opt{10}
+\def\ams@DeclareMathSymbol#1#2#3#4{%
+    \global\let#1\undefined
+    \DeclareMathSymbol{#1}{#2}{#3}{#4}%
+}%
+\providecommand*{\@mathmeasure}[3]{%
+  \setbox#1\hbox{\frozen@everymath\@emptytoks\m@th$#2#3$}}
+\@ifundefined{@emptytoks}{\csname newtoks\endcsname\@emptytoks}{}
+\DeclareSymbolFont{AMSa}{U}{msa}{m}{n}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\@ifundefined{yen}{%
+  \global\let\yen \mathyen
+}{}
+\@ifundefined{circledR}{%
+  \edef\circledR{\noexpand\mathhexbox{\hexnumber@\symAMSa}72}
+}{}
+\global\let\dashrightarrow \rightdasharrow
+\global\let\dashleftarrow \leftdasharrow
+\global\let\dasharrow \dashrightarrow
+\DeclareRobustCommand{\frak}[1]{%
+  {\@subst@obsolete{amsfonts}\frak\symfrak{#1}}}
+\DeclareRobustCommand{\Bbb}[1]{%
+  {\@subst@obsolete{amsfonts}\Bbb\symbb{#1}}}
+\DeclareRobustCommand{\bold}[1]{%
+  {\@subst@obsolete{amsfonts}\bold\symbf{#1}}}
+\gdef\newsymbol#1#2#3#4#5{%
+  \@obsolete{amsfonts}\newsymbol\DeclareMathSymbol
+  \@ifdefinable#1{%
+     \edef\next@
+       {\ifcase #2 \or
+          \hexnumber@\symAMSa\or
+          \hexnumber@\symAMSb\fi}%
+     \ifx\next@\@empty
+       \PackageError{amsfonts}{\Invalid@@\newsymbol}\@ehd%
+     \else
+      \global\mathchardef#1"#3\next@#4#5
+     \fi}}
+\long\def\@gobblethree#1#2#3{}
+\def\@obsolete#1#2#3{\PackageWarning{#1}{%
+  Obsolete command \protect#2; \protect#3 should be used instead}}%
+\def\@subst@obsolete#1#2#3{\@obsolete{#1}#2#3\gdef#2{#3}#2}
+\DeclareMathSymbol{\square}           {\mathord}{AMSa}{"03}
+\global\let\lozenge\mdlgwhtlozenge
+\global\let\Box\square
+\global\let\Diamond\lozenge
+\global\let\leadsto\rightsquigarrow
+\global\let\lhd\@@undefined
+\global\let\unlhd\@@undefined
+\global\let\rhd\@@undefined
+\global\let\unrhd\@@undefined
+% These are aliases with different mathclass.
+\Umathchardef \rhd \mathchar@type \mathbin \space \symlummain "22B3
+\Umathchardef \lhd \mathchar@type \mathbin \space \symlummain "22B2
+\Umathchardef \unrhd \mathchar@type \mathbin \space \symlummain "22B5
+\Umathchardef \unlhd \mathchar@type \mathbin \space \symlummain "22B4
+\endinput

@@ -1,0 +1,71 @@
+%%
+%% This is file `lua-unicode-math--amssymb.sty',
+%% derived from `amssymb.sty` which is generated from `amssymb.dtx`.
+%%
+%% Copyright for original `amssymb.sty`:
+%%
+%% Copyright 2001, 2009, 2013 American Mathematical Society.
+%% 
+%% American Mathematical Society
+%% Technical Support
+%% Publications Technical Group
+%% 201 Charles Street
+%% Providence, RI 02904
+%% USA
+%% tel: (401) 455-4080
+%%      (800) 321-4267 (USA and Canada only)
+%% fax: (401) 331-3842
+%% email: tech-support@ams.org
+%% 
+%% Unlimited copying and redistribution of this file are permitted as
+%% long as this file is not modified.  Modifications, and distribution
+%% of modified versions, are permitted, but only if the resulting file
+%% is renamed.
+%% 
+\NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
+\ProvidesPackage{amssymb}[2013/01/14 v3.01 AMS font symbols - Modified for lua-unicode-math]
+\RequirePackage{amsfonts}
+\let\square\relax \let\rightsquigarrow\square \let\lozenge\square
+\let\vartriangleright\square \let\vartriangleleft\square
+\let\trianglerighteq\square \let\trianglelefteq\square
+\DeclareMathSymbol{\square}       {\mathord}{AMSa}{"03}
+\DeclareMathSymbol{\blacksquare}  {\mathord}{AMSa}{"04}
+\DeclareMathSymbol{\centerdot}    {\mathbin}{AMSa}{"05}
+\global\let\lozenge\mdlgwhtlozenge
+\global\let\blacklozenge\mdlgblklozenge
+\DeclareMathSymbol{\circlearrowright}   {\mathrel}{AMSa}{"08}
+\DeclareMathSymbol{\circlearrowleft}    {\mathrel}{AMSa}{"09}
+\global\let\restriction\upharpoonright
+\DeclareMathSymbol{\circledS}     {\mathord}{AMSa}{"73}
+\DeclareMathSymbol{\digamma}        {\mathord}{AMSb}{"7A}
+\global\let\doteqdot\Doteq
+\global\let\doublecup\Cup
+\global\let\doublecap\Cap
+\global\let\llless\lll
+\global\let\gggtr\ggg
+\DeclareMathSymbol{\lvertneqq}    {\mathrel}{AMSb}{"00}
+\DeclareMathSymbol{\gvertneqq}    {\mathrel}{AMSb}{"01}
+\DeclareMathSymbol{\nleqq}        {\mathrel}{AMSb}{"14}
+\DeclareMathSymbol{\ngeqq}        {\mathrel}{AMSb}{"15}
+\DeclareMathSymbol{\nleqslant}    {\mathrel}{AMSb}{"0A}
+\DeclareMathSymbol{\ngeqslant}    {\mathrel}{AMSb}{"0B}
+\DeclareMathSymbol{\npreceq}      {\mathrel}{AMSb}{"0E}
+\DeclareMathSymbol{\nshortmid}      {\mathrel}{AMSb}{"2E}
+\DeclareMathSymbol{\nshortparallel} {\mathrel}{AMSb}{"2F}
+\DeclareMathSymbol{\nsubseteqq}     {\mathrel}{AMSb}{"22}
+\DeclareMathSymbol{\nsucceq}      {\mathrel}{AMSb}{"0F}
+\DeclareMathSymbol{\nsupseteqq}     {\mathrel}{AMSb}{"23}
+\DeclareMathSymbol{\ntriangleleft}  {\mathrel}{AMSb}{"36}
+\DeclareMathSymbol{\ntriangleright} {\mathrel}{AMSb}{"37}
+\DeclareMathSymbol{\shortmid}      {\mathrel}{AMSb}{"70}
+\DeclareMathSymbol{\shortparallel}  {\mathrel}{AMSb}{"71}
+\DeclareMathSymbol{\smallsmile}   {\mathrel}{AMSa}{"60}
+\DeclareMathSymbol{\smallsetminus}  {\mathbin}{AMSb}{"72}
+\DeclareMathSymbol{\smallfrown}   {\mathrel}{AMSa}{"61}
+\DeclareMathSymbol{\thicksim}       {\mathrel}{AMSb}{"73}
+\DeclareMathSymbol{\thickapprox}    {\mathrel}{AMSb}{"74}
+\DeclareMathSymbol{\varpropto}    {\mathrel}{AMSa}{"5F}
+\DeclareMathSymbol{\varsubsetneq}   {\mathrel}{AMSb}{"20}
+\DeclareMathSymbol{\varsupsetneq}   {\mathrel}{AMSb}{"21}
+\DeclareMathSymbol{\varsubsetneqq}  {\mathrel}{AMSb}{"26}
+\DeclareMathSymbol{\varsupsetneqq}  {\mathrel}{AMSb}{"27}
