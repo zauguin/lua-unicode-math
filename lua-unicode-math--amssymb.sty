@@ -25,19 +25,16 @@
 \NeedsTeXFormat{LaTeX2e}% LaTeX 2.09 can't be used (nor non-LaTeX)
 \ProvidesPackage{amssymb}[2013/01/14 v3.01 AMS font symbols - Modified for lua-unicode-math]
 \RequirePackage{amsfonts}
-\let\square\relax \let\rightsquigarrow\square \let\lozenge\square
-\let\vartriangleright\square \let\vartriangleleft\square
-\let\trianglerighteq\square \let\trianglelefteq\square
-\DeclareMathSymbol{\square}       {\mathord}{AMSa}{"03}
-\DeclareMathSymbol{\blacksquare}  {\mathord}{AMSa}{"04}
-\DeclareMathSymbol{\centerdot}    {\mathbin}{AMSa}{"05}
-\global\let\lozenge\mdlgwhtlozenge
-\global\let\blacklozenge\mdlgblklozenge
-\DeclareMathSymbol{\circlearrowright}   {\mathrel}{AMSa}{"08}
-\DeclareMathSymbol{\circlearrowleft}    {\mathrel}{AMSa}{"09}
-\global\let\restriction\upharpoonright
+\global\let\square \mdlgwhtsquare
+\global\let\blacksquare \mdlgblksquare
+\global\let\centerdot \smblksquare
+\global\let\lozenge \mdlgwhtlozenge
+\global\let\blacklozenge \mdlgblklozenge
+\global\let\circlearrowleft \acwopencirclearrow
+\global\let\circlearrowright \cwopencirclearrow
+\global\let\restriction \upharpoonright
 \DeclareMathSymbol{\circledS}     {\mathord}{AMSa}{"73}
-\DeclareMathSymbol{\digamma}        {\mathord}{AMSb}{"7A}
+\global\let\digamma\updigamma
 \global\let\doteqdot\Doteq
 \global\let\doublecup\Cup
 \global\let\doublecap\Cap
@@ -45,18 +42,18 @@
 \global\let\gggtr\ggg
 \DeclareMathSymbol{\lvertneqq}    {\mathrel}{AMSb}{"00}
 \DeclareMathSymbol{\gvertneqq}    {\mathrel}{AMSb}{"01}
-\DeclareMathSymbol{\nleqq}        {\mathrel}{AMSb}{"14}
-\DeclareMathSymbol{\ngeqq}        {\mathrel}{AMSb}{"15}
-\DeclareMathSymbol{\nleqslant}    {\mathrel}{AMSb}{"0A}
-\DeclareMathSymbol{\ngeqslant}    {\mathrel}{AMSb}{"0B}
-\DeclareMathSymbol{\npreceq}      {\mathrel}{AMSb}{"0E}
+\protected\xdef\nleqq{\not\leqq}
+\protected\xdef\ngeqq{\not\geqq}
+\protected\xdef\nleqslant{\not\leqslant}
+\protected\xdef\ngeqslant{\not\geqslant}
+\protected\xdef\npreceq{\not\preceq}
 \DeclareMathSymbol{\nshortmid}      {\mathrel}{AMSb}{"2E}
 \DeclareMathSymbol{\nshortparallel} {\mathrel}{AMSb}{"2F}
-\DeclareMathSymbol{\nsubseteqq}     {\mathrel}{AMSb}{"22}
-\DeclareMathSymbol{\nsucceq}      {\mathrel}{AMSb}{"0F}
-\DeclareMathSymbol{\nsupseteqq}     {\mathrel}{AMSb}{"23}
-\DeclareMathSymbol{\ntriangleleft}  {\mathrel}{AMSb}{"36}
-\DeclareMathSymbol{\ntriangleright} {\mathrel}{AMSb}{"37}
+\protected\xdef\nsubseteqq{\not\subseteqq}
+\protected\xdef\nsucceq{\not\succeq}
+\protected\xdef\nsupseteqq{\not\supseteqq}
+\protected\xdef\ntriangleleft{\not\triangleleft}
+\protected\xdef\ntriangleright{\not\triangleright}
 \DeclareMathSymbol{\shortmid}      {\mathrel}{AMSb}{"70}
 \DeclareMathSymbol{\shortparallel}  {\mathrel}{AMSb}{"71}
 \DeclareMathSymbol{\smallsmile}   {\mathrel}{AMSa}{"60}

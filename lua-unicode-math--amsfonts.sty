@@ -45,9 +45,6 @@
 \@ifundefined{@emptytoks}{\csname newtoks\endcsname\@emptytoks}{}
 \DeclareSymbolFont{AMSa}{U}{msa}{m}{n}
 \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
-\@ifundefined{yen}{%
-  \global\let\yen \mathyen
-}{}
 \@ifundefined{circledR}{%
   \edef\circledR{\noexpand\mathhexbox{\hexnumber@\symAMSa}72}
 }{}
@@ -76,15 +73,11 @@
 \def\@obsolete#1#2#3{\PackageWarning{#1}{%
   Obsolete command \protect#2; \protect#3 should be used instead}}%
 \def\@subst@obsolete#1#2#3{\@obsolete{#1}#2#3\gdef#2{#3}#2}
-\DeclareMathSymbol{\square}           {\mathord}{AMSa}{"03}
+\global\let\square \mdlgwhtsquare
 \global\let\lozenge\mdlgwhtlozenge
 \global\let\Box\square
 \global\let\Diamond\lozenge
 \global\let\leadsto\rightsquigarrow
-\global\let\lhd\@@undefined
-\global\let\unlhd\@@undefined
-\global\let\rhd\@@undefined
-\global\let\unrhd\@@undefined
 % These are aliases with different mathclass.
 \Umathchardef \rhd \mathchar@type \mathbin \space \symlummain "22B3
 \Umathchardef \lhd \mathchar@type \mathbin \space \symlummain "22B2
