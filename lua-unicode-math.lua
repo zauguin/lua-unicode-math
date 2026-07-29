@@ -92,6 +92,7 @@ mathclasses[0x5C] = 'N' -- \
 mathclasses[0x22EF] = 'N' -- ⋯
 mathclasses[0x2E] = 'N' -- .
 mathclasses[0x3A5] = 'A' -- Υ
+mathclasses[0x22A5] = 'N' -- ⊥
 
 -- Integrals and other big operators have the same classes in data files, but we need to tell them apart.
 -- Therefore we have a fixed list of all integral like codepoints here.
