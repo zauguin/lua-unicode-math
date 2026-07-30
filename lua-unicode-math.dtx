@@ -303,7 +303,7 @@
 }
 
 \int_new:N \g__l_uni_math_max_mathstyle_int
-\int_gset:Nn \g__l_uni_math_max_mathstyle_int { 1024 }
+\int_gset:Nn \g__l_uni_math_max_mathstyle_int { 512 }
 \cs_new:Npn \__l_uni_math_provide_mathstyle_id:n #1 {
   \cs_if_exist:cF { c__l_uni_math_attribute_sym #1 _int } {
     \int_const:cn { c__l_uni_math_attribute_sym #1 _int } { \g__l_uni_math_max_mathstyle_int }
