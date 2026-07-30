@@ -313,10 +313,16 @@
 }
 
 % This should be 
-% \tex_Umathcharnumdef:D \c__l_uni_math_attribute_symnormal_int = -"7FFFFFFF \scan_stop
+% \tex_Umathcharnumdef:D \c__l_uni_math_attribute_unset_int = -"7FFFFFFF \scan_stop
 % but LuaTeX is too buggy to save this correctly.
-\tex_Umathchardef:D \c__l_uni_math_attribute_symnormal_int = "0 "80 "1 \scan_stop:
-\__l_uni_math_define_mathstyle_cmd:n {normal}
+\tex_Umathchardef:D \c__l_uni_math_attribute_unset_int = "0 "80 "1 \scan_stop:
+\tex_Umathcharnumdef:D \c__l_uni_math_attribute_symnormal_int = 1023 \scan_stop:
+\cs_new_protected:Npn \symnormal #1 {
+  \group_begin:
+    \mathfamattr = \c__l_uni_math_attribute_unset_int
+    #1
+  \group_end:
+}
 \cs_gset:Npn \mathnormal { \symnormal }
 
 \seq_set_from_clist:Nn \l_tmpa_seq {
