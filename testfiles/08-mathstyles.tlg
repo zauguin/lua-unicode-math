@@ -13,14 +13,24 @@ LaTeX Font Info:    Trying to load font information for TU+lmm-ssf on input line
 (tulmm-ssf.fd
 File: tulmm-ssf.fd ....-..-.. v... NFSS font definitions for Latin Modern Math Subscript
 )
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
+Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 > \box...=
@@ -132,27 +142,23 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 4.84
-.\hbox(7.05+2.15)x61.05994, shifted 141.97003, direction TLT
-..\TU/lmm/m/n/10 𝐹
-..\kern1.34 (italic)
-..\TU/lmm/m/n/10 𝑓
-..\kern0.9 (italic)
-..\TU/lmm/m/n/10 Γ
-..\TU/lmm/m/n/10 𝛾
-..\kern0.53 (italic)
-..\TU/lmm/m/n/10 0
-..\TU/lmm/m/n/10 𝐹
-..\kern1.34 (italic)
-..\TU/lmm/m/n/10 𝑓
-..\kern0.9 (italic)
-..\TU/lmm/m/n/10 Γ
-..\TU/lmm/m/n/10 𝛾
-..\kern0.53 (italic)
-..\TU/lmm/m/n/10 0
+.\glue(\baselineskip) 4.89
+.\hbox(7.0+2.11)x54.43, shifted 145.285, direction TLT
+..\TU/lmm/m/n/10 𝐅
+..\TU/lmm/m/n/10 𝐟
+..\kern1.14 (italic)
+..\TU/lmm/m/n/10 𝚪
+..\TU/lmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/lmm/m/n/10 𝟎
+..\hbox(7.0+0.11)x23.42, direction TLT
+...\TU/lmr/bx/n/10 F
+...\TU/lmr/bx/n/10 f
+...\TU/lmr/bx/n/10 Γ
+...\TU/lmr/bx/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
-.\glue(\baselineskip) 2.8
+.\glue(\baselineskip) 2.84
 .\hbox(7.05+0.22)x345.0, glue set 263.37fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
@@ -361,27 +367,23 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 4.84
-.\hbox(7.05+2.15)x61.05994, shifted 141.97003, direction TLT
-..\TU/lmm/m/n/10 𝐹
-..\kern1.34 (italic)
-..\TU/lmm/m/n/10 𝑓
-..\kern0.9 (italic)
-..\TU/lmm/m/n/10 Γ
-..\TU/lmm/m/n/10 𝛾
-..\kern0.53 (italic)
-..\TU/lmm/m/n/10 0
-..\TU/lmm/m/n/10 𝐹
-..\kern1.34 (italic)
-..\TU/lmm/m/n/10 𝑓
-..\kern0.9 (italic)
-..\TU/lmm/m/n/10 Γ
-..\TU/lmm/m/n/10 𝛾
-..\kern0.53 (italic)
-..\TU/lmm/m/n/10 0
+.\glue(\baselineskip) 4.89
+.\hbox(7.0+2.11)x54.43, shifted 145.285, direction TLT
+..\TU/lmm/m/n/10 𝐅
+..\TU/lmm/m/n/10 𝐟
+..\kern1.14 (italic)
+..\TU/lmm/m/n/10 𝚪
+..\TU/lmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/lmm/m/n/10 𝟎
+..\hbox(7.0+0.11)x23.42, direction TLT
+...\TU/lmr/bx/n/10 F
+...\TU/lmr/bx/n/10 f
+...\TU/lmr/bx/n/10 Γ
+...\TU/lmr/bx/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
-.\glue(\baselineskip) 2.8
+.\glue(\baselineskip) 2.84
 .\hbox(7.05+0.22)x345.0, glue set 263.37fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
@@ -592,29 +594,25 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 4.84
-.\hbox(7.05+2.15)x63.53992, shifted 140.73004, direction TLT
-..\TU/lmm/m/n/10 𝐹
-..\kern1.34 (italic)
-..\TU/lmm/m/n/10 𝑓
-..\kern0.9 (italic)
-..\TU/lmm/m/n/10 𝛤
-..\kern1.34 (italic)
-..\TU/lmm/m/n/10 𝛾
-..\kern0.53 (italic)
-..\TU/lmm/m/n/10 0
-..\TU/lmm/m/n/10 𝐹
-..\kern1.34 (italic)
-..\TU/lmm/m/n/10 𝑓
-..\kern0.9 (italic)
-..\TU/lmm/m/n/10 𝛤
-..\kern1.34 (italic)
-..\TU/lmm/m/n/10 𝛾
-..\kern0.53 (italic)
-..\TU/lmm/m/n/10 0
+.\glue(\baselineskip) 4.87
+.\hbox(7.02+2.11)x58.57999, shifted 143.21, direction TLT
+..\TU/lmm/m/n/10 𝑭
+..\kern1.48 (italic)
+..\TU/lmm/m/n/10 𝒇
+..\kern0.86 (italic)
+..\TU/lmm/m/n/10 𝜞
+..\kern1.48 (italic)
+..\TU/lmm/m/n/10 𝜸
+..\kern0.55 (italic)
+..\TU/lmm/m/n/10 𝟎
+..\hbox(7.0+0.11)x23.42, direction TLT
+...\TU/lmr/bx/n/10 F
+...\TU/lmr/bx/n/10 f
+...\TU/lmr/bx/n/10 Γ
+...\TU/lmr/bx/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
-.\glue(\baselineskip) 2.8
+.\glue(\baselineskip) 2.84
 .\hbox(7.05+0.22)x345.0, glue set 263.37fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
@@ -829,23 +827,22 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 4.84
-.\hbox(7.05+2.15)x58.87997, shifted 143.06001, direction TLT
-..\TU/lmm/m/n/10 F
-..\TU/lmm/m/n/10 𝑓
-..\kern0.9 (italic)
-..\TU/lmm/m/n/10 Γ
-..\TU/lmm/m/n/10 γ
-..\TU/lmm/m/n/10 0
-..\TU/lmm/m/n/10 F
-..\TU/lmm/m/n/10 𝑓
-..\kern0.9 (italic)
-..\TU/lmm/m/n/10 Γ
-..\TU/lmm/m/n/10 γ
-..\TU/lmm/m/n/10 0
+.\glue(\baselineskip) 4.89
+.\hbox(7.0+2.11)x54.76999, shifted 145.115, direction TLT
+..\TU/lmm/m/n/10 𝐅
+..\TU/lmm/m/n/10 𝐟
+..\kern1.14 (italic)
+..\TU/lmm/m/n/10 𝚪
+..\TU/lmm/m/n/10 𝛄
+..\TU/lmm/m/n/10 𝟎
+..\hbox(7.0+0.11)x23.42, direction TLT
+...\TU/lmr/bx/n/10 F
+...\TU/lmr/bx/n/10 f
+...\TU/lmr/bx/n/10 Γ
+...\TU/lmr/bx/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
-.\glue(\baselineskip) 2.8
+.\glue(\baselineskip) 2.84
 .\hbox(7.05+0.22)x345.0, glue set 263.37fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
@@ -1054,23 +1051,22 @@ Missing character: There is no γ (U+03B3) in font [lmsans10-regular]:+tlig;!
 ..\glue(\rightskip) 0.0
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
-.\glue(\baselineskip) 4.84
-.\hbox(7.05+2.15)x54.97998, shifted 145.01001, direction TLT
-..\TU/lmm/m/n/10 F
-..\TU/lmm/m/n/10 f
-..\kern0.79 (italic)
-..\TU/lmm/m/n/10 Γ
-..\TU/lmm/m/n/10 γ
-..\TU/lmm/m/n/10 0
-..\TU/lmm/m/n/10 F
-..\TU/lmm/m/n/10 f
-..\kern0.79 (italic)
-..\TU/lmm/m/n/10 Γ
-..\TU/lmm/m/n/10 γ
-..\TU/lmm/m/n/10 0
+.\glue(\baselineskip) 4.89
+.\hbox(7.0+2.11)x54.76999, shifted 145.115, direction TLT
+..\TU/lmm/m/n/10 𝐅
+..\TU/lmm/m/n/10 𝐟
+..\kern1.14 (italic)
+..\TU/lmm/m/n/10 𝚪
+..\TU/lmm/m/n/10 𝛄
+..\TU/lmm/m/n/10 𝟎
+..\hbox(7.0+0.11)x23.42, direction TLT
+...\TU/lmr/bx/n/10 F
+...\TU/lmr/bx/n/10 f
+...\TU/lmr/bx/n/10 Γ
+...\TU/lmr/bx/n/10 0
 .\penalty 0
 .\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
-.\glue(\baselineskip) 2.8
+.\glue(\baselineskip) 2.84
 .\hbox(7.05+0.22)x345.0, glue set 263.37fil, direction TLT
 ..\localpar
 ...\localinterlinepenalty=0
