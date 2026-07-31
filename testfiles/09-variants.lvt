@@ -1,0 +1,24 @@
+\input regression-test
+\documentclass{article}
+\usepackage{lum-newcomputermodern}
+\begin{document}
+\START
+\setbox0=\vbox{
+  % These tests have trailing 0s. These ae not typos but used to verify that the scanning in the VS code is terminated correctly.
+  \[
+    ^^^^22680
+  \]
+  \[
+    ^^^^2268^^^^fe000
+  \]
+  \[
+    ^^^^228a0
+  \]
+  \[
+    ^^^^228a^^^^fe000
+  \]
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}

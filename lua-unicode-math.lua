@@ -18,6 +18,10 @@ for i=0, 7 do
   reverse_styles[style_names[i]] = i
 end
 
+-- mathfamattr contains multiple pieces of information:
+-- a & 0x3FF - Alphabet style
+-- (a >> 10) & 0x1FF - Variation selector - Highest bit indicates that variation selector is present.
+-- a >> 19 - Currently unused
 local mathfamattr = token.create'mathfamattr'
 assert(mathfamattr.cmdname == 'assign_attr')
 local attr = mathfamattr.index
@@ -497,6 +501,15 @@ local function traverse_kernel(style, n, outer_head, outer)
     local fam, char = n.fam, n.char
     if processed_families[fam] then
       local attr_value = node.get_attribute(n, attr) or default_style
+      if (attr_value & 0x40000) ~= 0 then
+        local vs = (attr_value >> 10) & 0xFF
+        if vs < 0x10 then
+          vs = 0xFE00 + vs
+        else
+          vs = 0xE00F0 + vs
+        end
+        n.char = vs_maps[vs][(style >> 2) | (n.fam << 2)][char] or char
+      end
       local char_type = char_types[char]
       if char_type then
         char = pre_replacement[char] or char
@@ -766,4 +779,27 @@ lua.get_functions_table()[func] = function()
       t[k] = nil
     end
   end
+end
+
+local func = luatexbase.new_luafunction'__l_uni_math_variation_selector:w'
+token.set_lua('__l_uni_math_variation_selector:w', func, 'protected')
+lua.get_functions_table()[func] = function()
+  local vs_id = token.scan_int()
+  if vs_id & 0xFF ~= vs_id then
+    return tex.error"Invalid variation selector identifier"
+  end
+  local nest = tex.nest.top
+  -- TODO: Verify nest.mode
+  local n = nest.tail
+  if n.id ~= noad_t then
+    return tex.error"Misuse"
+  end
+  if n.sub or n.sub then
+    return tex.error("Missing braces around complex script", {"Your document contains an unbraced superscipt or subscript which contains a Unicode variant. In this situation, you have to add braces around your script expression."})
+  end
+  local nucleus = n.nucleus
+  if not nucleus or nucleus.id ~= math_char_t then
+    return tex.error"Misuse"
+  end
+  node.set_attribute(nucleus, attr, ((node.get_attribute(nucleus, attr) or default_style) & 0xFFF803FF) | ((0x100 | vs_id) << 10))
 end

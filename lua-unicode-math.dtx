@@ -542,6 +542,18 @@
   \prime_helper:w "2035~
 }
 
+\int_step_inline:nnn {"0} {"F} {
+  \__l_uni_math_set_math_active:npx { "FE00 + #1 } {
+    \__l_uni_math_variation_selector:w #1 ~
+  }
+}
+
+\int_step_inline:nnn {"10} {"FF} {
+  \__l_uni_math_set_math_active:npx { "E00F0 + #1 } {
+    \__l_uni_math_variation_selector:w #1 ~
+  }
+}
+
 \cs_set_protected:Npn \uproot #1 {
   \__l_uni_math_uproot:w #1 \scan_stop:
 }

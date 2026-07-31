@@ -40,8 +40,8 @@
 \global\let\doublecap\Cap
 \global\let\llless\lll
 \global\let\gggtr\ggg
-\DeclareMathSymbol{\lvertneqq}    {\mathrel}{AMSb}{"00}
-\DeclareMathSymbol{\gvertneqq}    {\mathrel}{AMSb}{"01}
+\xdef\lvertneqq{\lneqq ^^^^fe00}
+\xdef\gvertneqq{\gneqq ^^^^fe00}
 \protected\xdef\nleqq{\not\leqq}
 \protected\xdef\ngeqq{\not\geqq}
 \protected\xdef\nleqslant{\not\leqslant}
@@ -52,8 +52,8 @@
 \protected\xdef\nsubseteqq{\not\subseteqq}
 \protected\xdef\nsucceq{\not\succeq}
 \protected\xdef\nsupseteqq{\not\supseteqq}
-\protected\xdef\ntriangleleft{\not\triangleleft}
-\protected\xdef\ntriangleright{\not\triangleright}
+\global\let\ntriangleleft\nvartriangleleft
+\global\let\ntriangleright\nvartriangleright
 \DeclareMathSymbol{\shortmid}      {\mathrel}{AMSb}{"70}
 \DeclareMathSymbol{\shortparallel}  {\mathrel}{AMSb}{"71}
 \DeclareMathSymbol{\smallsmile}   {\mathrel}{AMSa}{"60}
@@ -62,7 +62,7 @@
 \DeclareMathSymbol{\thicksim}       {\mathrel}{AMSb}{"73}
 \DeclareMathSymbol{\thickapprox}    {\mathrel}{AMSb}{"74}
 \DeclareMathSymbol{\varpropto}    {\mathrel}{AMSa}{"5F}
-\DeclareMathSymbol{\varsubsetneq}   {\mathrel}{AMSb}{"20}
-\DeclareMathSymbol{\varsupsetneq}   {\mathrel}{AMSb}{"21}
-\DeclareMathSymbol{\varsubsetneqq}  {\mathrel}{AMSb}{"26}
-\DeclareMathSymbol{\varsupsetneqq}  {\mathrel}{AMSb}{"27}
+\xdef\varsubsetneq{\subsetneq ^^^^fe00}
+\xdef\varsupsetneq{\supsetneq ^^^^fe00}
+\xdef\varsubsetneqq{\subsetneqq ^^^^fe00}
+\xdef\varsupsetneqq{\supsetneqq ^^^^fe00}
