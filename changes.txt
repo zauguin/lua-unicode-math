@@ -2,3 +2,4 @@
 - Adjust mathclass for ? and !
 - Implement handling for reverse primes.
 - Define substitution packages for amsfonts and amssymb
+- Add support for Unicode variation selectors
