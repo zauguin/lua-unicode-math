@@ -348,30 +348,30 @@ local remap_bases = {
     0x1D7AA, -- 𝞪
     0x1D7EC, -- 𝟬
   },
-  [script] = { -- Script Normal -- Roundhand
-    special_offset{offset = 0x1D49C, vs = 0xFE01}, -- 𝒜
-    special_offset{offset = 0x1D4B6, vs = 0xFE01}, -- 𝒶
-    0x1D6E2, -- 𝛢
-    0x1D6FC, -- 𝛼
-    0x0030, -- 0
-  },
-  [script | bold] = { -- Script Bold -- Roundhand
-    special_offset{offset = 0x1D4D0, vs = 0xFE01}, -- 𝓐
-    special_offset{offset = 0x1D4EA, vs = 0xFE01}, -- 𝓪
-    0x1D71C, -- 𝜜
-    0x1D736, -- 𝜶
-    0x1D7CE, -- 𝟎
-  },
-  [calligraphic] = { -- Script Normal -- Chancery
+  [script] = { -- Script Normal -- Chancery
     special_offset{offset = 0x1D49C, vs = 0xFE00}, -- 𝒜
     special_offset{offset = 0x1D4B6, vs = 0xFE00}, -- 𝒶
     0x1D6E2, -- 𝛢
     0x1D6FC, -- 𝛼
     0x0030, -- 0
   },
-  [calligraphic | bold] = { -- Script Bold -- Chancery
+  [script | bold] = { -- Script Bold -- Chancery
     special_offset{offset = 0x1D4D0, vs = 0xFE00}, -- 𝓐
     special_offset{offset = 0x1D4EA, vs = 0xFE00}, -- 𝓪
+    0x1D71C, -- 𝜜
+    0x1D736, -- 𝜶
+    0x1D7CE, -- 𝟎
+  },
+  [calligraphic] = { -- Script Normal -- Roundhand
+    special_offset{offset = 0x1D49C, vs = 0xFE01}, -- 𝒜
+    special_offset{offset = 0x1D4B6, vs = 0xFE01}, -- 𝒶
+    0x1D6E2, -- 𝛢
+    0x1D6FC, -- 𝛼
+    0x0030, -- 0
+  },
+  [calligraphic | bold] = { -- Script Bold -- Roundhand
+    special_offset{offset = 0x1D4D0, vs = 0xFE01}, -- 𝓐
+    special_offset{offset = 0x1D4EA, vs = 0xFE01}, -- 𝓪
     0x1D71C, -- 𝜜
     0x1D736, -- 𝜶
     0x1D7CE, -- 𝟎
