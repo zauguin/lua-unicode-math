@@ -202,7 +202,7 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 .\penalty 10000
 .\glue(\abovedisplayshortskip) 0.0 plus 3.0
 .\glue(\baselineskip) 4.84
-.\hbox(7.05+2.15)x57.03996, shifted 143.98003, direction TLT
+.\hbox(7.05+2.15)x53.38997, shifted 145.80502, direction TLT
 ..\TU/lmm/m/n/10 𝐹
 ..\kern1.34 (italic)
 ..\TU/lmm/m/n/10 𝑓
@@ -212,13 +212,10 @@ Missing character: There is no γ (U+03B3) in font [lmroman10-bold]:+tlig;!
 ..\TU/lmm/m/n/10 𝛾
 ..\kern0.53 (italic)
 ..\TU/lmm/m/n/10 0
-..\hbox(7.05+2.05)x25.27, direction TLT
+..\hbox(7.05+2.05)x21.62001, direction TLT
 ...\TU/lmr/m/it/10 F
-...\kern1.0 (italic)
 ...\TU/lmr/m/it/10 f
-...\kern1.65 (italic)
 ...\TU/lmr/m/it/10 Γ
-...\kern1.0 (italic)
 ...\TU/lmr/m/it/10 0
 ...\kern0.64 (italic)
 .\penalty 0
