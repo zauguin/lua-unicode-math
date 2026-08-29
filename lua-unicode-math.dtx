@@ -810,4 +810,53 @@
 }
 \UseInstance {lua-unicode-math-style} {TeX}
 %    \end{macrocode}
+%
+% \subsection{Math text alphabet adaption}
+% When used without fontspec, the math text alphabets are not automatically replaced with Unicode fonts.
+% For the common case of having Computer Modern configured as text font we are replacing the font with
+% Latin Modern in base mode.
+%
+%    \begin{macrocode}
+\group_begin:
+\use:e { \cs_new:Npn \exp_not:N \__l_uni_math_helper:w #1\token_to_str:c {OT1/cm}#2\token_to_str:N /#3 } \s_stop#4\q_nil #5#6 {
+  \tl_if_empty:nTF {#4} {
+    #6
+  } {
+    #5 \exp_not:c {TU/lm#2-base/#3}
+  }
+}
+\cs_set:Npn \alpha@elt #1 #2 #3 {
+  \exp_not:N \alpha@elt \exp_not:N #1
+  \exp_last_unbraced:Ne \__l_uni_math_helper:w { \token_to_str:N #3 \s_stop \token_to_str:c{OT1/cm/} \s_stop } \q_nil
+    { \exp_not:N \M@TU }
+    { \exp_not:N #2 \exp_not:N #3 }
+}
+\tl_gset:Nx \alpha@list {
+  \alpha@list
+}
+
+\cs_set:Npn \getanddefine@fonts #1 #2 {
+  \exp_not:n { \getanddefine@fonts #1 }
+  \exp_last_unbraced:Ne \__l_uni_math_helper:w { \token_to_str:N #2 \s_stop \token_to_str:c{OT1/cm/} \s_stop } \q_nil
+    {}
+    { \exp_not:N #2 }
+}
+\cs_set:Npn \__l_uni_math_install_mathalphabet_helper:NNNN #1 #2 #3 #4 {
+  \exp_not:n { #1 #2 }
+  \exp_last_unbraced:Ne \__l_uni_math_helper:w { \token_to_str:N #4 \s_stop \token_to_str:c{OT1/cm/} \s_stop } \q_nil
+    { \exp_not:N \M@TU }
+    { \exp_not:N #3 \exp_not:N #4 }
+}
+\cs_set:Npn \install@mathalphabet #1 #2 {
+  \exp_not:n { \install@mathalphabet #1 }
+  { \__l_uni_math_install_mathalphabet_helper:NNNN #2 }
+}
+\cs_set:Npn \version@elt #1 {
+  \tl_gset:Nx #1 {
+    #1
+  }
+}
+\version@list
+\group_end:
+%    \end{macrocode}
 % \end{implementation}

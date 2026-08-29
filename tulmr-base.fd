@@ -1,0 +1,51 @@
+\ProvidesFile{tulmr-base.fd}[2026-08-29 v1.0a LaTeX font definitions for Latin Modern in base mode]
+\DeclareFontFamily{TU}{lmr-base}{}
+\DeclareFontShape{TU}{lmr-base}{m}{n}%
+  {<-5.5>    \UnicodeFontFile{lmroman5-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <5.5-6.5> \UnicodeFontFile{lmroman6-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <6.5-7.5> \UnicodeFontFile{lmroman7-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <7.5-8.5> \UnicodeFontFile{lmroman8-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <8.5-9.5> \UnicodeFontFile{lmroman9-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <9.5-11>  \UnicodeFontFile{lmroman10-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <11-15>   \UnicodeFontFile{lmroman12-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <15-> \UnicodeFontFile{lmroman17-regular}{\UnicodeFontTeXLigatures mode=base;}
+   }{}
+\DeclareFontShape{TU}{lmr-base}{m}{sl}%
+  {<-8.5>    \UnicodeFontFile{lmromanslant8-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <8.5-9.5> \UnicodeFontFile{lmromanslant9-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <9.5-11>  \UnicodeFontFile{lmromanslant10-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <11-15>   \UnicodeFontFile{lmromanslant12-regular}{\UnicodeFontTeXLigatures mode=base;}
+   <15-> \UnicodeFontFile{lmromanslant17-regular}{\UnicodeFontTeXLigatures mode=base;}
+   }{}
+\DeclareFontShape{TU}{lmr-base}{m}{it}%
+  {<-7.5>    \UnicodeFontFile{lmroman7-italic}{\UnicodeFontTeXLigatures mode=base;}
+   <7.5-8.5> \UnicodeFontFile{lmroman8-italic}{\UnicodeFontTeXLigatures mode=base;}
+   <8.5-9.5> \UnicodeFontFile{lmroman9-italic}{\UnicodeFontTeXLigatures mode=base;}
+   <9.5-11>  \UnicodeFontFile{lmroman10-italic}{\UnicodeFontTeXLigatures mode=base;}
+   <11->   \UnicodeFontFile{lmroman12-italic}{\UnicodeFontTeXLigatures mode=base;}
+   }{}
+\DeclareFontShape{TU}{lmr-base}{m}{sc}%
+  {<-> \UnicodeFontFile{lmromancaps10-regular}{\UnicodeFontTeXLigatures mode=base;}}{}
+\DeclareFontShape{TU}{lmr-base}{m}{ui}%
+  {<-> \UnicodeFontFile{lmromanunsl10-regular}{\UnicodeFontTeXLigatures mode=base;}}{}
+\DeclareFontShape{TU}{lmr-base}{m}{scsl}%
+  {<-> \UnicodeFontFile{lmromancaps10-oblique}{\UnicodeFontTeXLigatures mode=base;}}{}
+\DeclareFontShape{TU}{lmr-base}{b}{n}
+  {<-> \UnicodeFontFile{lmromandemi10-regular}{\UnicodeFontTeXLigatures mode=base;}}{}
+\DeclareFontShape{TU}{lmr-base}{b}{sl}
+  {<-> \UnicodeFontFile{lmromandemi10-oblique}{\UnicodeFontTeXLigatures mode=base;}}{}
+\DeclareFontShape{TU}{lmr-base}{bx}{n}
+  {<-5.5>   \UnicodeFontFile{lmroman5-bold}{\UnicodeFontTeXLigatures mode=base;}
+   <5.5-6.5> \UnicodeFontFile{lmroman6-bold}{\UnicodeFontTeXLigatures mode=base;}
+   <6.5-7.5> \UnicodeFontFile{lmroman7-bold}{\UnicodeFontTeXLigatures mode=base;}
+   <7.5-8.5> \UnicodeFontFile{lmroman8-bold}{\UnicodeFontTeXLigatures mode=base;}
+   <8.5-9.5> \UnicodeFontFile{lmroman9-bold}{\UnicodeFontTeXLigatures mode=base;}
+   <9.5-11>  \UnicodeFontFile{lmroman10-bold}{\UnicodeFontTeXLigatures mode=base;}
+   <11->   \UnicodeFontFile{lmroman12-bold}{\UnicodeFontTeXLigatures mode=base;}
+   }{}
+\DeclareFontShape{TU}{lmr-base}{bx}{it}
+  {<-> \UnicodeFontFile{lmroman10-bolditalic}{\UnicodeFontTeXLigatures mode=base;}}{}
+\DeclareFontShape{TU}{lmr-base}{bx}{sl}
+  {<-> \UnicodeFontFile{lmromanslant10-bold}{\UnicodeFontTeXLigatures mode=base;}}{}
+\DeclareFontShape{TU}{lmr-base}{b}{it}
+  {<->sub * lmr-base/b/sl}{}

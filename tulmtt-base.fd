@@ -1,0 +1,73 @@
+\ProvidesFile{tulmtt-base.fd}[2026-08-29 v1.0a LaTeX font definitions for Latin Modern in base mode]
+\DeclareFontFamily{TU}{lmtt-base}{%
+\hyphenchar \font\m@ne
+\fontdimen3\font\z@
+\fontdimen4\font\z@
+}
+\ifx\lmtt-base@use@light@as@normal\@empty
+\DeclareFontShape{TU}{lmtt-base}{sb}{n}
+  {<-8.5>   \UnicodeFontFile{lmmono8-regular}{mode=base;}
+   <8.5-9.5> \UnicodeFontFile{lmmono9-regular}{mode=base;}
+   <9.5-11> \UnicodeFontFile{lmmono10-regular}{mode=base;}
+   <11->  \UnicodeFontFile{lmmono12-regular}{mode=base;}
+   }{}
+\DeclareFontShape{TU}{lmtt-base}{sb}{it}
+  {<-> \UnicodeFontFile{lmmono10-italic}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{sb}{sl}
+  {<-> \UnicodeFontFile{lmmonoslant10-regular}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{sb}{sc}
+  {<-> \UnicodeFontFile{lmmonocaps10-regular}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{sb}{scsl}
+  {<-> \UnicodeFontFile{lmmonocaps10-oblique}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{m}{n}
+  {<-> \UnicodeFontFile{lmmonolt10-regular}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{m}{it}
+  {<->sub*lmtt-base/l/sl}{}
+\DeclareFontShape{TU}{lmtt-base}{m}{sl}
+  {<-> \UnicodeFontFile{lmmonolt10-oblique}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{c}{n}
+  {<-> \UnicodeFontFile{lmmonoltcond10-regular}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{c}{it}
+  {<->sub*lmtt-base/lc/sl}{}
+\DeclareFontShape{TU}{lmtt-base}{c}{sl}
+  {<-> \UnicodeFontFile{lmmonoltcond10-oblique}{mode=base;}}{}
+\else
+\DeclareFontShape{TU}{lmtt-base}{m}{n}
+  {<-8.5>   \UnicodeFontFile{lmmono8-regular}{mode=base;}
+  <8.5-9.5> \UnicodeFontFile{lmmono9-regular}{mode=base;}
+   <9.5-11> \UnicodeFontFile{lmmono10-regular}{mode=base;}
+   <11->  \UnicodeFontFile{lmmono12-regular}{mode=base;}
+   }{}
+\DeclareFontShape{TU}{lmtt-base}{m}{it}
+  {<-> \UnicodeFontFile{lmmono10-italic}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{m}{sl}
+  {<-> \UnicodeFontFile{lmmonoslant10-regular}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{m}{sc}
+  {<-> \UnicodeFontFile{lmmonocaps10-regular}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{m}{scsl}
+  {<-> \UnicodeFontFile{lmmonocaps10-oblique}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{l}{n}
+  {<-> \UnicodeFontFile{lmmonolt10-regular}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{l}{it}
+  {<->sub*lmtt-base/l/sl}{}
+\DeclareFontShape{TU}{lmtt-base}{l}{sl}
+  {<-> \UnicodeFontFile{lmmonolt10-oblique}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{lc}{n}
+  {<-> \UnicodeFontFile{lmmonoltcond10-regular}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{lc}{it}
+  {<->sub*lmtt-base/lc/sl}{}
+\DeclareFontShape{TU}{lmtt-base}{lc}{sl}
+  {<-> \UnicodeFontFile{lmmonoltcond10-oblique}{mode=base;}}{}
+\fi
+\DeclareFontShape{TU}{lmtt-base}{b}{n}
+  {<-> \UnicodeFontFile{lmmonolt10-bold}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{b}{it}
+  {<->sub*lmtt-base/b/sl}{}
+\DeclareFontShape{TU}{lmtt-base}{b}{sl}
+{<-> \UnicodeFontFile{lmmonolt10-boldoblique}{mode=base;}}{}
+\DeclareFontShape{TU}{lmtt-base}{bx}{it}
+  {<->sub*lmtt-base/b/sl}{}
+\DeclareFontShape{TU}{lmtt-base}{bx}{n}
+  {<->ssub*lmtt-base/b/n}{}
+\DeclareFontShape{TU}{lmtt-base}{bx}{sl}
+  {<->ssub*lmtt-base/b/sl}{}

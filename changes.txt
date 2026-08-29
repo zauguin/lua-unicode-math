@@ -1,1 +1,2 @@
 - Switch \mathscr and \mathcal back, reverting the change in v0.9
+- Switch to Unicode font for math alphabets if fontspec isn't used.
