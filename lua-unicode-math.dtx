@@ -95,6 +95,16 @@
 % \setmathfont[AutoFakeBold=1]{Latin Modern Math}
 % \end{verbatim}
 %
+% Sometimes you might want to use different math fonts in the same document. This can be done by defining multiple math versions.
+% In order to do this with a \pkg{fontspec} compatible interface use
+% \begin{verbatim}
+% \setmathfontversion{special-version}{XITS Math}
+% \end{verbatim}
+% Afterwards in the document you can switch to the new math font using
+% \begin{verbatim}
+% \mathversion{special-version}
+% \end{verbatim}
+%
 % \subsection{Writing maths}
 % There are two ways of entering math: You can directly input Unicode math symbols or use regular \LaTeX{} commands for symbols.
 % All Unicode symbols are supported with the same commands as in \pkg{unicode-math}. For a full list see \texttt{texdoc unimath-symbols}.
@@ -128,7 +138,6 @@
   {Opentype Math support for LuaLaTeX}
 
 %<@@=l_uni_math>
-\int_new:N \g__l_uni_math_font_count_int
 \tl_new:N \l__l_uni_math_main_family_tl
 \tl_new:N \l__l_uni_math_script_family_tl
 \tl_new:N \l__l_uni_math_scriptscript_family_tl
@@ -171,21 +180,20 @@
   \bool_gset_false:N \g__fontspec_math_bool
 
   \NewDocumentCommand \setmathfont { O{} m O{} } {
-    \int_incr:N \g__l_uni_math_font_count_int
-    \exp_args:Nc \newfontfamily
-      { g__l_uni_math_font_ \int_use:N \g__l_uni_math_font_count_int _text_font }
+    \setfontfamily
+      \g__l_uni_math_font_text_font
       { #2 }
       [ #1, #3, Script = Math, Renderer = Base ]
     \tl_set_eq:NN \l__l_uni_math_main_family_tl \l_fontspec_family_tl
 
-    \exp_args:Nc \newfontfamily
-      { g__l_uni_math_font_ \int_use:N \g__l_uni_math_font_count_int  _script_font }
+    \setfontfamily
+      \g__l_uni_math_font_script_font
       { #2 }
       [ #1, #3, Script = Math, Renderer = Base, Style = MathScript ]
     \tl_set_eq:NN \l__l_uni_math_script_family_tl \l_fontspec_family_tl
 
-    \exp_args:Nc \newfontfamily
-      { g__l_uni_math_font_ \int_use:N \g__l_uni_math_font_count_int  _scriptscript_font }
+    \setfontfamily
+      \g__l_uni_math_font_scriptscript_font
       { #2 }
       [ #1, #3, Script = Math, Renderer = Base, Style = MathScriptScript ]
     \tl_set_eq:NN \l__l_uni_math_scriptscript_family_tl \l_fontspec_family_tl
@@ -194,6 +202,34 @@
 
     \exp_args:NnnV \DeclareSymbolFont {lummain} {TU} \l__l_uni_math_main_family_tl {m} {n}
     \exp_args:NnnnV \SetSymbolFont {lummain} {bold} {TU} \l__l_uni_math_main_family_tl {b} {n}
+  }
+
+  \NewDocumentCommand \setmathfontversion { m O{} m O{} } {
+    \exp_args:NNe \tl_if_in:NnF \version@list { \exp_not:c { mv@ #1 } } {
+      \DeclareMathVersion { #1 }
+    }
+
+    \setfontface
+      \g__l_uni_math_font_text_font
+      { #3 }
+      [ #2, #4, Script = Math, Renderer = Base ]
+    \tl_set_eq:NN \l__l_uni_math_main_family_tl \l_fontspec_family_tl
+
+    \setfontface
+      \g__l_uni_math_font_script_font
+      { #3 }
+      [ #2, #4, Script = Math, Renderer = Base, Style = MathScript ]
+    \tl_set_eq:NN \l__l_uni_math_script_family_tl \l_fontspec_family_tl
+
+    \setfontface
+      \g__l_uni_math_font_scriptscript_font
+      { #3 }
+      [ #2, #4, Script = Math, Renderer = Base, Style = MathScriptScript ]
+    \tl_set_eq:NN \l__l_uni_math_scriptscript_family_tl \l_fontspec_family_tl
+
+    \DeclareMathScriptfontMapping {TU} {\l__l_uni_math_main_family_tl} {TU} {\l__l_uni_math_script_family_tl} {TU} {\l__l_uni_math_scriptscript_family_tl}
+
+    \exp_args:NnnnV \SetSymbolFont {lummain} {#1} {TU} \l__l_uni_math_main_family_tl {m} {n}
   }
 
   \cs_set:Nn \__fontspec_setmainfont_hook:nn

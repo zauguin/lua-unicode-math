@@ -1,0 +1,20 @@
+\input regression-test
+\documentclass{article}
+\usepackage{lua-unicode-math,fontspec}
+\setmathfont{Latin Modern Math}
+\setmathfontversion{special}{XITS Math}
+\begin{document}
+\START
+\setbox0=\vbox{
+  \[
+    -1=e^{\pi \symrm{i}}
+  \]
+  \mathversion{special}
+  \[
+    -1=e^{\pi \symrm{i}}
+  \]
+}
+\showbox0
+\OMIT
+\unvbox0
+\end{document}

@@ -2,7 +2,6 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 (lua-unicode-math.sty
 Package: lua-unicode-math ....-..-.. v... Opentype Math support for LuaLaTeX
-\g__l_uni_math_font_count_int=\count...
 \symlummain=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lummain' in version `bold'
 (Font)                  TU/lmm/m/n --> TU/lmm/b/n on input line ....

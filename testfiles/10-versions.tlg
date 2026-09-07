@@ -1,0 +1,69 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    Trying to load font information for TU+lmr-base on input line ....
+(tulmr-base.fd
+File: tulmr-base.fd ....-..-.. v... LaTeX font definitions for Latin Modern in base mode
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+> \box...=
+\vbox(62.11+0.0)x345.0, direction TLT
+.\hbox(0.0+0.0)x345.0, glue set 122.9979fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\hbox(0.0+0.0)x15.0, direction TLT
+..\hbox(0.0+0.0)x207.0021, glue set 103.50105fil, direction TLT
+...\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayskip) 10.0 plus 2.0 minus 5.0
+.\glue(\baselineskip) 3.58899
+.\hbox(8.41101+0.11)x37.53743, shifted 153.7313, direction TLT
+..\TU/LatinModernMath(0)/m/n/10 −
+..\TU/LatinModernMath(0)/m/n/10 1
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\TU/LatinModernMath(0)/m/n/10 =
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\TU/LatinModernMath(0)/m/n/10 𝑒
+..\hbox(4.781+0.091)x6.76201, shifted -3.63, direction TLT
+...\TU/XITSMath(1)/m/n/7 𝜋
+...\kern0.35 (italic)
+...\TU/XITSMath(1)/m/n/7 i
+.\penalty 0
+.\glue(\belowdisplayskip) 10.0 plus 2.0 minus 5.0
+.\glue(\baselineskip) 11.89
+.\hbox(0.0+0.0)x345.0, glue set 345.0fil, direction TLT
+..\localpar
+...\localinterlinepenalty=0
+...\localbrokenpenalty=0
+...\localleftbox=null
+...\localrightbox=null
+..\penalty 10000
+..\glue(\parfillskip) 0.0 plus 1.0fil
+..\glue(\rightskip) 0.0
+.\penalty 10000
+.\glue(\abovedisplayshortskip) 0.0 plus 3.0
+.\glue(\baselineskip) 3.219
+.\hbox(8.781+0.11)x35.31744, shifted 154.84128, direction TLT
+..\TU/XITSMath(0)/m/n/10 −
+..\TU/XITSMath(0)/m/n/10 1
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\TU/XITSMath(0)/m/n/10 =
+..\glue(\thickmuskip) 2.77771 plus 2.77771
+..\TU/XITSMath(0)/m/n/10 𝑒
+..\hbox(4.781+0.091)x6.61201, shifted -4.0, direction TLT
+...\TU/XITSMath(1)/m/n/7 𝜋
+...\kern0.35 (italic)
+...\TU/XITSMath(1)/m/n/7 i
+.\penalty 0
+.\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0
+! OK.
+l. ...\showbox0
