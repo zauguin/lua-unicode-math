@@ -90,6 +90,7 @@
 % \usepackage{fontspec,lua-unicode-math}
 % \end{verbatim}
 % This will load \fntname{Latin Modern Math} by default. Another math font can be loaded using \cs{setmathfont} using the same options as \pkg{fontspec}'s \cs{newfontfamily}.
+% Be aware that this does not support additional options supported by \pkg{unicode-math}, especially \texttt{version}, \texttt{range}, \texttt{s[s]cript-features}, \texttt{s[s]cript-font}.
 % For example, you can use to to configure the current math font using
 % \begin{verbatim}
 % \setmathfont[AutoFakeBold=1]{Latin Modern Math}
