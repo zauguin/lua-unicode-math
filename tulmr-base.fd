@@ -1,4 +1,4 @@
-\ProvidesFile{tulmr-base.fd}[2026-08-29 v1.0a LaTeX font definitions for Latin Modern in base mode]
+\ProvidesFile{tulmr-base.fd}[2026-09-14 v1.0a LaTeX font definitions for Latin Modern in base mode]
 \DeclareFontFamily{TU}{lmr-base}{}
 \DeclareFontShape{TU}{lmr-base}{m}{n}%
   {<-5.5>    \UnicodeFontFile{lmroman5-regular}{\UnicodeFontTeXLigatures mode=base;}

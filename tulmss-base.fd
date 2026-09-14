@@ -1,4 +1,4 @@
-\ProvidesFile{tulmss-base.fd}[2026-08-29 v1.0a LaTeX font definitions for Latin Modern in base mode]
+\ProvidesFile{tulmss-base.fd}[2026-09-14 v1.0a LaTeX font definitions for Latin Modern in base mode]
 \DeclareFontFamily{TU}{lmss-base}{}
 \DeclareFontShape{TU}{lmss-base}{m}{n}
   {<-8.5> \UnicodeFontFile{lmsans8-regular}{\UnicodeFontTeXLigatures mode=base;}
