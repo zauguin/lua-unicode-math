@@ -248,10 +248,10 @@ local fonts = {
     shapes = simple_shapes('LibertinusMath-Regular', 3),
   },
   {
-    family = 'kpmath-sans',
+    family = 'kpmathsans',
     name = "KpMath Sans",
     package = 'kpmath-sans',
-    shapes = simple_and_bold('KpMath-Sans', 'KpMath-SansBold'),
+    shapes = simple_and_bold('KpMathSans-Regular', 'KpMathSans-Bold'),
   },
 }
 
